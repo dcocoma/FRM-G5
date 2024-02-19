@@ -1,9 +1,9 @@
 # FRM-G5
 
 ## Objetivos
-Familiarizarse con los robots Kuboki y EV3, explorando sus características, herramientas de desarrollo, sensores. creando un programa simple para controlar los movimientos del robot
-Modelador un robots movil en software de simulación
-creando un programa simple para controlar los movimientos del robot
+1. Familiarizarse con los robots Kuboki y EV3, explorando sus características, herramientas de desarrollo, sensores. creando un programa simple para controlar los movimientos del robot
+2. Modelador un robots movil en software de simulación
+3. creando un programa simple para controlar los movimientos del robot
 
 ## Herramientas Necesarias
 Robot Lego Ev3.
