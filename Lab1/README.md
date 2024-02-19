@@ -44,6 +44,12 @@ Computador.
 ## Procedimiento
 ### ¿Qué es un robot móvil? Definir qué es un robot y cuáles son sus principales características.
 ### Presentación de los Robots: Descripción detallada de los robots Kuboki y EV3, incluyendo sus características físicas y capacidades.
+No puede causar interferencia danina 
+el dispositivo debe aceptar cualquier interferencia recibida
+Puede generar frecuencias de radio
+Ebfatiza en el uso del adaptador,al parecer es especial para este
+Transformador LEGO de 10v DC, 7 VA para cargar la bateria
+
 ### Estado actual del robot y sistema de control.
 ### APIs y lenguajes de programación: Identificar las APIs o librerías disponibles para programar los robots. Enumerar los lenguajes de programación compatibles con los robots.
 ### Herramientas de desarrollo propias: Demostración de las herramientas de desarrollo propias de los robots, destacando su utilidad y funcionalidades. (Si es posible). Resumir las herramientas propias que disponen los robots para facilitar la programación y el control.
