@@ -38,8 +38,8 @@ Tabla de Contenidos
 3. Crear un programa simple para controlar los movimientos del robot.
 
 ## Herramientas Necesarias
-Robot Lego Ev3.
-Computador.
+- Robot Lego Ev3.
+- Computador.
 
 ## Procedimiento
 ### ¿Qué es un robot móvil? Definir qué es un robot y cuáles son sus principales características.
