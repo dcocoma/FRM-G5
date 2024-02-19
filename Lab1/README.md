@@ -20,7 +20,7 @@ Tabla de Contenidos
 - [1. Objetivos](#objetivos)
 - [2. Herramientas necesarias](#herramientas-necesarias)
 - [3. Procedimiento](#procedimiento)
-  - [3.1 ¿Qué es un robot móvil?](#qué-es-un-robot-móvil-definir-qu-és-un-robot-y-cuáles-son-sus-principales-características)
+  - [3.1 ¿Qué es un robot móvil?](#qué-es-un-robot-móvil-definir-qué-es-un-robot-y-cuáles-son-sus-principales-características)
   - [3.2 Presentación de los Robots](#presentación-de-los-robots-descripción-detallada-de-los-robots-kuboki-y-ev3-incluyendo-sus-características-físicas-y-capacidades)
   - [3.3 Estado actual del robot y sistema de control](#estado-actual-del-robot-y-sistema-de-control)
   - [3.4 APIs y lenguajes de programación](#apis-y-lenguajes-de-programación-identificar-las-apis-o-librerías-disponibles-para-programar-los-robots-enumerar-los-lenguajes-de-programación-compatibles-con-los-robots)
