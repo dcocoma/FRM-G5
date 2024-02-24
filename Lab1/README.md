@@ -147,16 +147,16 @@ No puede causar interferencia danina el dispositivo debe aceptar cualquier inter
 
 ### 3.3. Estado actual del robot y sistema de control.
   El robot cuenta con las siguientes piezas:
-    - 7 Cables de red
-    - 1 Sensor de ultrasonido
-    - 2 Sensores de contactos
-    - 1 Cable USB
-    - 1 Motor extra
-    - 1 sensor de giro
-    - 1 sensor de colores
+  - 7 Cables de red
+  - 1 Sensor de ultrasonido
+  - 2 Sensores de contactos
+  - 1 Cable USB
+  - 1 Motor extra
+  - 1 sensor de giro
+  - 1 sensor de colores
     
   Al robot le faltan las siguientes piezas:
-    - Un cargador
+  - Un cargador
     
 ### 3.4. APIs y lenguajes de programación: Identificar las APIs o librerías disponibles para programar los robots. Enumerar los lenguajes de programación compatibles con los robots.
 ### 3.5. Herramientas de desarrollo propias: Demostración de las herramientas de desarrollo propias de los robots, destacando su utilidad y funcionalidades. (Si es posible). Resumir las herramientas propias que disponen los robots para facilitar la programación y el control.
