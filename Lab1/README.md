@@ -118,17 +118,8 @@ No puede causar interferencia danina el dispositivo debe aceptar cualquier inter
   
   Para una medición más precisa, hay que tener en cuenta otros aspectos, como el hecho de que la velocidad del ultrasonido en el aire depende de la temperatura ambiente y de la frecuencia del ultrasonido emitido por el transmisor asociado con el sensor. No es difícil ver que esta característica nos recuerda a un murciélago que, aunque tiene un sentido de la vista escaso, se orienta de manera inconfundible en el espacio gracias a sus eco localizadores.
 
-### 3.3. Estado actual del robot y sistema de control.
-  El robot cuenta con las siguientes piezas:
-    - 7 Cables de red.
-    - 1 Sensor de ultrasonido.
-    - 2 Sensores de contactos.
-    - 1 Cable USB.
-    - 1 Motor extra.
-    - 1 sensor de giro.
-    - 1 sensor de colores.
-  Al robot le faltan las siguientes piezas:
-    - Un cargador.
+
+    
   **Sensor Óptico**
   El sensor óptico es un sensor digital que puede detectar el color o la intensidad de la luz que entra a través de la pequeña ventana en la cara del sensor. Lee a 1 kHz/segundo.
   
@@ -152,6 +143,21 @@ No puede causar interferencia danina el dispositivo debe aceptar cualquier inter
   Con base en estos datos, el usuario puede determinar si el robot está girando y también programar estos giros (con una precisión de +/- 3 grados para un giro de 90 grados). Para que el sensor produzca resultados precisos, es necesario mantener el robot inmóvil antes de encenderlo, para que el sensor pueda calibrarse correctamente.
   
   Además de los mencionados anteriormente, hay otros tipos de sensores disponibles, como el sensor de sonido, sensor de temperatura, sensor infrarrojo, etc.
+
+
+### 3.3. Estado actual del robot y sistema de control.
+  El robot cuenta con las siguientes piezas:
+    - 7 Cables de red
+    - 1 Sensor de ultrasonido
+    - 2 Sensores de contactos
+    - 1 Cable USB
+    - 1 Motor extra
+    - 1 sensor de giro
+    - 1 sensor de colores
+    
+  Al robot le faltan las siguientes piezas:
+    - Un cargador
+    
 ### 3.4. APIs y lenguajes de programación: Identificar las APIs o librerías disponibles para programar los robots. Enumerar los lenguajes de programación compatibles con los robots.
 ### 3.5. Herramientas de desarrollo propias: Demostración de las herramientas de desarrollo propias de los robots, destacando su utilidad y funcionalidades. (Si es posible). Resumir las herramientas propias que disponen los robots para facilitar la programación y el control.
 ### 3.6. Sensores del robot Identificar los sensores incorporados en los robots y explicar su funcionamiento. Que compatibildiad tienes con otros sensores.
