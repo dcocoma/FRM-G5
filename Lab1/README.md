@@ -102,49 +102,6 @@ No puede causar interferencia danina el dispositivo debe aceptar cualquier inter
   La base de un servomotor es en realidad un motor unidireccional con un cierto número de engranajes, y su funcionamiento se basa en el principio de modulación de ancho de pulso - PWM. El microcontrolador procesa los datos sobre el factor de relleno de la señal PWM (número de 0 a 100, y de 0 a -100), y basado en ese número se determina el porcentaje de duración de la señal PWM. Los números positivos se refieren a moverse hacia adelante y los negativos a moverse hacia atrás. Además de la obvia diferencia de tamaño, los motores varían en el número de RPM (rotaciones por minuto). El motor más grande es más lento pero proporciona más potencia. El motor mediano es más rápido y más estable. Contiene tacógrafos, que proporcionan información sobre el número de rotaciones y otros datos útiles.
   
   Con el diseño de construcción adecuado y la usabilidad del programa, puedes crear diferentes mecanismos de movimiento con los cuales el robot puede moverse usando ruedas y orugas; puede saltar como una rana, moverse como un escorpión, así como atrapar y empujar objetos, y colocarlos en lugares específicos.
-  
-  **Sensores**
-  Como los humanos, los robots necesitan sentidos para analizar su entorno.
-  El robot estándar de LEGO tiene cuatro tipos de sensores:
-  - ultrasónico (el que parece ojos), que se utiliza para determinar la distancia entre el robot y un obstáculo,
-  - óptico (sensor de color), que, como se implica por el nombre, reacciona al nivel de luz en su entorno, es decir, detecta el color como un valor del espectro electromagnético,
-  - sensor de sonido, que reacciona al nivel de sonido en su entorno; sensor táctil, que, lo adivinaste, reacciona al tacto, es decir, al botón siendo presionado,
-  - sensor giroscópico (giroscopio), mide el movimiento rotacional del objeto (robot) y los cambios en su orientación.
-
-  **Sensor Ultrasónico**
-  El sensor ultrasónico es un sensor digital que mide la distancia a un objeto. Además del receptor de ultrasonidos, que es una especie de micrófono especial, este sensor también tiene un transmisor de ultrasonidos. El transmisor envía una onda ultrasónica que rebota en el obstáculo y vuelve al robot. Esta onda que regresa es captada por el receptor, que es el sensor en sí. El robot calcula la distancia a un obstáculo midiendo el tiempo transcurrido desde que se emitió la onda ultrasónica hasta que el eco de esta onda, que ha rebotado en un objeto, regresa.
-  
-  La distancia puede medirse en pulgadas o centímetros. Cuando se utiliza la escala en centímetros, la distancia medible está entre 3 y 250 cm, con una precisión de +/- 1 cm. Cuando se utilizan pulgadas, la distancia medible está entre 1 y 99 pulgadas, con una precisión de +/- 0.394 pulgadas. La velocidad del ultrasonido es de unos 300 m/s, y la onda sonora viaja desde el transmisor hasta el obstáculo y de regreso, cruzando una distancia que es el doble de la distancia desde el robot al obstáculo. El procesador solo necesita usar la fórmula s=v*t para calcular la distancia al obstáculo.
-  
-  Para una medición más precisa, hay que tener en cuenta otros aspectos, como el hecho de que la velocidad del ultrasonido en el aire depende de la temperatura ambiente y de la frecuencia del ultrasonido emitido por el transmisor asociado con el sensor. No es difícil ver que esta característica nos recuerda a un murciélago que, aunque tiene un sentido de la vista escaso, se orienta de manera inconfundible en el espacio gracias a sus eco localizadores.
-
-
-    
-  **Sensor Óptico**
-  El sensor óptico es un sensor digital que puede detectar el color o la intensidad de la luz que entra a través de la pequeña ventana en la cara del sensor. Lee a 1 kHz/segundo.
-  
-  Este sensor reacciona a la luz o cambios en la luz ambiental. Anteriormente, los sensores eran en blanco y negro y podían reconocer algunos tonos de gris. Hoy en día, los sensores son más complejos y pueden reconocer el color, es decir, el nivel en el espectro electromagnético. Esto es por lo que a menudo se les llama sensores de color. Los seres humanos (a diferencia de los animales) tienen un sentido de la vista desarrollado gracias a un cerebro altamente desarrollado, que es capaz de recibir y procesar una gran cantidad de información, lo que resulta en el reconocimiento de imágenes.
-  
-  El sensor se puede utilizar para:
-  1. Lectura de colores: el robot reconoce siete colores (negro, azul, verde, amarillo, rojo, blanco, marrón y además sin color). Por ejemplo, el robot puede ser programado para clasificar bloques de colores, decir los nombres de los colores que reconoce, o detener la acción cuando reconoce rojo.
-  2. Reflexión de luz: el robot usa una lámpara para emitir luz roja y mide la intensidad de la luz reflejada por el objeto. Usa una escala de 0 (muy oscuro) a 100 (muy claro). Por ejemplo, el robot puede ser programado para moverse alrededor de una superficie blanca hasta que encuentra una superficie negra.
-  3. Luz ambiental (entorno): el robot mide la fuerza de la luz recibida del entorno, por ejemplo, la luz que viene de una lámpara. Usa la misma escala que en la segunda opción. Por ejemplo, el robot puede ser programado para activar una alarma de despertador cuando sale el sol.
-  
-  Hay claras limitaciones cuando se trata de sensores, es decir, robots; por lo tanto, orientarse en el espacio basado en imágenes en forma de un gran número de puntos es difícil. Es por eso que este sensor, y la comunicación a través de él, es un gran desafío para los constructores.
-  
-  **Sensor táctil**
-  Este es en realidad un interruptor, que tiene dos estados:
-  - presionado (cuando el robot toca un obstáculo) o
-  - liberado (cuando el sensor no está tocando ningún objeto).
-  
-  **Giroscopio**
-  El giroscopio es un sensor digital que detecta el movimiento y los cambios en el movimiento del robot. Cuando el robot se mueve, este sensor lo presentará como el cambio en la velocidad de rotación en grados por segundo (deg/s). La tasa máxima es de 440 deg/s.
-  
-  Con base en estos datos, el usuario puede determinar si el robot está girando y también programar estos giros (con una precisión de +/- 3 grados para un giro de 90 grados). Para que el sensor produzca resultados precisos, es necesario mantener el robot inmóvil antes de encenderlo, para que el sensor pueda calibrarse correctamente.
-  
-  Además de los mencionados anteriormente, hay otros tipos de sensores disponibles, como el sensor de sonido, sensor de temperatura, sensor infrarrojo, etc.
-
-
 ### 3.3. Estado actual del robot y sistema de control.
   El robot cuenta con las siguientes piezas:
   - 7 Cables de red
@@ -159,8 +116,72 @@ No puede causar interferencia danina el dispositivo debe aceptar cualquier inter
   - Un cargador
     
 ### 3.4. APIs y lenguajes de programación: Identificar las APIs o librerías disponibles para programar los robots. Enumerar los lenguajes de programación compatibles con los robots.
+
+  Para programar robots LEGO EV3, hay varias APIs y librerías disponibles que permiten utilizar una amplia gama de lenguajes de programación. Aquí tienes algunas de las opciones disponibles:
+
+  a. **Python**: Puedes usar la imagen de MicroPython en una tarjeta SD y programar tu EV3 con Visual Studio Code. LEGO Education proporciona documentación completa y código API de muestra para comenzar(https://education.lego.com/en-us/downloads/mindstorms-ev3/software/). Además, está disponible ev3dev Python, un lenguaje de programación Python para controlar el robot EV3 (https://www.ev3dev.org/docs/programming-languages/).
+  
+  b. **Java**: Existe soporte para los sensores y actuadores de EV3 en Java, y puedes seguir las interfaces de LeJOS para la navegación local (https://www.ev3dev.org/docs/programming-languages/).
+  
+  c. **C, C++, y otros**: También existen librerías y enlaces para C, C++, C#, y otros lenguajes como Go, Prolog, Vala, Genie y Rust. Estos lenguajes son compatibles gracias a las distintas librerías y API que facilitan la integración con la plataforma EV3 (https://www.ev3dev.org/docs/programming-languages/).
+  
+  d. **LeJOS**: Es una alternativa de firmware y una API de Java para programar el EV3, que reemplaza el firmware estándar y añade funcionalidades para Java (https://en.wikipedia.org/wiki/Lego_Mindstorms_EV3).
+  
+  e. **ROBOTC**: Es un lenguaje de programación basado en C con un depurador de software integrado y soporta una gama de diferentes plataformas de hardware, incluyendo EV3 (https://en.wikipedia.org/wiki/Lego_Mindstorms_EV3).
+  
+  f. **MonoBrick**: Una librería de comunicación para C# que permite comunicarte con el ladrillo EV3 utilizando USB, Bluetooth o WiFi, y ofrece la posibilidad de comunicarse con el EV3 a través de Internet (https://intorobotics.com/additional-lego-ev3-resources-for-robotic-applications/).
+  
+  g. **Hardware virtual machine (HVM) para EV3**: Utilizando el lenguaje de programación Java, puedes crear una amplia gama de aplicaciones con el HVM desde Eclipse, con soporte para sistemas operativos Linux y Windows (https://intorobotics.com/additional-lego-ev3-resources-for-robotic-applications/).
+
+Estos recursos te permitirán explorar y expandir las capacidades de programación de tus robots LEGO EV3 más allá de las opciones estándar proporcionadas por LEGO.
+
 ### 3.5. Herramientas de desarrollo propias: Demostración de las herramientas de desarrollo propias de los robots, destacando su utilidad y funcionalidades. (Si es posible). Resumir las herramientas propias que disponen los robots para facilitar la programación y el control.
 ### 3.6. Sensores del robot Identificar los sensores incorporados en los robots y explicar su funcionamiento. Que compatibildiad tienes con otros sensores.
+  
+  **Sensores**
+  
+  El robot estándar de LEGO tiene cuatro tipos de sensores:
+  - ultrasónico (el que parece ojos), que se utiliza para determinar la distancia entre el robot y un obstáculo,
+  - óptico (sensor de color), que, como se implica por el nombre, reacciona al nivel de luz en su entorno, es decir, detecta el color como un valor del espectro electromagnético,
+  - sensor de sonido, que reacciona al nivel de sonido en su entorno; sensor táctil, que, lo adivinaste, reacciona al tacto, es decir, al botón siendo presionado,
+  - sensor giroscópico (giroscopio), mide el movimiento rotacional del objeto (robot) y los cambios en su orientación.
+
+  **Sensor Ultrasónico**
+  
+  El sensor ultrasónico es un sensor digital que mide la distancia a un objeto. Además del receptor de ultrasonidos, que es una especie de micrófono especial, este sensor también tiene un transmisor de ultrasonidos. El transmisor envía una onda ultrasónica que rebota en el obstáculo y vuelve al robot. Esta onda que regresa es captada por el receptor, que es el sensor en sí. El robot calcula la distancia a un obstáculo midiendo el tiempo transcurrido desde que se emitió la onda ultrasónica hasta que el eco de esta onda, que ha rebotado en un objeto, regresa.
+  
+  La distancia puede medirse en pulgadas o centímetros. Cuando se utiliza la escala en centímetros, la distancia medible está entre 3 y 250 cm, con una precisión de +/- 1 cm. Cuando se utilizan pulgadas, la distancia medible está entre 1 y 99 pulgadas, con una precisión de +/- 0.394 pulgadas. La velocidad del ultrasonido es de unos 300 m/s, y la onda sonora viaja desde el transmisor hasta el obstáculo y de regreso, cruzando una distancia que es el doble de la distancia desde el robot al obstáculo. El procesador solo necesita usar la fórmula s=v*t para calcular la distancia al obstáculo.
+  
+  Para una medición más precisa, hay que tener en cuenta otros aspectos, como el hecho de que la velocidad del ultrasonido en el aire depende de la temperatura ambiente y de la frecuencia del ultrasonido emitido por el transmisor asociado con el sensor. No es difícil ver que esta característica nos recuerda a un murciélago que, aunque tiene un sentido de la vista escaso, se orienta de manera inconfundible en el espacio gracias a sus eco localizadores.
+    
+  **Sensor Óptico**
+  
+  El sensor óptico es un sensor digital que puede detectar el color o la intensidad de la luz que entra a través de la pequeña ventana en la cara del sensor. Lee a 1 kHz/segundo.
+  
+  Este sensor reacciona a la luz o cambios en la luz ambiental. Anteriormente, los sensores eran en blanco y negro y podían reconocer algunos tonos de gris. Hoy en día, los sensores son más complejos y pueden reconocer el color, es decir, el nivel en el espectro electromagnético. Esto es por lo que a menudo se les llama sensores de color. Los seres humanos (a diferencia de los animales) tienen un sentido de la vista desarrollado gracias a un cerebro altamente desarrollado, que es capaz de recibir y procesar una gran cantidad de información, lo que resulta en el reconocimiento de imágenes.
+  
+  El sensor se puede utilizar para:
+  1. Lectura de colores: el robot reconoce siete colores (negro, azul, verde, amarillo, rojo, blanco, marrón y además sin color). Por ejemplo, el robot puede ser programado para clasificar bloques de colores, decir los nombres de los colores que reconoce, o detener la acción cuando reconoce rojo.
+  2. Reflexión de luz: el robot usa una lámpara para emitir luz roja y mide la intensidad de la luz reflejada por el objeto. Usa una escala de 0 (muy oscuro) a 100 (muy claro). Por ejemplo, el robot puede ser programado para moverse alrededor de una superficie blanca hasta que encuentra una superficie negra.
+  3. Luz ambiental (entorno): el robot mide la fuerza de la luz recibida del entorno, por ejemplo, la luz que viene de una lámpara. Usa la misma escala que en la segunda opción. Por ejemplo, el robot puede ser programado para activar una alarma de despertador cuando sale el sol.
+  
+  Hay claras limitaciones cuando se trata de sensores, es decir, robots; por lo tanto, orientarse en el espacio basado en imágenes en forma de un gran número de puntos es difícil. Es por eso que este sensor, y la comunicación a través de él, es un gran desafío para los constructores.
+  
+  **Sensor táctil**
+  
+  Este es en realidad un interruptor, que tiene dos estados:
+  - presionado (cuando el robot toca un obstáculo) o
+  - liberado (cuando el sensor no está tocando ningún objeto).
+  
+  **Giroscopio**
+  
+  El giroscopio es un sensor digital que detecta el movimiento y los cambios en el movimiento del robot. Cuando el robot se mueve, este sensor lo presentará como el cambio en la velocidad de rotación en grados por segundo (deg/s). La tasa máxima es de 440 deg/s.
+  
+  Con base en estos datos, el usuario puede determinar si el robot está girando y también programar estos giros (con una precisión de +/- 3 grados para un giro de 90 grados). Para que el sensor produzca resultados precisos, es necesario mantener el robot inmóvil antes de encenderlo, para que el sensor pueda calibrarse correctamente.
+  
+  Además de los mencionados anteriormente, hay otros tipos de sensores disponibles, como el sensor de sonido, sensor de temperatura, sensor infrarrojo, etc.
+
+
 ### 3.7. Práctica de identificación y uso de los sensores integrados en los robots, explicando cómo interactúan con el entorno.
 ### 3.8. Modelado del robot real: Realizar el modelado del robot Kuboki y EV3, en coopeliasim.
 ### 3.9. Programa simple de movimientos: Utilizando las herramientas propias del robot, crear un programa sencillo que indique movimientos básicos del robot, como desplazarse hacia adelante, girar a la derecha, etc.
