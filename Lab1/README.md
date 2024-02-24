@@ -147,6 +147,8 @@ Estos recursos te permitirán explorar y expandir las capacidades de programaci�
   - sensor giroscópico (giroscopio), mide el movimiento rotacional del objeto (robot) y los cambios en su orientación.
 
   **Sensor Ultrasónico**
+
+  ![](./Imgs/ultrasonic.jpg)
   
   El sensor ultrasónico es un sensor digital que mide la distancia a un objeto. Además del receptor de ultrasonidos, que es una especie de micrófono especial, este sensor también tiene un transmisor de ultrasonidos. El transmisor envía una onda ultrasónica que rebota en el obstáculo y vuelve al robot. Esta onda que regresa es captada por el receptor, que es el sensor en sí. El robot calcula la distancia a un obstáculo midiendo el tiempo transcurrido desde que se emitió la onda ultrasónica hasta que el eco de esta onda, que ha rebotado en un objeto, regresa.
   
@@ -155,6 +157,8 @@ Estos recursos te permitirán explorar y expandir las capacidades de programaci�
   Para una medición más precisa, hay que tener en cuenta otros aspectos, como el hecho de que la velocidad del ultrasonido en el aire depende de la temperatura ambiente y de la frecuencia del ultrasonido emitido por el transmisor asociado con el sensor. No es difícil ver que esta característica nos recuerda a un murciélago que, aunque tiene un sentido de la vista escaso, se orienta de manera inconfundible en el espacio gracias a sus eco localizadores.
     
   **Sensor Óptico**
+  
+  ![](./Imgs/opticalSensor.png)
   
   El sensor óptico es un sensor digital que puede detectar el color o la intensidad de la luz que entra a través de la pequeña ventana en la cara del sensor. Lee a 1 kHz/segundo.
   
@@ -169,11 +173,15 @@ Estos recursos te permitirán explorar y expandir las capacidades de programaci�
   
   **Sensor táctil**
   
+  ![](./Imgs/touchSensor.png)
+  
   Este es en realidad un interruptor, que tiene dos estados:
   - presionado (cuando el robot toca un obstáculo) o
   - liberado (cuando el sensor no está tocando ningún objeto).
   
   **Giroscopio**
+  
+  ![](./Imgs/giroscopio.png)
   
   El giroscopio es un sensor digital que detecta el movimiento y los cambios en el movimiento del robot. Cuando el robot se mueve, este sensor lo presentará como el cambio en la velocidad de rotación en grados por segundo (deg/s). La tasa máxima es de 440 deg/s.
   
