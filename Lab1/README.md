@@ -97,7 +97,7 @@ No puede causar interferencia danina el dispositivo debe aceptar cualquier inter
   - puerto 4 para la detección de luz infrarroja o sensor ultrasónico
   
   **Motores**
-  Cualquier tipo de movimiento realizado por el robot sería inimaginable sin los motores. La mayoría de las veces, hay tres servomotores disponibles, estos motores reciben señales eléctricas a través de sus puertos, lo que les permite funcionar. Los servomotores se utilizan más comúnmente cuando se deben superar fuerzas pequeñas, como abrir puertas pequeñas, transportar cargas de pequeñas dimensiones a cortas distancias, y similares. Es por eso que se utilizan principalmente para hacer robots pequeños, brazos robóticos y otros manipuladores. Los servomotores no requieren una fuente de energía fuerte, son fáciles de controlar y son confiables.
+  Usualmente hay tres servomotores disponibles, estos motores reciben señales eléctricas a través de sus puertos, lo que les permite funcionar. Los servomotores se utilizan más comúnmente cuando se deben superar fuerzas pequeñas, como abrir puertas pequeñas, transportar cargas de pequeñas dimensiones a cortas distancias, y similares. Es por eso que se utilizan principalmente para hacer robots pequeños, brazos robóticos y otros manipuladores. Los servomotores no requieren una gran fuente de energía, son fáciles de controlar y son confiables.
 
   La base de un servomotor es en realidad un motor unidireccional con un cierto número de engranajes, y su funcionamiento se basa en el principio de modulación de ancho de pulso - PWM. El microcontrolador procesa los datos sobre el factor de relleno de la señal PWM (número de 0 a 100, y de 0 a -100), y basado en ese número se determina el porcentaje de duración de la señal PWM. Los números positivos se refieren a moverse hacia adelante y los negativos a moverse hacia atrás. Además de la obvia diferencia de tamaño, los motores varían en el número de RPM (rotaciones por minuto). El motor más grande es más lento pero proporciona más potencia. El motor mediano es más rápido y más estable. Contiene tacógrafos, que proporcionan información sobre el número de rotaciones y otros datos útiles.
   
@@ -106,7 +106,7 @@ No puede causar interferencia danina el dispositivo debe aceptar cualquier inter
   El robot cuenta con las siguientes piezas:
   - 7 Cables de red
   - 1 Sensor de ultrasonido
-  - 2 Sensores de contactos
+  - 2 Sensores de contacto
   - 1 Cable USB
   - 1 Motor extra
   - 1 sensor de giro
@@ -136,6 +136,31 @@ No puede causar interferencia danina el dispositivo debe aceptar cualquier inter
 Estos recursos te permitirán explorar y expandir las capacidades de programación de tus robots LEGO EV3 más allá de las opciones estándar proporcionadas por LEGO.
 
 ### 3.5. Herramientas de desarrollo propias: Demostración de las herramientas de desarrollo propias de los robots, destacando su utilidad y funcionalidades. (Si es posible). Resumir las herramientas propias que disponen los robots para facilitar la programación y el control.
+El kit básico de LEGO Mindstorms EV3 incluye un conjunto de piezas LEGO Technic, motores, sensores y el brick EV3, que es el cerebro del robot. El brick EV3 está equipado con un procesador ARM9, puertos de entrada y salida para conectar sensores y motores, una pantalla LCD, botones de navegación y conectividad Bluetooth y USB.
+
+  1. **Lego Mindstorms**
+  Es una plataforma de robótica educativa que permite a los usuarios construir, programar y controlar robots utilizando bloques de construcción LEGO y un microcontrolador programable llamado EV3 (Eduardo), que es parte del kit de inicio Mindstorms EV3.
+  Para controlar el EV3 y programar las acciones del robot, se utiliza este el software, que proporciona una interfaz gráfica de programación basada en bloques que permite crear secuencias de comandos arrastrando y soltando bloques de función en una pantalla.
+  Además, también es posible programar el EV3 utilizando lenguajes de programación como LEGO Mindstorms EV3 MicroPython o incluso otros entornos de programación como Scratch o Python a través de herramientas de terceros.
+
+Se puede programar el EV3 para realizar una variedad de acciones, como moverse, interactuar con su entorno utilizando sensores como los sensores de ultrasonidos, de color o de contacto, mostrar información en la pantalla LCD, emitir sonidos a través del altavoz integrado, e incluso conectarse y comunicarse con otros dispositivos a través de Bluetooth.
+
+  1.1.  Interfaz
+  ![image](https://github.com/dcocoma/FRM-G5/assets/73080388/35e5dbce-5c6e-475d-939d-875901826689)
+
+La interfaz del programa LEGO Mindstorms EV3 está organizada en diferentes categorías de bloques de acciones para programar el comportamiento del robot:
+
+  1. **Motors (Motores)**: Bloques de acciones para controlar los motores conectados al EV3, permitiendo establecer velocidad, dirección y duración del movimiento.
+  2. **Movement (Movimiento)**: Bloques específicos para controlar el movimiento del robot en distintas direcciones y distancias.
+  3. **Display (Pantalla)**: Bloques para visualizar información en la pantalla LCD del EV3, incluyendo texto, imágenes y números.
+  4. **Sound (Sonido)**: Bloques para reproducir sonidos a través del altavoz integrado en el EV3, agregando efectos de sonido o proporcionando retroalimentación auditiva.
+  5. **Events (Eventos)**: Bloques para detectar y responder a eventos como presionar un botón o detectar un objeto con un sensor.
+  6. **Control (Control)**: Bloques para controlar el flujo de ejecución del programa, incluyendo bucles, condiciones y otras  estructuras de control.
+  7. **Sensors (Sensores)**: Bloques para leer datos de los sensores conectados al EV3, como sensores de ultrasonidos, de color o de  contacto.
+  8. **Operators (Operadores)**: Bloques para realizar operaciones matemáticas y lógicas, como cálculos y comparaciones.
+  9. **Variables (Variables)**: Bloques para trabajar con variables y almacenar datos en la memoria del EV3, permitiendo el uso de valores numéricos o de texto en diferentes partes del programa.
+ 
+
 ### 3.6. Sensores del robot Identificar los sensores incorporados en los robots y explicar su funcionamiento. Que compatibildiad tienes con otros sensores.
   
   **Sensores**
