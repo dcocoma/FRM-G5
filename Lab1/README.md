@@ -59,7 +59,7 @@ Computador.
   Los robots pueden ser diseñados para aplicaciones específicas, como robótica industrial, robótica de servicio (que incluye a los robots móviles cuando son utilizados en logística o dispensación de alimentos), robótica médica, entre otras.
 
 ### 3.2. Presentación de los Robots: Descripción detallada de los robots Kuboki y EV3, incluyendo sus características físicas y capacidades.
-No puede causar interferencia danina el dispositivo debe aceptar cualquier interferencia recibida Puede generar frecuencias de radio Ebfatiza en el uso del adaptador,al parecer es especial para este Transformador LEGO de 10v DC, 7 VA para cargar la bateria
+De acuerdo a las instrucciones de seguridad del EV3 este robot cumple con unas normas segun las cuales el dispositivo debe aceptar cualquier interferencia recibida ,ademas no puede causar ninguna interferencia dañina por si mismo ya que puede generar frecuencias de ondas de radio.Tambien enfatiza como medida de seguridad utilizar el cargador de LEGO incluido en el producto ya que es especial para el transformador LEGO y este a su vez para la bateria del EV3.
 
   El conjunto LEGO Mindstorms EV3 está compuesto por una variedad de partes mecánicas y eléctricas de las cuales se pueden ensamblar robots de diversas formas y propósitos.
   
