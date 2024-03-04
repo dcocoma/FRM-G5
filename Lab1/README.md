@@ -27,7 +27,7 @@ Tabla de Contenidos
   - [3.5 Herramientas de desarrollo propias](#35-herramientas-de-desarrollo-propias-demostración-de-las-herramientas-de-desarrollo-propias-de-los-robots-destacando-su-utilidad-y-funcionalidades-si-es-posible-resumir-las-herramientas-propias-que-disponen-los-robots-para-facilitar-la-programación-y-el-control)
   - [3.6 Sensores del robot](#36-sensores-del-robot-identificar-los-sensores-incorporados-en-los-robots-y-explicar-su-funcionamiento-que-compatibildiad-tienes-con-otros-sensores)
   - [3.7 Práctica de identificación y uso de los sensores integrados en los robots](#37-práctica-de-identificación-y-uso-de-los-sensores-integrados-en-los-robots-explicando-cómo-interactúan-con-el-entorno)
-  - [3.8 Modelado del robot real](#38-modelado-del-robot-real-realizar-el-modelado-del-robot-ev3-en-coopeliasim)
+  - [3.8 Simulación del robot real](#38-modelado-del-robot-real-realizar-el-modelado-del-robot-ev3-en-coppeliasim)
   - [3.9 Programa simple de movimientos](#39-programa-simple-de-movimientos-utilizando-las-herramientas-propias-del-robot-crear-un-programa-sencillo-que-indique-movimientos-básicos-del-robot-como-desplazarse-hacia-adelante-girar-a-la-derecha-etc)
   - [3.10 Reflexión y Discusión](#310-reflexión-y-discusión-sesión-de-reflexión-donde-los-estudiantes-comparten-sus-experiencias-aprendizajes-y-posibles-mejoras-en-el-uso-del-robot-ev3-en-aplicaciones-prácticas)
 
@@ -229,7 +229,9 @@ Los sensores del LEGO Mindstorms EV3 interactúan con su entorno mediante la det
 
 Cada uno de estos sensores permite al robot EV3 percibir su entorno de manera diferente, lo que facilita la realización de tareas complejas como navegar laberintos, seguir líneas, sortear obstáculos, y reaccionar a inputs humanos. La programación del ladrillo inteligente EV3 permite definir cómo reacciona el robot ante las señales recibidas de los sensores, lo que posibilita la creación de comportamientos robotizados sofisticados y adaptativos.
 
-### 3.8. Modelado del robot real: Realizar el modelado del robot Kuboki y EV3, en coopeliasim.
+### 3.8. Simulación del robot real: Realizar el modelado y simulación del robot EV3, en CoppeliaSim.
+
+En el siguiente enlace se encuentra un video (realizado por uno de los miembros del equipo) donde se explica y demuestra cómo importar el modelo del robot EV3 dentro de CoppeliaSim, para posteriormente utilizar una toolbox de Matlab para realizar simulaciones con el robot EV3:
 
 https://youtu.be/8RXiWQjAwGA
 
