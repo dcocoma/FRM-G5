@@ -21,15 +21,15 @@ Tabla de Contenidos
 - [2. Herramientas necesarias](#2-herramientas-necesarias)
 - [3. Procedimiento](#3-procedimiento)
   - [3.1 ¿Qué es un robot móvil?](#31-qué-es-un-robot-móvil-definir-qué-es-un-robot-y-cuáles-son-sus-principales-características)
-  - [3.2 Presentación de los Robots](#32-presentación-de-los-robots-descripción-detallada-de-los-robots-kuboki-y-ev3-incluyendo-sus-características-físicas-y-capacidades)
+  - [3.2 Presentación de los Robots](#32-presentación-de-los-robots-descripción-detallada-del-robot-ev3-incluyendo-sus-características-físicas-y-capacidades)
   - [3.3 Estado actual del robot y sistema de control](#33-estado-actual-del-robot-y-sistema-de-control)
   - [3.4 APIs y lenguajes de programación](#34-apis-y-lenguajes-de-programación-identificar-las-apis-o-librerías-disponibles-para-programar-los-robots-enumerar-los-lenguajes-de-programación-compatibles-con-los-robots)
   - [3.5 Herramientas de desarrollo propias](#35-herramientas-de-desarrollo-propias-demostración-de-las-herramientas-de-desarrollo-propias-de-los-robots-destacando-su-utilidad-y-funcionalidades-si-es-posible-resumir-las-herramientas-propias-que-disponen-los-robots-para-facilitar-la-programación-y-el-control)
   - [3.6 Sensores del robot](#36-sensores-del-robot-identificar-los-sensores-incorporados-en-los-robots-y-explicar-su-funcionamiento-que-compatibildiad-tienes-con-otros-sensores)
   - [3.7 Práctica de identificación y uso de los sensores integrados en los robots](#37-práctica-de-identificación-y-uso-de-los-sensores-integrados-en-los-robots-explicando-cómo-interactúan-con-el-entorno)
-  - [3.8 Modelado del robot real](#38-modelado-del-robot-real-realizar-el-modelado-del-robot-kuboki-y-ev3-en-coopeliasim)
+  - [3.8 Modelado del robot real](#38-modelado-del-robot-real-realizar-el-modelado-del-robot-ev3-en-coopeliasim)
   - [3.9 Programa simple de movimientos](#39-programa-simple-de-movimientos-utilizando-las-herramientas-propias-del-robot-crear-un-programa-sencillo-que-indique-movimientos-básicos-del-robot-como-desplazarse-hacia-adelante-girar-a-la-derecha-etc)
-  - [3.10 Reflexión y Discusión](#310-reflexión-y-discusión-sesión-de-reflexión-donde-los-estudiantes-comparten-sus-experiencias-aprendizajes-y-posibles-mejoras-en-el-uso-del-robot-kuboki-en-aplicaciones-prácticas)
+  - [3.10 Reflexión y Discusión](#310-reflexión-y-discusión-sesión-de-reflexión-donde-los-estudiantes-comparten-sus-experiencias-aprendizajes-y-posibles-mejoras-en-el-uso-del-robot-ev3-en-aplicaciones-prácticas)
 
 
 ## 1. Objetivos
@@ -58,7 +58,7 @@ Computador.
   
   Los robots pueden ser diseñados para aplicaciones específicas, como robótica industrial, robótica de servicio (que incluye a los robots móviles cuando son utilizados en logística o dispensación de alimentos), robótica médica, entre otras.
 
-### 3.2. Presentación de los Robots: Descripción detallada de los robots Kuboki y EV3, incluyendo sus características físicas y capacidades.
+### 3.2. Presentación de los Robots: Descripción detallada del robot EV3, incluyendo sus características físicas y capacidades.
 De acuerdo a las instrucciones de seguridad del EV3 este robot cumple con unas normas segun las cuales el dispositivo debe aceptar cualquier interferencia recibida ,ademas no puede causar ninguna interferencia dañina por si mismo ya que puede generar frecuencias de ondas de radio.Tambien enfatiza como medida de seguridad utilizar el cargador de LEGO incluido en el producto ya que es especial para el transformador LEGO y este a su vez para la bateria del EV3.
 
   El conjunto LEGO Mindstorms EV3 está compuesto por una variedad de partes mecánicas y eléctricas de las cuales se pueden ensamblar robots de diversas formas y propósitos.
@@ -234,4 +234,4 @@ Cada uno de estos sensores permite al robot EV3 percibir su entorno de manera di
 https://youtu.be/8RXiWQjAwGA
 
 ### 3.9. Programa simple de movimientos: Utilizando las herramientas propias del robot, crear un programa sencillo que indique movimientos básicos del robot, como desplazarse hacia adelante, girar a la derecha, etc.
-### 3.10 Reflexión y Discusión: Sesión de reflexión donde los estudiantes comparten sus experiencias, aprendizajes y posibles mejoras en el uso del robot Kuboki en aplicaciones prácticas.
+### 3.10 Reflexión y Discusión: Sesión de reflexión donde los estudiantes comparten sus experiencias, aprendizajes y posibles mejoras en el uso del robot EV3 en aplicaciones prácticas.
