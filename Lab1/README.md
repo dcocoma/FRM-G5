@@ -216,6 +216,19 @@ La interfaz del programa LEGO Mindstorms EV3 está organizada en diferentes cate
 
 
 ### 3.7. Práctica de identificación y uso de los sensores integrados en los robots, explicando cómo interactúan con el entorno.
+
+Los sensores del LEGO Mindstorms EV3 interactúan con su entorno mediante la detección de cambios físicos o ambientales y convirtiéndolos en señales electrónicas que el ladrillo inteligente EV3 puede procesar. Cada tipo de sensor opera basándose en principios específicos:
+
+1. **Sensor de tacto**: Este sensor funciona de manera similar a un botón. Cuando se aplica presión sobre su extremo, cierra un circuito eléctrico, enviando una señal al ladrillo EV3 que indica que ha sido presionado. Esto permite al robot reaccionar a colisiones o a ser manipulado manualmente.
+
+2. **Sensor de color**: Utiliza un LED para emitir luz sobre un objeto y luego mide la luz reflejada con un fotodetector. Dependiendo de la cantidad y el tipo de luz reflejada, el sensor puede determinar el color del objeto o la intensidad de la luz ambiental. Este principio permite al robot seguir líneas en el suelo o clasificar objetos por color.
+
+3. **Sensor de distancia por infrarrojos**: Emite ondas de luz infrarroja desde un LED y detecta la luz reflejada por objetos cercanos con un fotodetector. La distancia al objeto se calcula en función del tiempo que tarda la luz en regresar al sensor o por la intensidad de la luz reflejada. Este sensor puede usarse para evitar obstáculos, medir distancias o interactuar con un control remoto infrarrojo.
+
+4. **Sensor giratorio (o de rotación)**: Integrado en los motores, este sensor mide la cantidad de rotación del eje del motor, permitiendo al ladrillo inteligente calcular cuánto se ha movido o girado el robot. Esto se logra mediante encoders rotativos que cuentan los giros del eje para proporcionar una medición precisa del movimiento.
+
+Cada uno de estos sensores permite al robot EV3 percibir su entorno de manera diferente, lo que facilita la realización de tareas complejas como navegar laberintos, seguir líneas, sortear obstáculos, y reaccionar a inputs humanos. La programación del ladrillo inteligente EV3 permite definir cómo reacciona el robot ante las señales recibidas de los sensores, lo que posibilita la creación de comportamientos robotizados sofisticados y adaptativos.
+
 ### 3.8. Modelado del robot real: Realizar el modelado del robot Kuboki y EV3, en coopeliasim.
 ### 3.9. Programa simple de movimientos: Utilizando las herramientas propias del robot, crear un programa sencillo que indique movimientos básicos del robot, como desplazarse hacia adelante, girar a la derecha, etc.
 ### 3.10 Reflexión y Discusión: Sesión de reflexión donde los estudiantes comparten sus experiencias, aprendizajes y posibles mejoras en el uso del robot Kuboki en aplicaciones prácticas.
