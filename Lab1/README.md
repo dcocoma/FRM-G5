@@ -17,19 +17,19 @@ En el repositorio de este laboratorio se encuentra lo siguiente:
 Tabla de Contenidos
 ---
 
-- [1. Objetivos](#objetivos)
-- [2. Herramientas necesarias](#herramientas-necesarias)
-- [3. Procedimiento](#procedimiento)
-  - [3.1 ¿Qué es un robot móvil?](#qué-es-un-robot-móvil-definir-qué-es-un-robot-y-cuáles-son-sus-principales-características)
-  - [3.2 Presentación de los Robots](#presentación-de-los-robots-descripción-detallada-de-los-robots-kuboki-y-ev3-incluyendo-sus-características-físicas-y-capacidades)
-  - [3.3 Estado actual del robot y sistema de control](#estado-actual-del-robot-y-sistema-de-control)
-  - [3.4 APIs y lenguajes de programación](#apis-y-lenguajes-de-programación-identificar-las-apis-o-librerías-disponibles-para-programar-los-robots-enumerar-los-lenguajes-de-programación-compatibles-con-los-robots)
-  - [3.5 Herramientas de desarrollo propias](#herramientas-de-desarrollo-propias-demostración-de-las-herramientas-de-desarrollo-propias-de-los-robots-destacando-su-utilidad-y-funcionalidades-si-es-posible-resumir-las-herramientas-propias-que-disponen-los-robots-para-facilitar-la-programación-y-el-control)
-  - [3.6 Sensores del robot](#sensores-del-robot-identificar-los-sensores-incorporados-en-los-robots-y-explicar-su-funcionamiento-que-compatibildiad-tienes-con-otros-sensores)
-  - [3.7 Práctica de identificación y uso de los sensores integrados en los robots](#práctica-de-identificación-y-uso-de-los-sensores-integrados-en-los-robots-explicando-cómo-interactúan-con-el-entorno)
-  - [3.8 Modelado del robot real](#modelado-del-robot-real-realizar-el-modelado-del-robot-kuboki-y-ev3-en-coopeliasim)
-  - [3.9 Programa simple de movimientos](#programa-simple-de-movimientos-utilizando-las-herramientas-propias-del-robot-crear-un-programa-sencillo-que-indique-movimientos-básicos-del-robot-como-desplazarse-hacia-adelante-girar-a-la-derecha-etc)
-  - [3.10 Reflexión y Discusión](#reflexión-y-discusión-sesión-de-reflexión-donde-los-estudiantes-comparten-sus-experiencias-aprendizajes-y-posibles-mejoras-en-el-uso-del-robot-kuboki-en-aplicaciones-prácticas)
+- [1. Objetivos](#1-objetivos)
+- [2. Herramientas necesarias](#2-herramientas-necesarias)
+- [3. Procedimiento](#3-procedimiento)
+  - [3.1 ¿Qué es un robot móvil?](#31-qué-es-un-robot-móvil-definir-qué-es-un-robot-y-cuáles-son-sus-principales-características)
+  - [3.2 Presentación de los Robots](#32-presentación-de-los-robots-descripción-detallada-de-los-robots-kuboki-y-ev3-incluyendo-sus-características-físicas-y-capacidades)
+  - [3.3 Estado actual del robot y sistema de control](#33-estado-actual-del-robot-y-sistema-de-control)
+  - [3.4 APIs y lenguajes de programación](#34-apis-y-lenguajes-de-programación-identificar-las-apis-o-librerías-disponibles-para-programar-los-robots-enumerar-los-lenguajes-de-programación-compatibles-con-los-robots)
+  - [3.5 Herramientas de desarrollo propias](#35-herramientas-de-desarrollo-propias-demostración-de-las-herramientas-de-desarrollo-propias-de-los-robots-destacando-su-utilidad-y-funcionalidades-si-es-posible-resumir-las-herramientas-propias-que-disponen-los-robots-para-facilitar-la-programación-y-el-control)
+  - [3.6 Sensores del robot](#36-sensores-del-robot-identificar-los-sensores-incorporados-en-los-robots-y-explicar-su-funcionamiento-que-compatibildiad-tienes-con-otros-sensores)
+  - [3.7 Práctica de identificación y uso de los sensores integrados en los robots](#37-práctica-de-identificación-y-uso-de-los-sensores-integrados-en-los-robots-explicando-cómo-interactúan-con-el-entorno)
+  - [3.8 Modelado del robot real](#38-modelado-del-robot-real-realizar-el-modelado-del-robot-kuboki-y-ev3-en-coopeliasim)
+  - [3.9 Programa simple de movimientos](#39-programa-simple-de-movimientos-utilizando-las-herramientas-propias-del-robot-crear-un-programa-sencillo-que-indique-movimientos-básicos-del-robot-como-desplazarse-hacia-adelante-girar-a-la-derecha-etc)
+  - [3.10 Reflexión y Discusión](#310-reflexión-y-discusión-sesión-de-reflexión-donde-los-estudiantes-comparten-sus-experiencias-aprendizajes-y-posibles-mejoras-en-el-uso-del-robot-kuboki-en-aplicaciones-prácticas)
 
 
 ## 1. Objetivos
