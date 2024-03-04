@@ -43,11 +43,11 @@ Computador.
 
 ## 3. Procedimiento
 ### 3.1. ¿Qué es un robot móvil? Definir qué es un robot y cuáles son sus principales características.
+  
+  Un robot es una entidad diseñada para realizar tareas útiles para humanos o equipos, excluyendo aplicaciones de automatización industrial. Los robots se caracterizan por su capacidad de ejecutar acciones de forma autónoma o semiautónoma, a menudo programados o dirigidos mediante inteligencia artificial. Algunos robots pueden ser fijos, mientras que los robots móviles son una subclase que se distingue por su movilidad, permitiéndoles desplazarse en diferentes entornos.
 
   Un robot móvil, es un robot capaz de moverse bajo su propio control y puede ser una plataforma móvil con o sin manipuladores.
-  
-  Además, un robot es una entidad diseñada para realizar tareas útiles para humanos o equipos, excluyendo aplicaciones de automatización industrial. Los robots se caracterizan por su capacidad de ejecutar acciones de forma autónoma o semiautónoma, a menudo programados o dirigidos mediante inteligencia artificial. Algunos robots pueden ser fijos, mientras que los robots móviles son una subclase que se distingue por su movilidad, permitiéndoles desplazarse en diferentes entornos.
-  
+
   Las principales características de un robot en general pueden incluir:
   
   1. **Autonomía:** Capacidad de operar sin intervención humana.
