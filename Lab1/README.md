@@ -230,5 +230,8 @@ Los sensores del LEGO Mindstorms EV3 interactúan con su entorno mediante la det
 Cada uno de estos sensores permite al robot EV3 percibir su entorno de manera diferente, lo que facilita la realización de tareas complejas como navegar laberintos, seguir líneas, sortear obstáculos, y reaccionar a inputs humanos. La programación del ladrillo inteligente EV3 permite definir cómo reacciona el robot ante las señales recibidas de los sensores, lo que posibilita la creación de comportamientos robotizados sofisticados y adaptativos.
 
 ### 3.8. Modelado del robot real: Realizar el modelado del robot Kuboki y EV3, en coopeliasim.
+
+https://youtu.be/8RXiWQjAwGA
+
 ### 3.9. Programa simple de movimientos: Utilizando las herramientas propias del robot, crear un programa sencillo que indique movimientos básicos del robot, como desplazarse hacia adelante, girar a la derecha, etc.
 ### 3.10 Reflexión y Discusión: Sesión de reflexión donde los estudiantes comparten sus experiencias, aprendizajes y posibles mejoras en el uso del robot Kuboki en aplicaciones prácticas.
