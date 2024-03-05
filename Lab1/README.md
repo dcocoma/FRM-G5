@@ -259,7 +259,7 @@ https://github.com/dcocoma/FRM-G5/assets/45526932/b6ca44ca-56de-43a9-a07c-dadaff
 
 **Aprendizaje colaborativo y reflexivo:** Las sesiones de reflexión promueven el intercambio de experiencias entre estudiantes, fomentando el trabajo en equipo.
 
-Se pudo acercar a esas regulaciones y normas ligadas a los robots comerciales como en el caso del EV3 que va dirigido a el publico en general ,estas regulaciones y normas estan dirigidas a el correcto funcionamiento del robot ,fin de vida util de cada elemento y garantias del robot comercial lo cual fomenta el uso responsable y etica de la robotica.
+Se pudo acercar a esas regulaciones y normas ligadas a los robots comerciales como en el caso del EV3 que va dirigido a el publico en general, estas regulaciones y normas estan dirigidas a el correcto funcionamiento del robot ,fin de vida util de cada elemento y garantias del robot comercial lo cual fomenta el uso responsable y etica de la robotica.
 
 El equipo de trabajo pudo utilizar el robot EV3 y entender su funcionamiento de manera didáctica gracias a las herramientas de desarrollo propias de LEGO para el robot EV3. Además, la simulación del robot con Matlab permitió entender de una mejor manera cómo se definen las geometrías dentro de un modelo de robot real, de manera que visualmente se asemeje mucho al robot real, pero internamente tenga un modelo simplificado para poder realizar cálculos dinámicos más rápidamente.
 
