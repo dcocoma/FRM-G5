@@ -246,9 +246,9 @@ El código en diagrama de bloques se presenta en la siguiente imagen:
 
 Los videos del robot realizando la rutina descrita se presentan a conutnuación:
 
-https://github.com/dcocoma/FRM-G5/assets/45526932/b6ca44ca-56de-43a9-a07c-dadaffc8ba51
-
 https://github.com/dcocoma/FRM-G5/assets/45526932/6c5616d0-a141-4aaf-9778-92bca3b9fb21
+
+https://github.com/dcocoma/FRM-G5/assets/45526932/b6ca44ca-56de-43a9-a07c-dadaffc8ba51
 
 ### 3.10 Reflexión y Discusión: Sesión de reflexión donde los estudiantes comparten sus experiencias, aprendizajes y posibles mejoras en el uso del robot EV3 en aplicaciones prácticas.
 **Variedad en la programación:** El robot EV3 ofrece múltiples opciones de programación, desde interfaces gráficas hasta lenguajes como Python, Java, C/C++ y Matlab.
