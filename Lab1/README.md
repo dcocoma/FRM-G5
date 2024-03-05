@@ -239,7 +239,16 @@ En el siguiente enlace se encuentra un video (realizado por uno de los miembros 
 https://youtu.be/8RXiWQjAwGA
 
 ### 3.9. Programa simple de movimientos: Utilizando las herramientas propias del robot, crear un programa sencillo que indique movimientos básicos del robot, como desplazarse hacia adelante, girar a la derecha, etc.
-A continuación se presentan dos videos donde se ejecuta
+Se realizó un código en la interfaz de LEGO Mindstorms con los bloques del programa para realizar una rutina sencilla. Al iniciar el programa, el robot saluda y muestra una sonrisa en la interfaz gráfica del robot EV3 real. En caso de detectar que se presiona el interruptor del robot, se inicia una rutina donde el robot avanza en línea recta hasta detectar el color ROJO. Al detectarlo, rota 90 grados y repite lo anterior hasta completar el cuadrado. Y, en caso de detectar un objeto cercano con el sensor ultrasónico, el robot realiza un movimiento predefinido que se puede apreciar en los videos que se presentan a continuación.
+
+El código en diagrama de bloques se presenta en la siguiente imagen:
+![](./Imgs/Codigo.png)
+
+Los videos del robot realizando la rutina descrita se presentan a conutnuación:
+
+https://github.com/dcocoma/FRM-G5/assets/45526932/b6ca44ca-56de-43a9-a07c-dadaffc8ba51
+
+https://github.com/dcocoma/FRM-G5/assets/45526932/6c5616d0-a141-4aaf-9778-92bca3b9fb21
 
 ### 3.10 Reflexión y Discusión: Sesión de reflexión donde los estudiantes comparten sus experiencias, aprendizajes y posibles mejoras en el uso del robot EV3 en aplicaciones prácticas.
 **Variedad en la programación:** El robot EV3 ofrece múltiples opciones de programación, desde interfaces gráficas hasta lenguajes como Python, Java, C/C++ y Matlab.
