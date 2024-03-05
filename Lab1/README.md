@@ -34,11 +34,14 @@ Tabla de Contenidos
 
 ## 1. Objetivos
 1.1. Familiarizarse con el robots EV3, explorando sus características, herramientas de desarrollo, y sensores.
+
 1.2. Modelar un robot móvil en software de simulación.
+
 1.3. Crear un programa simple para controlar los movimientos del robot.
 
 ## 2. Herramientas Necesarias
 Robot Lego Ev3.
+
 Computador.
 
 ## 3. Procedimiento
