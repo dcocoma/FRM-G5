@@ -239,4 +239,25 @@ En el siguiente enlace se encuentra un video (realizado por uno de los miembros 
 https://youtu.be/8RXiWQjAwGA
 
 ### 3.9. Programa simple de movimientos: Utilizando las herramientas propias del robot, crear un programa sencillo que indique movimientos básicos del robot, como desplazarse hacia adelante, girar a la derecha, etc.
+A continuación se presentan dos videos donde se ejecuta
+
 ### 3.10 Reflexión y Discusión: Sesión de reflexión donde los estudiantes comparten sus experiencias, aprendizajes y posibles mejoras en el uso del robot EV3 en aplicaciones prácticas.
+**Variedad en la programación:** El robot EV3 ofrece múltiples opciones de programación, desde interfaces gráficas hasta lenguajes como Python, Java, C/C++ y Matlab.
+
+**Interacción efectiva con el entorno:** Los sensores integrados permiten al robot EV3 interactuar con su entorno, tomando decisiones en tiempo real como evitar obstáculos o seguir líneas.
+
+**Simulación y experimentación virtual:** La capacidad de modelar y simular el robot en entornos virtuales como CoppeliaSim amplía las oportunidades de aprendizaje y experimentación.
+
+**Aprendizaje colaborativo y reflexivo:** Las sesiones de reflexión promueven el intercambio de experiencias entre estudiantes, fomentando el trabajo en equipo.
+
+El equipo de trabajo pudo utilizar el robot EV3 y entender su funcionamiento de manera didáctica gracias a las herramientas de desarrollo propias de LEGO para el robot EV3. Además, la simulación del robot con Matlab permitió entender de una mejor manera cómo se definen las geometrías dentro de un modelo de robot real, de manera que visualmente se asemeje mucho al robot real, pero internamente tenga un modelo simplificado para poder realizar cálculos dinámicos más rápidamente.
+
+El equipo de trabajo pudo utilizar el robot EV3 y entender su funcionamiento de manera didáctica gracias a las herramientas de desarrollo propias de LEGO para el robot EV3. Además, la simulación del robot con Matlab permitió comprender de manera más completa cómo se definen las geometrías dentro de un modelo de robot real. Esto se logra visualmente asemejando mucho al robot real, pero internamente se utiliza un modelo simplificado para poder realizar cálculos dinámicos más rápidamente.
+
+**Posibles mejoras para el uso del robot EV3:**
+- Incorporar más sensores, tanto de LEGO como de otros proveedores.
+- Desarrollar rutinas de movimiento más complejas para ampliar las capacidades del robot.
+- Utilizar lenguajes de programación más avanzados y potentes para permitir una programación más sofisticada y versátil.
+- Integrar el robot con ROS (Robot Operating System) para aprovechar las ventajas de esta plataforma de código abierto en términos de control y coordinación de robots.
+
+Se espera poder implementar estas mejoras en las prácticas futuras para seguir potenciando el uso del robot EV3 y ampliar sus aplicaciones prácticas.
