@@ -77,10 +77,10 @@ Para verificar si la instalación de ROS se realizó correctamente se debe hacer
 
 Abrir una terminal y ejecutar los siguientes comandos:
 
-´´´
+'''
 sudo su
 roscore
-´´´
+'''
 
 Si la instalación fue correcta, se obtiene lo siguiente en la terminal:
 
