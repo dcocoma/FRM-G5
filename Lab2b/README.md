@@ -74,7 +74,7 @@ En nuestro caso, primero intentamos conectar el Arduino a la máquina virtual y 
 
 ![](./Imgs/errorArduinoVM.jpg)
 
-Lo que hicimos, entonces, fue conectar el Arduino UNO al host (computador Windows) para compilar el código y subirlo, y luego conectar el Arduino a la máquina virtual para probar la conexión con ROS (con el código ya ejecutandose en el Arduino). Para cambiar el Arduino del host a la máquina virtual, VMWare tiene una opción que permite hacer el cambio con un click, tal como se muestra en la siguiente imagen:
+Lo que hicimos, entonces, fue conectar el Arduino UNO al host (computador Windows) para compilar el código y subirlo. Luego, conectar el Arduino a la máquina virtual para probar la conexión con ROS (con el código ya ejecutándose en el Arduino). Para cambiar el Arduino del host a la máquina virtual, VMWare tiene una opción que permite hacer el cambio con un click, tal como se muestra en la siguiente imagen:
 
 ![](./Imgs/arduinoCambio.jpg)
 
