@@ -72,7 +72,7 @@ Conectar un Arduino UNO al puerto USB del computador.
 
 En nuestro caso, primero intentamos conectar el Arduino a la máquina virtual y probar la conexión pero no funcionó la compilación del código Arduino. El error se encuentra en la siguiente imagen:
 
-![](./Imgs/errorArduino.jpg)
+![](./Imgs/errorArduinoVM.jpg)
 
 Lo que hicimos, entonces, fue conectar el Arduino UNO al host (computador Windows) para compilar el código y subirlo, y luego conectar el Arduino a la máquina virtual para probar la conexión con ROS (con el código ya ejecutandose en el Arduino). Para cambiar el Arduino del host a la máquina virtual, VMWare tiene una opción que permite hacer el cambio con un click, tal como se muestra en la siguiente imagen:
 
