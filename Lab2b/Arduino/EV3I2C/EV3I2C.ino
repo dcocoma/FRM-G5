@@ -1,45 +1,55 @@
 #include <Wire.h>
+#include <ros.h>
+#include <std_msgs/UInt8.h>
+
 #define SLAVE_ADDRESS 0x04
 
-int val, flag = 0;
-int numero = 50;
-int counter = 0;
-long timeControl = 0;
+int codeSensorEV3 = 0;
+bool recepcionEV3 = false;
+int codeMotorEV3 = 50;
 
-void setup(){
-  Serial.begin(9600);
+void procesarMotores( const std_msgs::UInt8& comando){
+  codeMotorEV3 = comando.data;
+}
+
+ros::NodeHandle rosNode;
+std_msgs::UInt8 rosMsj;
+ros::Publisher sensores("sensores", &rosMsj);
+ros::Subscriber<std_msgs::UInt8> motores("motores", procesarMotores);
+
+void setup() {
+  // Conexión EV3
   Wire.begin(SLAVE_ADDRESS);
-  Wire.onReceive(receiveData);
-  Wire.onRequest(sendData);
-  Serial.println("Ready!");
-  timeControl = millis();
+  Wire.onReceive(receiveEV3);
+  Wire.onRequest(sendEV3);
+
+  // Conexión ROS
+  rosNode.initNode();
+  rosNode.advertise(sensores);
+  rosNode.subscribe(motores);
 }
 
-void loop(){
-  if (flag == 1)
-  {
-    Serial.println(val);
-    flag = 0;
+void loop() {
+  // Procesar Motores
+  // Los motores se procesan en las funciones sendEV3 y procesarMotores
+  
+  // Procesar Sensores
+  if (recepcionEV3) {
+    rosMsj.data = codeSensorEV3;
+    sensores.publish( &rosMsj );
+    recepcionEV3 = false;
+  }
+
+  rosNode.spinOnce();
+}
+
+void receiveEV3(int byteCount) {
+  while (Wire.available() > 0) {
+    codeSensorEV3 = Wire.read();
+    recepcionEV3 = true;
   }
 }
 
-void receiveData(int byteCount)
-{
-  while (Wire.available() > 0)
-  {
-    val = Wire.read();
-    flag = 1;
-  }
-}
-
-void sendData(){
-  if (millis() - timeControl >= 5000) {
-    timeControl = millis();
-    if (numero == 51) {
-      numero = 52;
-    } else {
-      numero = 51;
-    }
-  }
-  Wire.write(numero);
+void sendEV3() {
+  Wire.write(codeMotorEV3);
 }
