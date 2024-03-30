@@ -282,3 +282,96 @@ Si la comunicación es correcta, se deberá obtener lo siguiente en el monitor s
 Esta conexión se logra utilizando el Arduino como puente. La infraestructura del proyecto se presenta a continuación:
 
 ![](./Imgs/infraestructura.png)
+
+Las flechas en Rojo representan la conexión necesaria para programar el Arduino y el EV3, respectivamente.
+
+Se debe realizar 3 programas:
+
+1. **Programa EV3:** Programa en Lego Mindstorms para que el robot EV3 envíe información de los sensores y reciba comandos para los motores, mediante I2C.
+2. **Programa Arduino:** Programa en Arduino que recibe la información de los sensores mediante I2C y la publica en un topic de ROS. Y, lee comandos de movimiento desde el tópic de ROS y los manda por I2C al EV3.
+3. **Programa ROS:** Programa en Python que lea la información de los sensores y publique comandos del usuario a través de un topic de ROS. Para interactuar con el usuario se utiliza una interfaz gráfica.
+
+### Programa EV3
+
+Primero, se tiene cierta limitación con los bloques de Lego Mindstorm. Tal como se observa en la imagen, solamente se tienen bloques para trabajar con el sensor de color, el sensor de contacto y el sensor infrarrojo.
+
+![](./Imgs/finalEV31.jpg)
+
+Se decide trabajar solamente con el sensor de color y el sensor de contacto.
+
+Se correrán 3 bloques en paralelo una vez iniciado el programa. Uno se encarga de enviar la información del sensor de color, otro se encarga de enviar la información del sensor de contacto y, el útlimo, se encarga de recibir comandos para los motores.
+
+#### Programa Sensor de Color
+
+![](./Imgs/finalEV32.jpg)
+
+El bloque completo no se muestra debido a que son varios colores y la imagen quedaría muy grande. Sin embargo, los demás colores se colocan de manera similar a lo que se ve, y a continuación se explica el bloque y la codificación utilizada.
+
+Este bloque representa la siguiente secuencia:
+
+0. Repetir siempre
+1. Detectar el color que lee el sensor de color
+2. Switch del color -> En cada caso envía 1 byte usando el bloque I2C
+3. Esperar 0.1 segundos antes de repetir
+
+El caso default es *Sin color*.
+
+La codificación de los colores es la siguiente:
+| Color    | Byte |
+|----------|------|
+| Sin color| 20   |
+| Negro    | 21   |
+| Azul     | 22   |
+| Verde    | 23   |
+| Amarillo | 24   |
+| Rojo     | 25   |
+| Blanco   | 26   |
+| Cafe     | 27   |
+
+#### Programa Sensor de Contacto
+
+![](./Imgs/finalEV33.jpg)
+
+Este bloque representa la siguiente secuencia:
+
+0. Repetir siempre
+1. Detectar si el sensor está presionado
+2. Switch del contacto -> En cada caso envía 1 byte usando el bloque I2C
+3. Esperar 0.1 segundos antes de repetir
+
+La codificación de los estados del contacto es la siguiente:
+| Estado        | Byte |
+|---------------|------|
+| Presionado    | 11   |
+| No presionado | 10   |
+
+#### Programa Motores
+
+![](./Imgs/finalEV34.jpg)
+
+Este bloque representa la siguiente secuencia:
+
+0. Repetir siempre
+1. Leer 1 byte usando el bloque I2C -> Este byte codifica la acción a realizar
+2. Switch de los motores -> En base al byte recibido hace alguna acción.
+3. Esperar 0.1 segundos antes de repetir
+
+La codificación de los estados del contacto es la siguiente:
+| Byte | Acción                   |
+|------|--------------------------|
+| 50   | Detener motores          |
+| 51   | Avanzar                  |
+| 52   | Rotar hacia la derecha   |
+| 53   | Rotar hacia la izquierda |
+| 54   | Retroceder               |
+| 0    | No hacer nada            |
+
+El caso *0* es el caso por default. En caso de que se llegue a recibir algún otro valor (por ruido u otra razón), esto no afectará el funcionamiento del robot pues simplemente se ignorará dicho byte.
+
+Los motores están configurados para funcionar al 50% de su potencia máxima.
+
+![](./Imgs/finalEV35.jpg)
+
+### Programa Arduino
+
+### Programa ROS
