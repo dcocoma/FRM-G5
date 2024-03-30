@@ -14,6 +14,7 @@ En el repositorio de este laboratorio se encuentra lo siguiente:
 - README.md -> Archivo base con la descripción del laboratorio.
 - Imgs -> Carpeta con imágenes utilizadas en el archivo README.
 - Arduino -> Carpeta con códigos y librerías de Arduino utilizadas.
+- Mindstorms -> Carpeta con proyectos y bloques de Lego Mindstorms Home Edition utilizados.
 
 Para esta práctica se tiene un computador Windows 10 con una máquina virtual VMWare Workstation Player V17 Linux Ubuntu versión 20.04. En el Windows 10 se instaló el IDE de Arduino y en la máquina virtual Linux se instaló ROS Noetic (junto con *catkin* -> http://wiki.ros.org/catkin).
 
@@ -201,3 +202,74 @@ Finalmente, conectar un cable de sensor del EV3 (RJ12) entre el puerto 1 del rob
 ![](./Imgs/arduinoEV3fisico.jpeg)
 
 Para reducir el movimiento entre los cables, se pegó el circuito al EV3 con cinta.
+
+### Programación Mindstroms
+
+Para programar el robot EV3 se debe utilizar Lego Mindstroms Home Edition (**NO** el Education Edition), el cual se puede descargar de: https://www.lego.com/en-gb/themes/mindstorms/downloads.
+
+Para realizar la conexión, se utiliza la librería para mindstorm desarrollada por Dexter Industries, la cual se encuentra en: https://github.com/DexterInd/EV3_Dexter_Industries_Sensors.
+
+Instalar los bloques de la librería dentro de Lego Mindstorms tal como se ilustra en la imagen:
+
+![](./Imgs/dexterImport.jpg)
+
+Dentro de Lego Mindstorms ir a *Tools* y seleccionar *Block Import*. Se debe buscar el arhchivo a instalar en *Browse*, el cual debe ser previamente descargado (este archivo se encuentra en este GitHub en *Mindstorms/Dexter.ev3b*). Se hace click en *Import*.
+
+Para verificar que se instaló el bloque requerido, en la parte inferior de Lego Mindstorms ir a la pestaña amarilla (la de *sensores*) y verificar que aparezca el bloque I2C, tal como se muestra en la imagen:
+
+![](./Imgs/bloqueI2C.jpg)
+
+El programa de prueba de conexión se encuentra en *Mindstorms/ArduinoTest.ev3*. Este programa se muestra a continuación:
+
+![](./Imgs/mindstormsTest.jpg)
+
+### Probando la comunicación
+
+Conectar el Arduino UNO que está sobre el robot EV3 al puerto USB del computador.
+
+Abrir el IDE de Arduino y copiar el siguiente código, el cual se encuentra en *Arduino/EV3I2CTest/EV3I2CTest.ino*:
+
+```
+#include <Wire.h>
+#define SLAVE_ADDRESS 0x04
+int val, flag = 0;
+void setup(){
+  Serial.begin(9600);
+  Wire.begin(SLAVE_ADDRESS);
+  Wire.onReceive(receiveData);
+  Wire.onRequest(sendData);
+  Serial.println("Ready!");
+}
+void loop(){
+  if (flag == 1){
+    Serial.println(val);
+    flag = 0;
+  }
+}
+void receiveData(int byteCount){
+  while (Wire.available() > 0){
+    val = Wire.read();
+    flag = 1;
+  }
+}
+void sendData(){}
+```
+
+Subir el código al Arduino UNO. Para esto, utilizar las funcionalidades de la IDE de Arduino.
+
+Encender el robot EV3 y habilitar el bluetooth del robot. Abrir Lego Mindstorms con el proyecto *ArduinoTest.ev3* abierto y en la parte inferior derecha darle a *Refresh*.
+
+![](./Imgs/ev3Arduino0.jpeg)
+![](./Imgs/ev3Arduino1.jpg)
+
+Conectar el robot EV3 mediante Bluetooth.
+
+Abrir un monitor serial dentro del IDE de Arduino. Esto se logra con **Ctrl + Shift + m** o en *Tools -> Serial Monitor* (en el IDE).
+
+Subir el programa al EV3 dando click en la flecha de *play* dentro de Lego Mindstorms.
+
+![](./Imgs/ev3Arduino2.jpg)
+
+Si la comunicación es correcta, se deberá obtener lo siguiente en el monitor serial de Arduino:
+
+![](./Imgs/ev3Arduino3.jpg)

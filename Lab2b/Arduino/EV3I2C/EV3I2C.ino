@@ -7,7 +7,7 @@ int counter = 0;
 long timeControl = 0;
 
 void setup(){
-  Serial.begin(9600); // start serial for output
+  Serial.begin(9600);
   Wire.begin(SLAVE_ADDRESS);
   Wire.onReceive(receiveData);
   Wire.onRequest(sendData);
