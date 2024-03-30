@@ -198,6 +198,6 @@ Los colores mencionados en el esquemático coinciden con los colores marcados en
 
 Finalmente, conectar un cable de sensor del EV3 (RJ12) entre el puerto 1 del robot y el adaptador RJ12 hembra, tal como se muestra a continuación:
 
-![](./Imgs/arduinoEV3fisico.jpg)
+![](./Imgs/arduinoEV3fisico.jpeg)
 
 Para reducir el movimiento entre los cables, se pegó el circuito al EV3 con cinta.
