@@ -16,9 +16,29 @@ En el repositorio de este laboratorio se encuentra lo siguiente:
 - Arduino -> Carpeta con códigos y librerías de Arduino utilizadas.
 - Mindstorms -> Carpeta con proyectos y bloques de Lego Mindstorms Home Edition utilizados.
 
-Para esta práctica se tiene un computador Windows 10 con una máquina virtual VMWare Workstation Player V17 Linux Ubuntu versión 20.04. En el Windows 10 se instaló el IDE de Arduino y en la máquina virtual Linux se instaló ROS Noetic (junto con *catkin* -> http://wiki.ros.org/catkin).
+Tabla de Contenidos
+---
+
+- [Introducción](#introducción)
+- [Conexión Arduino --- ROS](#conexión-arduino---ros)
+  - [Configuración del proyecto](#configuración-del-proyecto)
+  - [Probando la conexión](#probando-la-conexión)
+- [Conexión Arduino --- EV3](#conexión-arduino---ev3)
+  - [Conexión Física](#conexión-física)
+  - [Programación Mindstroms](#programación-mindstroms)
+  - [Probando la comunicación](#probando-la-comunicación)
+- [Conexión ROS --- EV3](#conexión-ros---ev3)
+  - [Programa EV3](#programa-ev3)
+  - [Programa Arduino](#programa-arduino)
+  - [Programa ROS](#programa-ros)
+- [Resultados](#resultados)
+- [Conclusiones](#conclusiones)
+
+## Introducción
 
 ## Conexión Arduino --- ROS
+
+Se tiene un computador Windows 10 con una máquina virtual VMWare Workstation Player V17 Linux Ubuntu versión 20.04. En el Windows 10 se instaló el IDE de Arduino y en la máquina virtual Linux se instaló ROS Noetic (junto con *catkin* -> http://wiki.ros.org/catkin).
 
 Se conectará Arduino con ROS a través del paquete *rosserial*. Para esto, se siguen algunos de los ejemplos de la documentación oficial de *rosserial*, los cuales se encuentran en el siguiente link:
 
@@ -305,7 +325,7 @@ Se correrán 3 bloques en paralelo una vez iniciado el programa. Uno se encarga 
 
 ![](./Imgs/finalEV32.jpg)
 
-El bloque completo no se muestra debido a que son varios colores y la imagen quedaría muy grande. Sin embargo, los demás colores se colocan de manera similar a lo que se ve, y a continuación se explica el bloque y la codificación utilizada.
+Los demás colores se colocan de manera similar a lo que se ve en la imagen.
 
 Este bloque representa la siguiente secuencia:
 
@@ -370,8 +390,14 @@ El caso *0* es el caso por default. En caso de que se llegue a recibir algún ot
 
 Los motores están configurados para funcionar al 50% de su potencia máxima.
 
+El programa completo se muestra a continuación:
+
 ![](./Imgs/finalEV35.jpg)
 
 ### Programa Arduino
 
 ### Programa ROS
+
+## Resultados
+
+## Conclusiones
