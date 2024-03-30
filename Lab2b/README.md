@@ -279,4 +279,6 @@ Si la comunicación es correcta, se deberá obtener lo siguiente en el monitor s
 
 ## Conexión ROS --- EV3
 
-Esta conexión se logra utilizando el Arduino como puente. La infraestructura del proyecto se presenta a continuación
+Esta conexión se logra utilizando el Arduino como puente. La infraestructura del proyecto se presenta a continuación:
+
+![](./Imgs/infraestructura.png)
