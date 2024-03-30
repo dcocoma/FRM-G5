@@ -156,3 +156,48 @@ Si todo está funcionando correctamente, se verá lo siguiente en la terminal:
 ![](./Imgs/arduinoTest3.jpg)
 
 Con esto terminamos de probar la conexión, y para terminar la ejecución de las ventanas de la terminal, presionar *Ctrl + C* dentro de cada ventana.
+
+## Conexión Arduino --- EV3
+
+Se conectará Arduino con el robot EV3 mediante uno de los cables de sensor del robot EV3 utilizando el protocolo de comunicación I2C.
+
+### Conexión Física
+
+Para esta conexión, se sigue lo explicado en el siguiente link: https://www.dexterindustries.com/howto/connecting-ev3-arduino.
+
+Se requieren los siguientes elementos:
+- Robot EV3
+- Arduino UNO
+- Adaptador RJ12 hembra
+- Placa Shield Syb-170 (opcional) -> Si no se tiene, usar protoboard
+- Cables de colores
+
+Los cables de sensores que se conectan al robot EV3 tienen terminales RJ12 tal como se muestra en la siguiente imagen:
+
+![](./Imgs/rj12.jpg)
+
+Es complicado conseguir un conector RJ12 hembra que permita la conexión de estos cables debido a que el *buckle* se encuentra corrido a la derecha y la mayoría de conectores hembra tienen el espacio para el *buckle* en el centro.
+
+Para este trabajo, logramos realizar la conexión a partir de un adaptador RJ12 genérico como el siguiente:
+
+![](./Imgs/rj12hembra.jpg)
+
+Los colores marcados en las patas son los colores correspondientes a los cables del RJ12. Se obtuvo la información mediante pruebas de continuidad.
+
+Con un *motortool*, se removió el material de la esquina superior derecha para permitir la inserción del RJ12 macho. Luego, se soldaron cables a las 6 patas del adaptador para poder realizar conexiones en una protoboard.
+
+Se utilizó la *Placa Shield Syb-170* para conectar el *Arduino UNO* y el adaptador RJ12 de manera compacta.
+
+![](./Imgs/placaShield.jpg)
+
+La conexión se hace siguiendo el siguiente esquemático:
+
+![](./Imgs/arduinoConexion.jpg)
+
+Los colores mencionados en el esquemático coinciden con los colores marcados en la imagen del adaptador RJ12 hembra. Nótese que no se utiliza el color negro ni blanco, es decir, se puede evitar el uso de esas 2 patas para este proyecto.
+
+Finalmente, conectar un cable de sensor del EV3 (RJ12) entre el puerto 1 del robot y el adaptador RJ12 hembra, tal como se muestra a continuación:
+
+![](./Imgs/arduinoEV3fisico.jpg)
+
+Para reducir el movimiento entre los cables, se pegó el circuito al EV3 con cinta.
