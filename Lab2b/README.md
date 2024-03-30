@@ -257,9 +257,12 @@ void sendData(){}
 
 Subir el código al Arduino UNO. Para esto, utilizar las funcionalidades de la IDE de Arduino.
 
-Encender el robot EV3 y habilitar el bluetooth del robot. Abrir Lego Mindstorms con el proyecto *ArduinoTest.ev3* abierto y en la parte inferior derecha darle a *Refresh*.
+Encender el robot EV3 y habilitar el bluetooth del robot. 
 
 ![](./Imgs/ev3Arduino0.jpeg)
+
+Abrir Lego Mindstorms con el proyecto *ArduinoTest.ev3* abierto y en la parte inferior derecha darle a *Refresh*.
+
 ![](./Imgs/ev3Arduino1.jpg)
 
 Conectar el robot EV3 mediante Bluetooth.
@@ -273,3 +276,7 @@ Subir el programa al EV3 dando click en la flecha de *play* dentro de Lego Minds
 Si la comunicación es correcta, se deberá obtener lo siguiente en el monitor serial de Arduino:
 
 ![](./Imgs/ev3Arduino3.jpg)
+
+## Conexión ROS --- EV3
+
+Esta conexión se logra utilizando el Arduino como puente. La infraestructura del proyecto se presenta a continuación
