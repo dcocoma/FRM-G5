@@ -20,14 +20,14 @@ Tabla de Contenidos
 ---
 
 - [Introducción](#introducción)
-- [Conexión Arduino --- ROS](#conexión-arduino---ros)
+- [Conexión Arduino --- ROS](#conexión-arduino-----ros)
   - [Configuración del proyecto](#configuración-del-proyecto)
   - [Probando la conexión](#probando-la-conexión)
-- [Conexión Arduino --- EV3](#conexión-arduino---ev3)
+- [Conexión Arduino --- EV3](#conexión-arduino-----ev3)
   - [Conexión Física](#conexión-física)
   - [Programación Mindstroms](#programación-mindstroms)
   - [Probando la comunicación](#probando-la-comunicación)
-- [Conexión ROS --- EV3](#conexión-ros---ev3)
+- [Conexión ROS --- EV3](#conexión-ros-----ev3)
   - [Programa EV3](#programa-ev3)
   - [Programa Arduino](#programa-arduino)
   - [Programa ROS](#programa-ros)
