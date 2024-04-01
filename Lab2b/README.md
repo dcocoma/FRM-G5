@@ -313,7 +313,7 @@ Se debe realizar 3 programas:
 
 ### Programa EV3
 
-Primero, se tiene cierta limitación con los bloques de Lego Mindstorm. Tal como se observa en la imagen, solamente se tienen bloques para trabajar con el sensor de color, el sensor de contacto y el sensor infrarrojo.
+Se tiene cierta limitación con los bloques de Lego Mindstorm. Tal como se observa en la imagen, solamente se tienen bloques para trabajar con el sensor de color, el sensor de contacto y el sensor infrarrojo.
 
 ![](./Imgs/finalEV31.jpg)
 
@@ -396,6 +396,81 @@ El programa completo se muestra a continuación:
 
 ### Programa Arduino
 
+El programa de Arduino actúa como puente entre el robot EV3 y ROS.
+
+Se definen los siguientes topics de ROS:
+| Topic    | Tipo de mensaje |
+|----------|-----------------|
+| sensores | UInt8          |
+| motores  | UInt8          |
+
+Los mensajes que se escriben por los tópicos serán enteros sin signo de 8 bits (*UInt8*). Esto resulta correcto para conectar con el programa del EV3 debido a que éste puede enviar y recibir bytes, que en todo caso son números de 8 bits.
+
+El Arduino realizará lo siguiente:
+0. Establecer un nodo en ROS para interactuar con los topics
+1. Suscribirse al topic *motores*: Leer bytes del topic *motores* y enviarlos al robot EV3 mediante I2C
+2. Publicar en el topic *sensores*: Recibir bytes del robot EV3 mediante I2C y publicarlos en el topic *sensores*
+
+El código de Arduino se encuentra en *Arduino/Main/Main.ino*. Dicho código se muestra a continuación:
+
+```
+#include <Wire.h>
+#include <ros.h>
+#include <std_msgs/UInt8.h>
+
+#define SLAVE_ADDRESS 0x04
+
+uint8_t codeSensorEV3 = 0;
+bool recepcionEV3 = false;
+uint8_t codeMotorEV3 = 50;
+
+void procesarMotores( const std_msgs::UInt8& comando){
+  codeMotorEV3 = comando.data;
+}
+
+ros::NodeHandle rosNode;
+std_msgs::UInt8 rosMsj;
+ros::Publisher sensores("sensores", &rosMsj);
+ros::Subscriber<std_msgs::UInt8> motores("motores", procesarMotores);
+
+void setup() {
+  // Conexión EV3
+  Wire.begin(SLAVE_ADDRESS);
+  Wire.onReceive(receiveEV3);
+  Wire.onRequest(sendEV3);
+
+  // Conexión ROS
+  rosNode.initNode();
+  rosNode.advertise(sensores);
+  rosNode.subscribe(motores);
+}
+
+void loop() {
+  // Procesar Motores
+  // Los motores se procesan en las funciones sendEV3 y procesarMotores
+  
+  // Procesar Sensores
+  if (recepcionEV3) {
+    rosMsj.data = codeSensorEV3;
+    sensores.publish( &rosMsj );
+    recepcionEV3 = false;
+  }
+
+  rosNode.spinOnce();
+}
+
+void receiveEV3(int byteCount) {
+  while (Wire.available() > 0) {
+    codeSensorEV3 = Wire.read();
+    recepcionEV3 = true;
+  }
+}
+
+void sendEV3() {
+  Wire.write(codeMotorEV3);
+}
+```
+
 ### Programa ROS
 
 En la terminal de la máquina virtual Linux, navegamos usando el comando *cd* hasta ubicarnos dónde habíamos creado el proyecto de ROS en la sección [Configuración del proyecto](#configuración-del-proyecto). En nuestro caso, la carpeta se llama *ArduinoROS*. Ejecutar lo siguiente:
@@ -452,6 +527,14 @@ Revisar que la estructura de archivos de la carpeta ArduinoROS sea:
 ![](./Imgs/archivosCatkin.jpg)
 
 Para verificar que se configuró todo correctamente, ejecutar `roscore` en una terminal nueva y `rosrun ev3_arduino HMI.py` en la terminal que está en la carpeta *ArduinoROS*. Si todo está bien, se ejecuta el programa en Python (se puede probar poniendo algo sencillo como `print("Hola")`).
+
+El código en Python para conectar a ROS con el Arduino hace lo siguiente:
+
+1. Crea una interfaz gráfica
+2. Lee el topic de ROS *sensores* y actualiza la información en la interfaz gráfica
+3. Escribe en el topic de ROS *motores* en base a las teclas que el usuario presione
+
+Copiar y pegar el siguiente código en el archivo *HMI.py*:
 
 ```
 import rospy
