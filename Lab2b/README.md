@@ -99,7 +99,7 @@ Lo que hicimos, entonces, fue conectar el Arduino UNO al host (computador Window
 
 ![](./Imgs/arduinoCambio.jpg)
 
-Abrir el IDE de Arduino y copiar el siguiente código, el cual se encuentra como el ejemplo *HelloWorld* de la librería *ros_lib*:
+Abrir el IDE de Arduino y copiar el siguiente código, el cual se encuentra en *Arduino/ROSTest/ROSTest.ino*. Este corresponde con el ejemplo *HelloWorld* de la librería *ros_lib*:
 
 ```
 #include <ros.h>
