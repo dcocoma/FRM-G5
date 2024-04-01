@@ -346,7 +346,7 @@ La codificación de los colores es la siguiente:
 | Amarillo | 24   |
 | Rojo     | 25   |
 | Blanco   | 26   |
-| Cafe     | 27   |
+| Café     | 27   |
 
 #### Programa Sensor de Contacto
 
@@ -398,6 +398,172 @@ El programa completo se muestra a continuación:
 
 ### Programa ROS
 
+En la terminal de la máquina virtual Linux, navegamos usando el comando *cd* hasta ubicarnos dónde habíamos creado el proyecto de ROS en la sección [Configuración del proyecto](#configuración-del-proyecto). En nuestro caso, la carpeta se llama *ArduinoROS*. Ejecutar lo siguiente:
+
+```
+cd ArduinoROS
+cd src
+source devel/setup.bash
+catkin_create_pkg ev3_arduino std_msgs rospy
+```
+
+Esto creará un nuevo paquete de ROS llamado **ev3_arduino** que incluye las dependencias *std_msgs* y *rospy*, la cuales sirven para trabajar con los mensajes estándar de ROS y python, respectivamente.
+
+Para verificar la creación del paquete, correr lo siguiente en la terminal:
+
+```
+cd ev3_arduino
+ls
+```
+
+Si todo va bien, aparece:
+
+```
+CMakeLists.txt  package.xml  src
+```
+
+Se recomienda abrir la carpeta completa *ArduinoROS* en un editor de código como *VSCode*. 
+
+Se crea el archivo que contendrá el programa en Python para interactuar con el usuario y ROS. Esté archivo se llamará HMI.py y DEBE estar dentro de la carpeta *ArduinoROS/src/ev3_arduino/src*.
+
+En el archivo *CMakeLists.txt*, se debe agregar lo siguiente (copiar y pegar al final del archivo):
+
+
+```
+catkin_install_python(PROGRAMS
+  src/HMI.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+```
+
+Si el archivo que se quiere crear tiene otro nombre, colocar dicho nombre en vez de *HMI.py*.
+
+Ejecutar `catkin_make` en la terminal, ubicados en el archivo base (ArduinoROS). Si aún no se ha cerrado ni modificado la misma que se ha venido usando, ejecutar lo siguiente:
+
+```
+cd ..
+cd ..
+source devel/setup.bash
+catkin_make
+```
+
+Revisar que la estructura de archivos de la carpeta ArduinoROS sea:
+
+![](./Imgs/archivosCatkin.jpg)
+
+Para verificar que se configuró todo correctamente, ejecutar `roscore` en una terminal nueva y `rosrun ev3_arduino HMI.py` en la terminal que está en la carpeta *ArduinoROS*. Si todo está bien, se ejecuta el programa en Python (se puede probar poniendo algo sencillo como `print("Hola")`).
+
+```
+import rospy
+from std_msgs.msg import UInt8
+import tkinter as tk
+from PIL import Image, ImageTk
+
+__author__ = "Felipe Cruz"
+__credits__ = ["Felipe Cruz"]
+__email__ = "fcruzv@unal.edu.co"
+__status__ = "Test"
+
+# Crear la ventana de la interfaz gráfica
+root = tk.Tk()
+root.title("Control Lego EV3")
+
+# Crear una función para PARAR
+def STOP():
+    exit()
+
+# Colocar nombres y titulo
+tk.Label(root, text="HMI para controlar robot EV3").pack()
+tk.Label(root, text="Felipe Cruz").pack()
+tk.Label(root, text="David Cocoma").pack()
+tk.Label(root, text="Joan Jauregui").pack()
+tk.Label(root, text="Johan López").pack()
+
+# Colocar logo de la U
+image_path = '/home/feli/Documents/RoboticaMovil/ArduinoROS/src/ev3_arduino/src/UNAL.jpeg'
+img = Image.open(image_path)
+img = ImageTk.PhotoImage(img)
+image_label = tk.Label(root, image=img)
+image_label.pack()
+
+# Crear espacios para mostrar info
+color_label = tk.Label(root, text="Color: ")
+color_label.pack()
+contacto_label = tk.Label(root, text="Contacto: ")
+contacto_label.pack()
+
+# Crear un botón para parar
+move_button = tk.Button(root, text="PARAR", command=STOP)
+move_button.pack()
+
+# Definir la función callback para actualizar los valores en tiempo real
+def callback(data):
+    print(data.data)
+    if(data == 20):
+        color_label.config(text=f"Color: Sin Color")
+    elif(data == 21):
+        color_label.config(text=f"Color: Negro")
+    elif(data == 22):
+        color_label.config(text=f"Color: Azul")
+    elif(data == 23):
+        color_label.config(text=f"Color: Verde")
+    elif(data == 24):
+        color_label.config(text=f"Color: Amarillo")
+    elif(data == 25):
+        color_label.config(text=f"Color: Rojo")
+    elif(data == 26):
+        color_label.config(text=f"Color: Blanco")
+    elif(data == 27):
+        color_label.config(text=f"Color: Café")
+    elif(data == 10):
+        contacto_label.config(text=f"Contacto: No")
+    elif(data == 11):
+        contacto_label.config(text=f"Contacto: Sí")
+    else:
+        pass
+
+def listener():
+    rospy.init_node('sensores_listener', anonymous=True)
+    rospy.Subscriber("sensores", UInt8, callback)
+
+def update_gui():
+    listener() # Leer datos
+    root.after(1000, update_gui)  # Actualizar
+
+# Funcion principal
+if __name__ == '__main__':
+    # Iniciar un hilo para la actualización de la GUI
+    update_gui()
+
+    root.mainloop() # HMI
+```
+
 ## Resultados
+
+### Ejecución programas
+
+Para ejecutar el proyecto completo, se debe tener lo siguiente:
+
+1. Máquina virtual abierta con 3 terminales localizadas en la carpeta *ArduinoROS*
+2. Lego Mindstorms Home Edition abierto en el proyecto *ArduinoEV3.ev3*
+3. Arduino IDE abierto con el código *Main.ino*
+4. Arduino UNO conectado al computador y al robot EV3
+5. Robot EV3 conectado a Lego Mindstorms por bluetooth
+
+El proceso para ejecutar todo el proyecto de manera correcta es el siguiente:
+
+1. Conectar el Arduino UNO al *host*
+2. Subir el código *Main.ino* al Arduino UNO
+3. Conectar el Arduino UNO a la máquina virtual
+4. En la terminal 1 de la máquina virtual ejecutar `roscore`
+5. En la terminal 2 de la máquina virtual ejecutar `rosrun rosserial_python serial_node.py /dev/ttyACM0`
+6. Ejecutar el programa *ArduinoEV3.ev3* en el robot EV3
+7. En la terminal 3 de la máquina virtual ejecutar `rosrun ev3_arduino HMI.py`
+8. Usar las flechas del computador para mover el robot y la HMI de Python para observar lo que leen los sensores
+
+Para terminar la ejecución:
+1. En Lego Mindstorms detener la ejecución del programa
+2. En la HMI de Python presionar el botón de PARAR
+3. En la terminal 1 y 2 presionar **Ctrl + C**
 
 ## Conclusiones

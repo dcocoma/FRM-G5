@@ -4,9 +4,9 @@
 
 #define SLAVE_ADDRESS 0x04
 
-int codeSensorEV3 = 0;
+uint8_t codeSensorEV3 = 0;
 bool recepcionEV3 = false;
-int codeMotorEV3 = 50;
+uint8_t codeMotorEV3 = 50;
 
 void procesarMotores( const std_msgs::UInt8& comando){
   codeMotorEV3 = comando.data;
