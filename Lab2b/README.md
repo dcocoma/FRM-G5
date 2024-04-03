@@ -306,11 +306,17 @@ Esta conexión se logra utilizando el Arduino como puente. La infraestructura de
 
 Las flechas en Rojo representan la conexión necesaria para programar el Arduino y el EV3, respectivamente.
 
+Además, la comunicación entre los diferentes componentes se representa de la siguiente manera:
+
+![](./Imgs/rosComm.png)
+
+Las comunicaciones dentro de ROS se harán mediante 2 topics que envían mensajes del tipo **UInt8** (enteros de 8 bits).
+
 Se debe realizar 3 programas:
 
 1. **Programa EV3:** Programa en Lego Mindstorms para que el robot EV3 envíe información de los sensores y reciba comandos para los motores, mediante I2C.
-2. **Programa Arduino:** Programa en Arduino que recibe la información de los sensores mediante I2C y la publica en un topic de ROS. Y, lee comandos de movimiento desde el tópic de ROS y los manda por I2C al EV3.
-3. **Programa ROS:** Programa en Python que lea la información de los sensores y publique comandos del usuario a través de un topic de ROS. Para interactuar con el usuario se utiliza una interfaz gráfica.
+2. **Programa Arduino:** Programa en Arduino que recibe la información de los sensores mediante I2C y la publica en el topic de ROS. Y, lee comandos de movimiento desde el tópic de ROS y los manda por I2C al EV3.
+3. **Programa ROS:** Programa en Python que lea la información de los sensores y publique comandos del usuario a través del topic de ROS. Para interactuar con el usuario se utiliza una interfaz gráfica.
 
 ### Programa EV3
 
