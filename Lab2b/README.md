@@ -39,6 +39,10 @@ Tabla de Contenidos
 
 ## Introducción
 
+La integración de sistemas robóticos con diversas tecnologías es una práctica esencial en el campo de la robótica móvil, permitiendo el desarrollo de sistemas más versátiles y funcionales. El Laboratorio 2 B presenta un proyecto que combina el uso de ROS (Robot Operating System), Arduino, y el kit de robótica LEGO Mindstorms EV3 para explorar las posibilidades de la interacción entre sistemas computacionales y mecánicos de diferentes plataformas. Este documento ofrece una visión detallada de cómo configurar y programar estos componentes para que trabajen juntos.
+
+El proyecto se estructura en torno a la creación de una serie de conexiones: Arduino con ROS, Arduino con EV3, y ROS con EV3 a través de Arduino, utilizando protocolos de comunicación como I2C y el paquete rosserial para la transmisión de datos. Se proporciona una guía paso a paso que incluye la configuración del entorno, el manejo de la comunicación entre dispositivos y la programación necesaria para lograr una integración efectiva. Esta documentación está destinada a servir como un recurso educativo para estudiantes y aficionados en robótica, ofreciendo las bases para entender mejor la interacción entre software de alto nivel y hardware específico en aplicaciones robóticas.
+
 ## Conexión Arduino --- ROS
 
 Se tiene un computador Windows 10 con una máquina virtual VMWare Workstation Player V17 Linux Ubuntu versión 20.04. En el Windows 10 se instaló el IDE de Arduino y en la máquina virtual Linux se instaló ROS Noetic (junto con *catkin* -> http://wiki.ros.org/catkin).
