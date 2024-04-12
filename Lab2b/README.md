@@ -723,3 +723,11 @@ Este video muestra el robot moviendose libremente en base a las instrucciones qu
 https://github.com/FCruzV10/ROSEV3/assets/45526932/dfabb451-379d-44e2-bdb1-6c84f5dc9a36
 
 ## Conclusiones
+
+* La integración de ROS y Arduino con LEGO Mindstorms EV3 se demostró efectiva para la creación de un entorno robótico interactivo. Utilizando ROS como el sistema operativo de alto nivel y Arduino como interfaz de hardware, se logró un puente comunicativo eficaz entre el software de control avanzado y el hardware robótico accesible, facilitando la programación y ejecución de tareas complejas.
+
+* La implementación del paquete *rosserial* fue crucial para superar los desafíos de comunicación entre Arduino y ROS, permitiendo una transmisión de datos fiable y en tiempo real. Este enfoque minimizó los problemas de latencia y pérdida de datos, fundamentales en aplicaciones robóticas donde la respuesta en tiempo real es esencial.
+
+* La conexión entre Arduino y EV3 mediante I2C demostró ser una solución robusta para la transmisión de comandos y la recopilación de datos de sensores. Esta interfaz de bajo costo y fácil implementación es ideal para proyectos educativos y de investigación que requieren interacción entre diferentes plataformas de hardware.
+
+* Los desafíos encontrados en la configuración inicial de la máquina virtual para conectar el Arduino y manejar la compilación del código resaltan la importancia de una correcta configuración del entorno de desarrollo. La solución de estos problemas implicó ajustes tanto en el nivel de software como en el de hardware, lo que subraya la necesidad de una integración cuidadosa y testeada en proyectos de robótica.
