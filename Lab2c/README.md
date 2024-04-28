@@ -19,13 +19,14 @@ En el repositorio de este laboratorio se encuentra lo siguiente:
 En un computador con sistemaoperativo windows 10, se implemtó una máquina virtual de Ubuntu 64 bits para simular el software de linux y ejecutar la instalación de ROS como se muestra en el Lab2a.
 
 Una vez configurado el entorno se realizó la conección con el robot kobuki siguiendo los siguientes pasos:
+  
   1.Abrir una terminal dentro de la máquina virtual y posicionarse en el lugar donde se desea crear el workspace, en este caso en la carpeta Documents/rosproyects/ creada anteriormente.
   
   2. Se crea un espacio de trabajo (workspace) como un directorio en el computador, utilizando el comando mkdir en consola para crear la carpeta.
-    mkdir Kobuki_ws
+    'mkdir Kobuki_ws'
   
   3. Se crea una carpeta "src"dentro del workspace e ingresamos a ese directorio:
-    cd Kobuki_ws
+    'cd Kobuki_ws'
     mkdir src
     cd src
   
