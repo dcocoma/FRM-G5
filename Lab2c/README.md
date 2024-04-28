@@ -20,11 +20,12 @@ En un computador con sistemaoperativo windows 10, se implemtó una máquina virt
 
 Una vez configurado el entorno se realizó la conección con el robot kobuki siguiendo los siguientes pasos:
   
-  1.Abrir una terminal dentro de la máquina virtual y posicionarse en el lugar donde se desea crear el workspace, en este caso en la carpeta Documents/rosproyects/ creada anteriormente.
+  1. Abrir una terminal dentro de la máquina virtual y posicionarse en el lugar donde se desea crear el workspace, en este caso en la carpeta Documents/rosproyects/ creada anteriormente.
   
   2. Se crea un espacio de trabajo (workspace) como un directorio en el computador, utilizando el comando mkdir en consola para crear la carpeta.
-
-`mkdir Kobuki_ws`
+```
+mkdir Kobuki_ws
+```
   
   4. Se crea una carpeta "src"dentro del workspace e ingresamos a ese directorio:
 
@@ -42,19 +43,22 @@ git clone https://github.com/yujinrobot/yujin_ocs
 ```
   
   7. Ejecutamos el comando de compilación:
-
-`catkin_make`
-  
+```
+catkin_make
+``` 
   8. Se prende el Kobuki con el switch ubicado en la parte lateral derecha, se conecta mediante el puerto USB al computador y se indica que debe realizar la conección con la máquina virtual y no con el computador principal.
   
   9. En la carpeta kobuki_ws, se ejecuta el comando para configurar finalmente el espacio:
-    source devel/setup.bash
-  
+```
+source devel/setup.bash
+```  
   10. Se ejecuta la conexión utilizando el comando roslaunch, el script minimal.launch ubicado en el paquete kobuki_node para generar el enlace con el robot:
-    cd
-    roslaunch kobuki_node minimal.launch --screen
+```
+cd
+roslaunch kobuki_node minimal.launch --screen
+```
   Se debe ver en la terminal todos los nodos iniciados para la comunicación y los diagnosticos del robot como se muestra a continuación:
   ![image](https://github.com/dcocoma/FRM-G5/assets/73080388/9df0796f-1e71-4192-931e-3fd6dcafa30c)
   ![image](https://github.com/dcocoma/FRM-G5/assets/73080388/b900cc96-2108-4282-9fbf-ca1bae065f28)
 
-  11. 
+  12. 
