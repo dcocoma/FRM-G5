@@ -23,21 +23,27 @@ Una vez configurado el entorno se realizó la conección con el robot kobuki sig
   1.Abrir una terminal dentro de la máquina virtual y posicionarse en el lugar donde se desea crear el workspace, en este caso en la carpeta Documents/rosproyects/ creada anteriormente.
   
   2. Se crea un espacio de trabajo (workspace) como un directorio en el computador, utilizando el comando mkdir en consola para crear la carpeta.
-  `mkdir Kobuki_ws`
+
+`mkdir Kobuki_ws`
   
   4. Se crea una carpeta "src"dentro del workspace e ingresamos a ese directorio:
-    ```
-    cd Kobuki_ws
-    mkdir src
-    cd src
-    ```
+
+```
+cd Kobuki_ws
+mkdir src
+cd src
+```
   
   6. Una vez adentro, se clonan los repositorios a través de los comandos:
-    git clone https://github.com/yujinrobot/kobuki
-    git clone https://github.com/yujinrobot/yujin_ocs
+ 
+```
+git clone https://github.com/yujinrobot/kobuki
+git clone https://github.com/yujinrobot/yujin_ocs
+```
   
   7. Ejecutamos el comando de compilación:
-    catkin_make
+
+`catkin_make`
   
   8. Se prende el Kobuki con el switch ubicado en la parte lateral derecha, se conecta mediante el puerto USB al computador y se indica que debe realizar la conección con la máquina virtual y no con el computador principal.
   
