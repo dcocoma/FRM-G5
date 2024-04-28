@@ -171,3 +171,111 @@ https://w3.cs.jmu.edu/spragunr/CS354_F17/handouts/ROSCheatsheet.pdf
 - *Paso 5. Bucle de espera de eventos (spin):* `rospy.spin()`: Un bucle que mantiene el script ejecutándose y esperando por nuevos mensajes. A diferencia de otros bucles que manejan la frecuencia de ejecución manualmente, `rospy.spin()` simplemente bloquea y espera por eventos hasta que el nodo se apaga. Este método es útil cuando un nodo está dedicado principalmente a escuchar y procesar mensajes entrantes.
 
 # Obteniendo dimensiones del plano con turtle_teleop_key y PYSUBPOSE.PY
+
+Se obtienen las coordenadas de la esquina superior derecha.
+
+![](./Imgs/lab2A_4_1.png)
+
+Se obtienen las coordenadas de la esquina superior izquierda.
+
+![](./Imgs/lab2A_4_2.png)
+
+Se obtienen las coordenadas de la esquina inferior izquierda.
+
+![](./Imgs/lab2A_4_3.png)
+
+Se obtienen las coordenadas de la esquina inferior derecha.
+
+![](./Imgs/lab2A_4_4.png)
+
+Las dimensiones del plano son de 0 a 11.089 en X y en Y.
+
+# Servicios SPAWN y TELEPORT_ABSOLUT
+   ## spawn
+   - *Tipo de mensaje:* turtlesim/Spawn
+   - *Descripción:* Añade una nueva tortuga a la simulación en una ubicación especificada con un nombre opcional.
+   - *Argumentos x, y:* Coordenadas para la posición inicial. ;theta: Orientación inicial en radianes. ; name: Nombre opcional para la nueva tortuga.
+   ## teleport_absolut
+   - *Tipo de mensaje:* turtlesim/TeleportAbsolute
+   - *Descripción:* Mueve la tortuga a una posición y orientación absolutas sin dejar rastro.
+   - *Argumentos x, y:* Coordenadas de la nueva posición; theta: Nueva orientación en radianes.
+
+# Uso de TURTLESIMSERVICE.PY
+
+Se permite la ejecución como programa del archivo turtlesimservice.py .
+
+![](./Imgs/lab2A_5_1.png)
+
+Se usa setup.bash.
+
+![](./Imgs/lab2A_5_2.png)
+
+Se ejecutan dibuja un cuadrado con la tortuga.
+
+![](./Imgs/lab2A_5_3.png)
+
+# Creando un cuadrado y triangulo con dos tortugas
+Primero se creo el programa llamado TRIANGLE.PY .
+```
+#!/usr/bin/python3
+# La línea shebang indica que este script debe ejecutarse con Python 3.
+
+import rospy  # Importa el módulo rospy, utilizado para escribir nodos de ROS en Python.
+from turtlesim.srv import TeleportAbsolute  # Importa el tipo de servicio TeleportAbsolute de turtlesim.
+from std_srvs.srv import Empty  # Importa el tipo de servicio Empty que no requiere argumentos y no retorna nada.
+
+if __name__ == '__main__':  # Comprueba si este script es el punto de entrada principal para asegurarse de que no se ejecuta como módulo importado.
+    rospy.init_node('turtlesimservice', anonymous=False)  # Inicializa un nodo de ROS llamado 'turtlesimservice'.
+
+    rospy.wait_for_service('turtle1/teleport_absolute')  # Espera a que el servicio 'turtle1/teleport_absolute' esté disponible.
+    turtle1_teleport = rospy.ServiceProxy('turtle1/teleport_absolute', TeleportAbsolute)  # Crea un proxy de servicio para llamar al servicio de teletransporte de la tortuga 1.
+
+    rospy.wait_for_service('tortuga2/teleport_absolute')  # Espera a que el servicio 'tortuga2/teleport_absolute' esté disponible.
+    tortuga2_teleport = rospy.ServiceProxy('tortuga2/teleport_absolute', TeleportAbsolute)  # Crea un proxy de servicio para llamar al servicio de teletransporte de la tortuga 2.
+
+    rospy.wait_for_service('clear')  # Espera a que el servicio 'clear' esté disponible.
+    clear1 = rospy.ServiceProxy('clear', Empty)  # Crea un proxy de servicio para llamar al servicio 'clear' que borra la pantalla.
+
+    rate = rospy.Rate(0.3)  # Establece la frecuencia del bucle principal a 0.3 Hz (aproximadamente 3 segundos por ciclo).
+    pos1=1  # Inicializa la posición de la tortuga 1.
+    pos2=1  # Inicializa la posición de la tortuga 2.
+    
+    # Bucle principal que sigue ejecutándose hasta que el nodo de ROS se apague.
+    while not rospy.is_shutdown():
+        if (pos2==1):
+            resp1 = tortuga2_teleport(2.25, 2.25, 0)  # Teletransporta la tortuga 2 a la posición (2.25, 2.25) con ángulo 0.
+            clear1()  # Llama al servicio clear para borrar las huellas.
+        if (pos2==2):
+            resp1 = tortuga2_teleport(7.75, 2.25, 0)  # Teletransporta la tortuga 2 a otra posición.
+        if (pos2==3):
+            resp1 = tortuga2_teleport(5.5, 7.75, 0)  # Continúa teletransportando a la tortuga 2 a distintas posiciones.
+        if (pos2==4):
+            resp1 = tortuga2_teleport(2.25, 2.25, 0)  # Repite posición inicial para tortuga 2.
+        if (pos2>4):
+            pos2=1  # Reinicia la posición de la tortuga 2 si supera 4.
+        pos2+=1  # Incrementa la posición de control para la tortuga 2.
+
+        if (pos1==1):
+            resp1 = turtle1_teleport(4, 5, 0)  # Teletransporta la tortuga 1 a la posición (4, 5) con ángulo 0.
+            clear1()  # Llama al servicio clear para borrar las huellas de la tortuga 1.
+        if (pos1==2):
+            resp1 = turtle1_teleport(4, 10, 0)  # Continúa teletransportando a la tortuga 1 a distintas posiciones.
+        if (pos1==3):
+            resp1 = turtle1_teleport(8, 10, 0)
+        if (pos1==4):
+            resp1 = turtle1_teleport(8, 5, 0)
+        if (pos1==5):
+            resp1 = turtle1_teleport(4, 5, 0)  # Repite posición inicial para tortuga 1.
+        if (pos1>5):
+            pos1=1  # Reinicia la posición de la tortuga 1 si supera 5.
+        pos1+=1  # Incrementa la posición de control para la tortuga 1.
+
+    rate.sleep()  # Pausa el bucle según la tasa definida para sincronizar el ciclo.
+```
+Se usa el servicio spawn para crear otra tortuga.
+
+![](./Imgs/lab2A_6_1.png)
+
+Se corre el programa triangle.py y se el resultado.
+
+![](./Imgs/lab2A_6_2.png)
