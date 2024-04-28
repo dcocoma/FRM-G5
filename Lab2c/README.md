@@ -128,6 +128,16 @@ roslaunch kobuki_keyop safe_keyop.launch --screen
   
 ![image](https://github.com/dcocoma/FRM-G5/assets/73080388/53a73a1c-7193-429a-a05c-1fff8269edaf)
 
+# Ejercicio de revisión
+
+1. Realice una investigación acerca del robot TurtleBot2 y su relación con la base Kobuki.
+
+2. ¿Para que sirve los sensores cliff en el Kobuki?¿Como leer un evento de dicho sensor?
+
+3. Construya un archivo en Python que permita hacer la lectura de la información del sensor cliff y active
+un sonido al ocurrir un evento con ese sensor. Active también el modo de teleoperación por teclado al
+mismo tiempo para controlar el movimiento del Kobuki.
+
 # Creación código python.
 
 Se crea un código en python para leer los eventos detecytados por el sensor "cliff" que lee si hay una posible caida al no detectar suelo en los extremos debajo del robot.
@@ -166,4 +176,5 @@ Finalmente se puede controlar el robot con las teclas y al estar cerca de un pre
 
 # Evidencia
 
-https://youtu.be/NCzT87E5tAg
+[https://youtu.be/NCzT87E5tAg]
+(https://www.youtube.com/watch?v=NCzT87E5tAg)
