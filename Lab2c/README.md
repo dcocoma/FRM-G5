@@ -176,5 +176,4 @@ Finalmente se puede controlar el robot con las teclas y al estar cerca de un pre
 
 # Evidencia
 
-[https://youtu.be/NCzT87E5tAg]
-(https://www.youtube.com/watch?v=NCzT87E5tAg)
+[https://youtu.be/NCzT87E5tAg](https://www.youtube.com/watch?v=NCzT87E5tAg)
