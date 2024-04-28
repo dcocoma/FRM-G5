@@ -61,4 +61,71 @@ roslaunch kobuki_node minimal.launch --screen
   ![image](https://github.com/dcocoma/FRM-G5/assets/73080388/9df0796f-1e71-4192-931e-3fd6dcafa30c)
   ![image](https://github.com/dcocoma/FRM-G5/assets/73080388/b900cc96-2108-4282-9fbf-ca1bae065f28)
 
-  12. 
+  11. Para ver cuales comandos están disponibles para la interacción con el robot se puede ejecutar el comando `rostopic list` para visualizar los comandos de interacción.
+```
+ rostopic list
+/diagnostics
+/diagnostics_agg
+/diagnostics_toplevel_state
+/joint_states
+/mobile_base/commands/digital_output
+/mobile_base/commands/external_power
+/mobile_base/commands/led1
+/mobile_base/commands/led2
+/mobile_base/commands/motor_power
+/mobile_base/commands/reset_odometry
+/mobile_base/commands/sound
+/mobile_base/commands/velocity
+/mobile_base/debug/raw_data_command
+/mobile_base/debug/raw_data_stream
+/mobile_base/events/bumper
+/mobile_base/events/button
+/mobile_base/events/cliff
+/mobile_base/events/digital_input
+/mobile_base/events/power_system
+/mobile_base/events/robot_state
+/mobile_base/events/wheel_drop
+/mobile_base/sensors/bump_pc
+/mobile_base/sensors/core
+/mobile_base/sensors/dock_ir
+/mobile_base/sensors/imu_data
+/mobile_base/sensors/imu_data_raw
+/mobile_base/version_info
+/odom
+/rosout
+/rosout_agg
+/tf
+```
+  Con estos comandos se puede leer el estado de la batería, el estado de los distintos sensores y las entradas digitales.
+  
+  12. Para probar la conexión y el control podemos ejecutar varios comandos tipo `echo` para leer los eventos que detecten los distintos sensores como el bumper que detecta al chocar con algún obstáculo, el wheel_drop que siente si las ruedas son descolgadas, el cliff que detecta si hay superficie en los extremos debajo del robot, la IMU que está enviando los datos de orientación, velocidad angular y velocidad lineal y también comandos tipo `pub` para enviar ordenes al robot y modificar su velocidad, posición, orientación, el estado de los leds y sonidos por el parlante.
+
+  Es importante presionar el comando ctrl + c luego de cada lectura de eventos ya que esta función lo que hace es abrir un nodo para recibir información de manera constante y queda en operación hasta que se le de la orden de cerrar, si se desea utilizar dos servicios al tiempo se puede dejar la terminal corriendo y ejecutar un nuevo comando en otra terminal.
+
+  Se muestran algunos comandos que se pueden ejecutar con el robot.
+```
+rostopic echo /mobile_base/events/bumper
+rostopic echo /mobile_base/events/wheel_drop
+rostopic echo /mobile_base/sensorrostopic pub /mobile_base/commands/led1 kobuki_msgs/Led "value: 1"
+rostopic pub /mobile_base/commands/led1 kobuki_msgs/Led "value: 0"
+rostopic pub /mobile_base/commands/sound kobuki_msgs/Sound "value: 6"
+rostopic pub /mobile_base/commands/velocity geometry_msgs/Twist "linear:
+x: 0.1
+y: 0.0
+z: 0.0
+angular:
+x: 0.0
+y: 0.0
+z: 0.0"
+```
+  13. Finalemnte se puede controlar la velocidad el robot con las teclas del computador ejecutando el programa de `safe_keyop.launch` del paquete `kobuki_keyop` : 
+```
+roslaunch kobuki_keyop safe_keyop.launch --screen
+```
+  Con este programa se ejecutan los nodos de los sensores para que este responda ante eventualidades y se inicia el control, el funcionamiento de este tipo de control es mediante la configuración de la velocidad lineal y angular del robot, se muestrabn los valores actuales de vel lineal y vel angular cada vez que una tecla es presionada, si la tecla derecha es presionada se incrementa en 0.33 la velovidad angular del robot en sentido horario y para hacer que se detenga es necesario presionar la tecla izquierda para dejar esta velocidad nuevamente en 0, de esta manera se puede incrementar la velocidad angular presionando varias veces en un mismo sentido y disminuir o cambiar totalmente la dirección presionando en el sentido contrario.
+
+  De igual forma con la velocidad lineal, con la fecha superior se aumenta la velocidad 0.33 unidades y la inferior la disminuye para poder parar el movimiento o iniciarlo hacia atrás.
+  
+![image](https://github.com/dcocoma/FRM-G5/assets/73080388/53a73a1c-7193-429a-a05c-1fff8269edaf)
+
+
