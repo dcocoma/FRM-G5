@@ -19,12 +19,13 @@ Tabla de Contenidos
 
 - [Conexión ROS - Kobuki](#conexión-ros---kobuki)
 - [Ejercicio de revisión](#ejercicio-de-revisión)
-   - [Investigación sobre el TurtleBot2 y su relación con la base Kobuki](#investigación-sobre-el-turtlebot2-y-su-relación-con-la-base-kobuki)
-   - [Función de los Sensores Cliff](#función-de-los-sensores-cliff)
-   - [Construcción de un archivo en Python para la lectura del sensor cliff y control del Kobuki](#construcción-de-un-archivo-en-python-para-la-lectura-del-sensor-cliff-y-control-del-kobuki)
-      - [Creación código python](#creación-código-python)
+   - [Investigación sobre el TurtleBot2 y su relación con la base Kobuki](#investigación-turtlebot2-y-su-relación-con-la-base-kobuki)
+   - [Investigación Sensores Cliff y su uso](#investigación-sensores-cliff-y-su-uso)
+      - [Función de los Sensores Cliff](#función-de-los-sensores-cliff)
+      - [Leer un Evento del Sensor Cliff](#leer-un-evento-del-sensor-cliff)
+   - [Creación código python](#creación-código-python)
       - [Ejecución programa](#ejecución-programa)
-   - [Evidencia](#evidencia)
+      - [Evidencia](#evidencia)
 
 # Conexión ROS - Kobuki.
 
