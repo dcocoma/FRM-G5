@@ -28,7 +28,7 @@ mismo objeto, o de objetos similares, bajo condiciones especificadas (2.15)
 partir de la información que se utiliza (2.26)
 NOTA: los numeros al final de cada definicion en este punto corresponde a la numeracion del VIM tercera edicion.
 3. Explique la diferencia entre un error sistemático y un error aleatorio.
-bla bla bla
+  Ambos son compnentes de error de medida en los que en mediciones repetidas para el sistematico  es constante o predecible y para el aleatorio varia de forma impredecible.
 
 4. De acuerdo a la teoría de estadística: ¿Qué es valor medio? ¿Cuáles magnitudes se usan para medir la dispersión de datos?
 bla bla bla
