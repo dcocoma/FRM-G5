@@ -276,6 +276,6 @@ Se usa el servicio spawn para crear otra tortuga.
 
 ![](./Imgs/lab2A_6_1.png)
 
-Se corre el programa triangle.py y se el resultado.
+Se corre el programa triangle.py y se ve el resultado.
 
 ![](./Imgs/lab2A_6_2.png)
