@@ -13,6 +13,7 @@
 En el repositorio de este laboratorio se encuentra lo siguiente:
 - README.md -> Archivo base con la descripción del laboratorio.
 - Imgs -> Carpeta con imágenes utilizadas en el archivo README.
+- firsttry.py -> Archivo correspondiente al código en Python utilizado.
 
 Tabla de Contenidos
 ---
