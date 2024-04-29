@@ -26,7 +26,7 @@ Tabla de Contenidos
       - [Ejecución programa](#ejecución-programa)
    - [Evidencia](#evidencia)
 
-# Conección ROS - Kobuki.
+# Conexión ROS - Kobuki.
 
 En un computador con sistema operativo Windows 10, se implementó una máquina virtual de Ubuntu 64 bits para simular el software de Linux y ejecutar la instalación de ROS como se muestra en el Lab2a.
 
@@ -218,7 +218,7 @@ Una vez abierto el programa se instala la extención de python para tener la ayu
 
 Se desea construir un archivo en Python que permita hacer la lectura de la información del sensor cliff y active un sonido al ocurrir un evento con ese sensor y que active también el modo de teleoperación por teclado al mismo tiempo para controlar el movimiento del Kobuki.
 
-Se importa la librería rospy para poder establecer la conección con ROS desde python, las funciones CliffEvent y Sound de la librería kobuki_msgs.msg para interactuar con el robot con los comandos previamente vistos y la librería subprocess para lanzar el programa `safe_keyop.launch` 
+Se importa la librería rospy para poder establecer la conexión con ROS desde python, las funciones CliffEvent y Sound de la librería kobuki_msgs.msg para interactuar con el robot con los comandos previamente vistos y la librería subprocess para lanzar el programa `safe_keyop.launch` 
 
 A continuación se crean 4 funciones:
   1. callback: Esta función se ejcuta cuando un evento de cliff es recibido y llama la función play_sound.
