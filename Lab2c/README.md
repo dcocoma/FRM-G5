@@ -142,6 +142,8 @@ roslaunch kobuki_keyop safe_keyop.launch --screen
 
 # Ejercicio de revisión
 
+## Investigación Turtlebot2 y su relación con la base Kobuki
+
 1. Realice una investigación acerca del robot TurtleBot2 y su relación con la base Kobuki.
 
   El TurtleBot2 es un kit de desarrollo de robots de código abierto diseñado para aplicaciones móviles. Esta segunda generación del TurtleBot incluye una base Kobuki, que es fundamental para su operación y funcionalidad. La base Kobuki permite la integración de componentes como sensores y actuadores, haciendo del TurtleBot2 una plataforma ideal para la educación y la investigación en robótica a bajo costo [1.1].
@@ -166,6 +168,7 @@ roslaunch kobuki_keyop safe_keyop.launch --screen
   
   1.3. TurtleBot.com. (n.d.). About TurtleBot. Retrieved April 28, 2024, from [https://www.turtlebot.com/about/](https://www.turtlebot.com/about/)
   
+## Investigación Sensores Cliff y su uso
 
 2. ¿Para que sirve los sensores cliff en el Kobuki?¿Como leer un evento de dicho sensor?
 Los sensores de acantilado, también conocidos como sensores "cliff", en la base Kobuki son esenciales para la navegación segura de robots como el TurtleBot2, especialmente en entornos donde hay riesgo de caídas, como escaleras o cambios bruscos de nivel. Estos sensores están diseñados para detectar caídas potenciales, permitiendo al robot evitar accidentes al acercarse a bordes peligrosos.
@@ -206,7 +209,7 @@ Los sensores de acantilado, también conocidos como sensores "cliff", en la base
 
 3. Construya un archivo en Python que permita hacer la lectura de la información del sensor cliff y active un sonido al ocurrir un evento con ese sensor. Active también el modo de teleoperación por teclado al mismo tiempo para controlar el movimiento del Kobuki.
 
-# Creación código python.
+## Creación Código Python.
 
 Se crea un código en python para leer los eventos detecytados por el sensor "cliff" que lee si hay una posible caida al no detectar suelo en los extremos debajo del robot.
 
@@ -229,7 +232,7 @@ A continuación se crean 4 funciones:
 Finalmente se crea la función principal main donde dentro de un try catch se llama primero la función `launch_roslaunch_file` y posteriormente la función `listener()`.
 Este archivo se anexa en el Lab2c par su visualización.
 
-# Ejecución programa.
+### Ejecución programa.
 
 Se ejecuta el programa de la siguiente manera, primero se inicia la conexión con el robot kobuki mediante el roslauanch en la consola 
 ```
@@ -242,6 +245,6 @@ python firsttry.py
 ```
 Finalmente se puede controlar el robot con las teclas y al estar cerca de un precipicio se ejecuta un sonido.
 
-# Evidencia
+### Evidencia
 
 [https://youtu.be/NCzT87E5tAg](https://www.youtube.com/watch?v=NCzT87E5tAg)
