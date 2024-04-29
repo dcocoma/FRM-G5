@@ -5,7 +5,7 @@
 % de Colombia, 2023. 
 
 clear all;
-port=serialport('COM8',9600,'DataBits',8);
+port=serialport('COM7',9600,'DataBits',8);
 flush(port)
 nm=100; %Número de muestras.
 figure(1)
@@ -24,3 +24,6 @@ end
 plot(t,dist)
 delete(port);
 clear port
+disp('Guardando datos...')
+writematrix(dist,'Sample1.csv') 
+disp('Datos guardados!')

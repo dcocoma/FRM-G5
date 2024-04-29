@@ -39,6 +39,46 @@ NOTA: los numeros al final de cada definicion corresponde a la numeracion del VI
   Para medir la dispersion de datos se tienen las siguientes medidas de variabilidad:Rango ,Varianza ,Desviacion estandar y el Rango interquartilico.
 # Sensor Lidar
 
+https://la.mathworks.com/matlabcentral/fileexchange/57425-matlab-driver-for-hokuyu-urg-family
+https://la.mathworks.com/matlabcentral/fileexchange/36700-hokuyo-urg-04lx-lidar-driver-for-matlab
+
+```
+Warning: serial will be removed in a future release. Use serialport
+instead. 
+Warning: Unsuccessful read: A timeout occurred before the Terminator
+was reached.
+'serial' unable to read all requested data. For more information on
+possible reasons, see Serial Read Warnings. 
+Warning: Unsuccessful read: A timeout occurred before the Terminator
+was reached.
+'serial' unable to read all requested data. For more information on
+possible reasons, see Serial Read Warnings. 
+
+ans =
+
+    'VV
+     00P
+     VEND:Hokuyo Automatic Co.,Ltd.;[
+     PROD:SOKUIKI Sensor URG-04LX-UG01(Simple-URG);[
+     FIRM:3.4.03(17/Dec./2012);T
+     PROT:SCIP 2.0;N
+     SERI:H1510998;V
+     
+     '
+
+Warning: Unsuccessful read: A timeout occurred before the Terminator
+was reached.
+'serial' unable to read all requested data. For more information on
+possible reasons, see Serial Read Warnings. 
+
+ans =
+
+    'BM
+     02R
+     
+     '
+```
+
 # Sensor Ultrasonido
 
 # Sensores Lego
