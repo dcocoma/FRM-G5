@@ -1,6 +1,6 @@
 # Laboratorio 3 - Incertidumbre en sensores
 # Fundamentos de Robótica Móvil
-# Abril 2024
+# Mayo 2024
 ![](./Imgs/ESCUDO.png)
 
 # Integrantes:
@@ -13,22 +13,8 @@
 En el repositorio de este laboratorio se encuentra lo siguiente:
 - README.md -> Archivo base con la descripción del laboratorio.
 - Imgs -> Carpeta con imágenes utilizadas en el archivo README.
-
-# Laboratorio 3 - Incertidumbre en sensores
-# Fundamentos de Robótica Móvil
-# Abril 2024
-![](./Imgs/ESCUDO.png)
-
-# Integrantes:
-- Johan López
-- David Cocoma
-- Joan Sebastián Jauregui
-- Felipe Cruz
-
-# Contenido
-En el repositorio de este laboratorio se encuentra lo siguiente:
-- README.md -> Archivo base con la descripción del laboratorio.
-- Imgs -> Carpeta con imágenes utilizadas en el archivo README.
+- Code -> Carpeta con los diferentes códigos utilizados durante la práctica: Matlab (*.m*), Arduino (*.ino*), y LegoMindstorms (*.lmsp*).
+- Datos -> Carpeta con los archivos .csv que contienen los datos tomados y códigos en Python para el procesamiento de estos.
 
 Tabla de Contenidos
 ---
