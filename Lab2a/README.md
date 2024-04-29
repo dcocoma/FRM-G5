@@ -18,7 +18,7 @@ En el repositorio de este laboratorio se encuentra lo siguiente:
 Tabla de Contenidos
 ---
 
-- [Instalar ROS en máquina virtual](#instalar-ros-en-máquina-virtual)
+- [Instalar ROS](#instalar-ros-en-máquina-virtual)
 - [¿Qué es ROS?](#qué-es-ros)
    - [Ventajas de ROS](#ventajas-de-ros)
 - [Comandos ROS](#comandos-ros)
@@ -27,14 +27,14 @@ Tabla de Contenidos
    - [rosservice](#rosservice)
    - [rosmsg](#rosmsg)
    - [rospack](#rospack)
-- [Descripción del programa PYPUVEL.PY](#descripción-del-programa-pypuvelpy)
-- [Descripción del programa PYSUBPOSE.PY](#descripción-del-programa-pysubposepy)
-- [Obteniendo dimensiones del plano con turtle_teleop_key y PYSUBPOSE.PY](#obteniendo-dimensiones-del-plano-con-turtle_teleop_key-y-pysubposepy)
+- [Descripción PYPUVEL.PY](#descripción-del-programa-pypuvelpy)
+- [Descripción PYSUBPOSE.PY](#descripción-del-programa-pysubposepy)
+- [Dimensiones del plano](#obteniendo-dimensiones-del-plano-con-turtle_teleop_key-y-pysubposepy)
 - [Servicios SPAWN y TELEPORT_ABSOLUTE](#servicios-spawn-y-teleport_absolute)
    - [spawn](#spawn)
    - [teleport_absolute](#teleport_absolute)
 - [Uso de TURTLESIMSERVICE.PY](#uso-de-turtlesimservicepy)
-- [Creando un cuadrado y triangulo con dos tortugas](#creando-un-cuadrado-y-triangulo-con-dos-tortugas)
+- [Dibujando con 2 tortugas](#creando-un-cuadrado-y-triangulo-con-dos-tortugas)
 
 # Instalar ROS en máquina virtual
 Esta práctica se realizó en un computador Windows 10. Utilizando una máquina virtual con Ubuntu 16.04.
