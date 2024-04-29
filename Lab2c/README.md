@@ -132,11 +132,63 @@ roslaunch kobuki_keyop safe_keyop.launch --screen
 
 1. Realice una investigación acerca del robot TurtleBot2 y su relación con la base Kobuki.
 
-2. ¿Para que sirve los sensores cliff en el Kobuki?¿Como leer un evento de dicho sensor?
+  El TurtleBot2 es un kit de desarrollo de robots de código abierto diseñado para aplicaciones móviles. Esta segunda generación del TurtleBot incluye una base Kobuki, que es fundamental para su operación y funcionalidad. La base Kobuki permite la integración de componentes como sensores y actuadores, haciendo del TurtleBot2 una plataforma ideal para la educación y la investigación en robótica a bajo costo [1.1].
 
-3. Construya un archivo en Python que permita hacer la lectura de la información del sensor cliff y active
-un sonido al ocurrir un evento con ese sensor. Active también el modo de teleoperación por teclado al
-mismo tiempo para controlar el movimiento del Kobuki.
+  *Sensores:*
+  - Sensor Kinect: Usado para la visión en 3D y mapeo del entorno.
+  - Giroscopio: Integrado en la base Kobuki para detectar cambios de orientación y mejorar la navegación.
+  - Sensores de choque y caída: Incluidos en la base Kobuki para evitar colisiones y caídas.
+  - Encoders de rueda: Para medir la distancia recorrida y la velocidad de las ruedas, ayudando en la localización y mapeo.
+
+  *Actuadores:*
+  - Base de movimiento Kobuki: Permite el desplazamiento del robot controlando las ruedas para manejar direcciones y velocidades específicas.
+  - Brazo robótico opcional: Puede ser añadido para manipulación de objetos y tareas específicas, aunque no viene por defecto con el kit básico.
+
+  El sistema del TurtleBot2 incluye software que se ejecuta sobre ROS (Robot Operating System)[1.2], proporcionando un entorno de desarrollo robusto para aplicaciones robóticas. Este robot se comercializa como una solución accesible y está especialmente configurado para ser usado directamente desde su ensamblaje, permitiendo a los usuarios empezar a experimentar y aprender sobre robótica con un mínimo de configuración previa [1.3].
+
+### Referencias
+  1.1. TurtleBot.com. (n.d.). TurtleBot2. Retrieved April 28, 2024, from [https://www.turtlebot.com/turtlebot2/](https://www.turtlebot.com/turtlebot2/)
+  1.2. ROS Wiki. (n.d.). Kobuki Base - TurtleBot Tutorials/Indigo. Retrieved April 28, 2024, from [http://wiki.ros.org/turtlebot/Tutorials/indigo/Kobuki%20Base](http://wiki.ros.org/turtlebot/Tutorials/indigo/Kobuki%20Base)
+  1.3. TurtleBot.com. (n.d.). About TurtleBot. Retrieved April 28, 2024, from [https://www.turtlebot.com/about/](https://www.turtlebot.com/about/)
+
+2. ¿Para que sirve los sensores cliff en el Kobuki?¿Como leer un evento de dicho sensor?
+Los sensores de acantilado, también conocidos como sensores "cliff", en la base Kobuki son esenciales para la navegación segura de robots como el TurtleBot2, especialmente en entornos donde hay riesgo de caídas, como escaleras o cambios bruscos de nivel. Estos sensores están diseñados para detectar caídas potenciales, permitiendo al robot evitar accidentes al acercarse a bordes peligrosos.
+
+### Función de los Sensores Cliff:
+  Los sensores cliff utilizan tecnología infrarroja para medir la distancia hasta el suelo continuamente. Si la distancia medida excede un umbral específico—indicativo de que el borde de una superficie elevada ha sido alcanzado—el sensor envía una señal al sistema de control del robot para que detenga el movimiento o cambie de dirección, evitando así que el robot caiga o se dañe.
+  
+  ### Leer un Evento del Sensor Cliff:
+  Para leer un evento del sensor cliff en un robot que utiliza la base Kobuki y está programado con ROS (Robot Operating System), se puede hacer de la siguiente manera:
+  
+  a. **Suscripción a un Tema (Topic) de ROS**: Los eventos de los sensores cliff son publicados en un tema específico dentro del ecosistema ROS. Generalmente, este tema podría ser algo como `/mobile_base/events/cliff`.
+     
+  b. **Lectura de Mensajes**: Al suscribirse a ese tema, puedes recibir mensajes que indican si el sensor ha detectado un "cliff". Estos mensajes suelen contener datos como la posición del sensor que detectó el cliff (izquierda, derecha, centro) y un valor booleano que indica si se ha detectado o no un cliff.
+  
+  c. **Programación del Manejo de Eventos**: Utilizando callbacks en tu código ROS, puedes definir respuestas específicas cuando un evento cliff es detectado, como detener el robot, retroceder, o emitir una alerta.
+  
+  Ejemplo de código en ROS para manejar eventos de sensores cliff podría ser algo así:
+  ```python
+  #!/usr/bin/env python
+  import rospy
+  from kobuki_msgs.msg import CliffEvent
+  
+  def cliff_callback(data):
+      if data.state == CliffEvent.CLIFF:
+          rospy.loginfo("Cliff Detected! Stopping robot...")
+          # Código para detener o modificar la trayectoria del robot
+  
+  def listener():
+      rospy.init_node('cliff_detector', anonymous=True)
+      rospy.Subscriber("/mobile_base/events/cliff", CliffEvent, cliff_callback)
+      rospy.spin()
+  
+  if __name__ == '__main__':
+      listener()
+  ```
+  
+  Este script de Python para ROS se suscribe al tema del sensor cliff y define una función de callback que se activa cuando se detecta un cliff, proporcionando una base para implementar medidas de seguridad reactivas. 
+
+3. Construya un archivo en Python que permita hacer la lectura de la información del sensor cliff y active un sonido al ocurrir un evento con ese sensor. Active también el modo de teleoperación por teclado al mismo tiempo para controlar el movimiento del Kobuki.
 
 # Creación código python.
 
