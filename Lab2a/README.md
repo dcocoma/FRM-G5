@@ -20,6 +20,7 @@ Tabla de Contenidos
 
 - [Instalar ROS en máquina virtual](#instalar-ros-en-máquina-virtual)
 - [¿Qué es ROS?](#qué-es-ros)
+   - [Ventajas de ROS](#ventajas-de-ros)
 - [Comandos ROS](#comandos-ros)
    - [rosnode](#rosnode)
    - [rostopic](#rostopic)
