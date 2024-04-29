@@ -14,6 +14,18 @@ En el repositorio de este laboratorio se encuentra lo siguiente:
 - README.md -> Archivo base con la descripción del laboratorio.
 - Imgs -> Carpeta con imágenes utilizadas en el archivo README.
 
+Tabla de Contenidos
+---
+
+- [Conexión ROS - Kobuki](#conexión-ros---kobuki)
+- [Ejercicio de revisión](#ejercicio-de-revisión)
+   - [Investigación sobre el TurtleBot2 y su relación con la base Kobuki](#investigación-sobre-el-turtlebot2-y-su-relación-con-la-base-kobuki)
+   - [Función de los Sensores Cliff](#función-de-los-sensores-cliff)
+   - [Construcción de un archivo en Python para la lectura del sensor cliff y control del Kobuki](#construcción-de-un-archivo-en-python-para-la-lectura-del-sensor-cliff-y-control-del-kobuki)
+      - [Creación código python](#creación-código-python)
+      - [Ejecución programa](#ejecución-programa)
+   - [Evidencia](#evidencia)
+
 # Conección ROS - Kobuki.
 
 En un computador con sistema operativo Windows 10, se implementó una máquina virtual de Ubuntu 64 bits para simular el software de Linux y ejecutar la instalación de ROS como se muestra en el Lab2a.

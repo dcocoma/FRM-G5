@@ -13,6 +13,27 @@
 En el repositorio de este laboratorio se encuentra lo siguiente:
 - README.md -> Archivo base con la descripción del laboratorio.
 - Imgs -> Carpeta con imágenes utilizadas en el archivo README.
+- ros -> Proyecto de ROS utilizado en el laboratorio.
+
+Tabla de Contenidos
+---
+
+- [Instalar ROS en máquina virtual](#instalar-ros-en-máquina-virtual)
+- [¿Qué es ROS?](#qué-es-ros)
+- [Comandos ROS](#comandos-ros)
+   - [rosnode](#rosnode)
+   - [rostopic](#rostopic)
+   - [rosservice](#rosservice)
+   - [rosmsg](#rosmsg)
+   - [rospack](#rospack)
+- [Descripción del programa PYPUVEL.PY](#descripción-del-programa-pypuvelpy)
+- [Descripción del programa PYSUBPOSE.PY](#descripción-del-programa-pysubposepy)
+- [Obteniendo dimensiones del plano con turtle_teleop_key y PYSUBPOSE.PY](#obteniendo-dimensiones-del-plano-con-turtle_teleop_key-y-pysubposepy)
+- [Servicios SPAWN y TELEPORT_ABSOLUTE](#servicios-spawn-y-teleport_absolute)
+   - [spawn](#spawn)
+   - [teleport_absolute](#teleport_absolute)
+- [Uso de TURTLESIMSERVICE.PY](#uso-de-turtlesimservicepy)
+- [Creando un cuadrado y triangulo con dos tortugas](#creando-un-cuadrado-y-triangulo-con-dos-tortugas)
 
 # Instalar ROS en máquina virtual
 Esta práctica se realizó en un computador Windows 10. Utilizando una máquina virtual con Ubuntu 16.04.
@@ -190,12 +211,12 @@ Se obtienen las coordenadas de la esquina inferior derecha.
 
 Las dimensiones del plano son de 0 a 11.089 en X y en Y.
 
-# Servicios SPAWN y TELEPORT_ABSOLUT
+# Servicios SPAWN y TELEPORT_ABSOLUTE
    ## spawn
    - *Tipo de mensaje:* turtlesim/Spawn
    - *Descripción:* Añade una nueva tortuga a la simulación en una ubicación especificada con un nombre opcional.
    - *Argumentos x, y:* Coordenadas para la posición inicial. ;theta: Orientación inicial en radianes. ; name: Nombre opcional para la nueva tortuga.
-   ## teleport_absolut
+   ## teleport_absolute
    - *Tipo de mensaje:* turtlesim/TeleportAbsolute
    - *Descripción:* Mueve la tortuga a una posición y orientación absolutas sin dejar rastro.
    - *Argumentos x, y:* Coordenadas de la nueva posición; theta: Nueva orientación en radianes.

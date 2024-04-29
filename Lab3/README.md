@@ -14,6 +14,57 @@ En el repositorio de este laboratorio se encuentra lo siguiente:
 - README.md -> Archivo base con la descripción del laboratorio.
 - Imgs -> Carpeta con imágenes utilizadas en el archivo README.
 
+# Laboratorio 3 - Incertidumbre en sensores
+# Fundamentos de Robótica Móvil
+# Abril 2024
+![](./Imgs/ESCUDO.png)
+
+# Integrantes:
+- Johan López
+- David Cocoma
+- Joan Sebastián Jauregui
+- Felipe Cruz
+
+# Contenido
+En el repositorio de este laboratorio se encuentra lo siguiente:
+- README.md -> Archivo base con la descripción del laboratorio.
+- Imgs -> Carpeta con imágenes utilizadas en el archivo README.
+
+Tabla de Contenidos
+---
+
+- [Cuestionario](#cuestionario)
+- [Sensor Lidar](#sensor-lidar)
+   - [Preparación del entorno y del sensor Lidar](#preparación-del-entorno-y-del-sensor-lidar)
+   - [Toma de datos Lidar](#toma-de-datos-lidar)
+   - [Procesamiento de datos Lidar](#procesamiento-de-datos-lidar)
+      - [Ploteo](#ploteo)
+      - [Mapa de ocupación](#mapa-de-ocupación)
+      - [Mapa del entorno](#mapa-del-entorno)
+   - [Análisis y fuentes de error](#análisis-y-fuentes-de-error)
+- [Sensor Ultrasonido](#sensor-ultrasonido)
+   - [Preparación del entorno y del sensor ultrasonido](#preparación-del-entorno-y-del-sensor-ultrasonido)
+   - [Toma de datos ultrasonido](#toma-de-datos-ultrasonido)
+   - [Procesamiento de datos ultrasonido](#procesamiento-de-datos-ultrasonido)
+      - [Medidas estadísticas](#medidas-estadísticas)
+      - [Gráficos estadísticos](#gráficos-estadísticos)
+      - [Análisis y conclusiones](#análisis-y-conclusiones)
+- [Sensores Lego](#sensores-lego)
+   - [Preparación del entorno y del robot Lego EV3](#preparación-del-entorno-y-del-robot-lego-ev3)
+   - [Medición de distancia en avance](#medición-de-distancia-en-avance)
+      - [Experimento de avance](#experimento-de-avance)
+         - [Avance con ultrasonido](#avance-con-ultrasonido)
+         - [Avance con encoder del motor](#avance-con-encoder-del-motor)
+      - [Experimento de avance a máxima velocidad](#experimento-de-avance-a-máxima-velocidad)
+         - [Avance con ultrasonido máxima velocidad](#avance-con-ultrasonido-máxima-velocidad)
+         - [Avance con encoder del motor máxima velocidad](#avance-con-encoder-del-motor-máxima-velocidad)
+      - [Análisis comparativo y cálculo de errores avance](#análisis-comparativo-y-cálculo-de-errores-avance)
+   - [Medición del ángulo de giro de las ruedas](#medición-del-ángulo-de-giro-de-las-ruedas)
+      - [Setup experimental](#setup-experimental)
+      - [Experimento 30 grados](#experimento-30-grados)
+      - [Experimento 45 grados](#experimento-45-grados)
+      - [Análisis comparativo y cálculo de errores giro](#análisis-comparativo-y-cálculo-de-errores-giro)
+
 # Cuestionario
 1. ¿Qué es el Vocabulario Internacional de Metrología (VIM)? 
 
@@ -37,6 +88,7 @@ NOTA: los numeros al final de cada definicion corresponde a la numeracion del VI
 
   Es el valor tipico o promedio que representa la tendencia general de los datos ,tambien conocido como medida de tendencia central, se tienen tres medidas de tendencia central las cuales son :moda,media y madiana.
   Para medir la dispersion de datos se tienen las siguientes medidas de variabilidad:Rango ,Varianza ,Desviacion estandar y el Rango interquartilico.
+
 # Sensor Lidar
 
 https://la.mathworks.com/matlabcentral/fileexchange/57425-matlab-driver-for-hokuyu-urg-family
@@ -78,7 +130,80 @@ ans =
      
      '
 ```
+## Preparación del entorno y del sensor Lidar
+
+### Código relevante Lidar
+
+## Toma de datos Lidar
+
+## Procesamiento de datos Lidar
+
+### Ploteo
+
+### Mapa de ocupación
+
+### Mapa del entorno
+
+## Análisis y fuentes de error
 
 # Sensor Ultrasonido
 
+1: 1m
+2: 1.75m
+3: 2.5m
+
+## Preparación del entorno y del sensor ultrasonido
+
+### Código relevante ultrasonido
+
+## Toma de datos ultrasonido
+
+## Procesamiento de datos ultrasonido
+
+### Medidas estadísticas
+
+### Gráficos estadísticos
+
+### Análisis y conclusiones
+
 # Sensores Lego
+
+30%
+Ultrasonido: 101.6cm - Patron: 101.1cm
+Encoder B: 2096 grad - Patron: 99.5cm
+Encoder C: 2098 grad - Patron: 99.4cm
+
+100%
+Ultrasonido: 134.1cm - Patron: 133.5cm
+Encoder B: 2134 grad - Patron: 98.4cm
+Encoder C: 2133 grad - Patron: 98.3cm
+
+## Preparación del entorno y del robot Lego EV3
+
+### Código relevante EV3
+
+## Medición de distancia en avance
+
+### Experimento de avance
+
+#### Avance con ultrasonido
+
+#### Avance con encoder del motor
+
+### Experimento de avance a máxima velocidad
+
+#### Avance con ultrasonido máxima velocidad
+
+#### Avance con encoder del motor máxima velocidad
+
+### Análisis comparativo y cálculo de errores avance
+
+## Medición del ángulo de giro de las ruedas
+
+### Setup experimental
+
+### Experimento 30 grados
+
+### Experimento 45 grados
+
+### Análisis comparativo y cálculo de errores giro
