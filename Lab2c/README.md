@@ -147,9 +147,13 @@ roslaunch kobuki_keyop safe_keyop.launch --screen
   El sistema del TurtleBot2 incluye software que se ejecuta sobre ROS (Robot Operating System)[1.2], proporcionando un entorno de desarrollo robusto para aplicaciones robóticas. Este robot se comercializa como una solución accesible y está especialmente configurado para ser usado directamente desde su ensamblaje, permitiendo a los usuarios empezar a experimentar y aprender sobre robótica con un mínimo de configuración previa [1.3].
 
 ### Referencias
+
   1.1. TurtleBot.com. (n.d.). TurtleBot2. Retrieved April 28, 2024, from [https://www.turtlebot.com/turtlebot2/](https://www.turtlebot.com/turtlebot2/)
+  
   1.2. ROS Wiki. (n.d.). Kobuki Base - TurtleBot Tutorials/Indigo. Retrieved April 28, 2024, from [http://wiki.ros.org/turtlebot/Tutorials/indigo/Kobuki%20Base](http://wiki.ros.org/turtlebot/Tutorials/indigo/Kobuki%20Base)
+  
   1.3. TurtleBot.com. (n.d.). About TurtleBot. Retrieved April 28, 2024, from [https://www.turtlebot.com/about/](https://www.turtlebot.com/about/)
+  
 
 2. ¿Para que sirve los sensores cliff en el Kobuki?¿Como leer un evento de dicho sensor?
 Los sensores de acantilado, también conocidos como sensores "cliff", en la base Kobuki son esenciales para la navegación segura de robots como el TurtleBot2, especialmente en entornos donde hay riesgo de caídas, como escaleras o cambios bruscos de nivel. Estos sensores están diseñados para detectar caídas potenciales, permitiendo al robot evitar accidentes al acercarse a bordes peligrosos.
