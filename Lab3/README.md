@@ -224,7 +224,11 @@ Encoder C: 2133 grad - Patron: 98.3cm
 
 ### Experimento de avance a máxima velocidad
 
+
+
 #### Avance con ultrasonido máxima velocidad
+
+[![Lego Velocidad 100% - Desplazamiento de 100 cm](https://img.youtube.com/vi/8byMhU9oRZg/0.jpg)](https://www.youtube.com/watch?v=8byMhU9oRZg)
 
 #### Avance con encoder del motor máxima velocidad
 
