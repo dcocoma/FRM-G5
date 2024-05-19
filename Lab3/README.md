@@ -133,56 +133,6 @@ ans =
 ## Análisis y fuentes de error
 
 # Sensor Ultrasonido
-```
-datosNumericos1 = 1×100    
-
-
-media1 = 97.7693
-desviacion1 = 0.4594
-varianza1 = 0.2110
-errorAbsolutoMedio1 = 2.2307
-errorAbsolutoMax1 = 3.0800
-errorRelativoMedio1 = 0.0223
-errorRelativoMax1 = 0.0308
-datosNumericos2 = 1×100    
-
-media2 = 172.6080
-desviacion2 = 0.5434
-varianza2 = 0.2953
-errorAbsolutoMedio2 = 2.3920
-errorAbsolutoMax2 = 3.4700
-errorRelativoMedio2 = 0.0137
-errorRelativoMax2 = 0.0198
-datosNumericos3 = 1×100    
-
-media3 = 237.8667
-desviacion3 = 14.2758
-varianza3 = 203.7976
-errorAbsolutoMedio3 = 12.1333
-errorAbsolutoMax3 = 35.7800
-errorRelativoMedio3 = 0.0485
-errorRelativoMax3 = 0.1431
-```
-
-
-1: 1m
-
-![](./Imgs/ArduinoSample1.jpg)
-
-
-![](./Imgs/histograma100cm.png)
-
-2: 1.75m
-
-![](./Imgs/ArduinoSample2.jpg)
-
-![](./Imgs/histograma175cm.png)
-
-3: 2.5m
-
-![](./Imgs/ArduinoSample3.jpg)
-
-![](./Imgs/histograma250cm.png)
 
 ## Preparación del entorno y del sensor ultrasonido
 
@@ -192,9 +142,58 @@ errorRelativoMax3 = 0.1431
 
 ## Procesamiento de datos ultrasonido
 
+
+1: 1m
+
+![](./Imgs/ArduinoSample1.jpg)
+
+2: 1.75m
+
+![](./Imgs/ArduinoSample2.jpg)
+
+3: 2.5m
+
+![](./Imgs/ArduinoSample3.jpg)
+
+
 ### Medidas estadísticas
 
+*1: 1m*
+$$\bar{x} = 97.7693$$
+$$S=0.4594$$
+$$S^2=0.2110$$
+$$error Absoluto = 3.08\%$$
+$$error Relativo = 0.0308\%$$
+
+*2: 1.75m*
+
+$$\bar{x} = 172.6080$$
+$$S=0.5434$$
+$$S^2=0.2953$$
+$$error Absoluto = 3.4700\%$$
+$$error Relativo = 0.0198\%$$
+
+*3: 2.5m*
+$$\bar{x} = 237.8667$$
+$$S=14.2758$$
+$$S^2=203.7976$$
+$$error Absoluto = 35.7800\%$$
+$$error Relativo = 0.1431\%$$
+
+
 ### Gráficos estadísticos
+
+1: 1m
+
+![](./Imgs/histograma100cm.png)
+
+2: 1.75m
+
+![](./Imgs/histograma175cm.png)
+
+3: 2.5m
+
+![](./Imgs/histograma250cm.png)
 
 ### Análisis y conclusiones
 
@@ -228,7 +227,14 @@ Encoder C: 2133 grad - Patron: 98.3cm
 
 #### Avance con ultrasonido máxima velocidad
 
+Lego Velocidad 100% - Desplazamiento de 100 cm
+
 [![Lego Velocidad 100% - Desplazamiento de 100 cm](https://img.youtube.com/vi/8byMhU9oRZg/0.jpg)](https://www.youtube.com/watch?v=8byMhU9oRZg)
+
+Lego Velocidad 30% - Desplazamiento de 100 cm
+
+[![Lego Velocidad 30% - Desplazamiento de 100 cm](https://img.youtube.com/vi/9WclsTMnz-s/0.jpg)](https://www.youtube.com/watch?v=9WclsTMnz-s)
+
 
 #### Avance con encoder del motor máxima velocidad
 
