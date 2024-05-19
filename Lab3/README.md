@@ -133,10 +133,56 @@ ans =
 ## Análisis y fuentes de error
 
 # Sensor Ultrasonido
+```
+datosNumericos1 = 1×100    
+
+
+media1 = 97.7693
+desviacion1 = 0.4594
+varianza1 = 0.2110
+errorAbsolutoMedio1 = 2.2307
+errorAbsolutoMax1 = 3.0800
+errorRelativoMedio1 = 0.0223
+errorRelativoMax1 = 0.0308
+datosNumericos2 = 1×100    
+
+media2 = 172.6080
+desviacion2 = 0.5434
+varianza2 = 0.2953
+errorAbsolutoMedio2 = 2.3920
+errorAbsolutoMax2 = 3.4700
+errorRelativoMedio2 = 0.0137
+errorRelativoMax2 = 0.0198
+datosNumericos3 = 1×100    
+
+media3 = 237.8667
+desviacion3 = 14.2758
+varianza3 = 203.7976
+errorAbsolutoMedio3 = 12.1333
+errorAbsolutoMax3 = 35.7800
+errorRelativoMedio3 = 0.0485
+errorRelativoMax3 = 0.1431
+```
+
 
 1: 1m
+
+![](./Imgs/ArduinoSample1.jpg)
+
+
+![](./Imgs/histograma100cm.png)
+
 2: 1.75m
+
+![](./Imgs/ArduinoSample2.jpg)
+
+![](./Imgs/histograma175cm.png)
+
 3: 2.5m
+
+![](./Imgs/ArduinoSample3.jpg)
+
+![](./Imgs/histograma250cm.png)
 
 ## Preparación del entorno y del sensor ultrasonido
 
