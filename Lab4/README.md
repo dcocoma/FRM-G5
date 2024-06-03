@@ -349,4 +349,6 @@ Adicionalmente, cuando el robot está siguiendo la pared, ilumina de color rojo;
 
 ## Video del resultado 2
 
+https://youtu.be/KG5FalbwQMs
+
 # Conclusiones
