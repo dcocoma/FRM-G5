@@ -170,18 +170,48 @@ El robot traza una línea recta que le permita llegar al objetivo. El robot se m
 Tomado de https://ucsb.app.box.com/v/LecturesRobotics.
 
 ## Maze algorithm
+
 **Describa al menos un algoritmo de solución de un laberinto (maze algorithm) aplicado en robótica móvil.**
+
+A continuación se presentan los algoritmos de solución de laberinto más conocidos. La información se obtuvo de: https://en.wikipedia.org/wiki/Maze-solving_algorithm.
+
+### Random Mouse Algorithm
+El algoritmo del ratón aleatorio (Random Mouse Algorithm) consiste en moverse aleatoriamente en cada intersección hasta encontrar la salida del laberinto. Este método no garantiza encontrar la solución de manera eficiente, pero eventualmente llegará a la salida si se mueve indefinidamente.
+
+### Hand On Wall Rule
+La regla de la mano en la pared (Hand On Wall Rule), implica mantener siempre una mano en una pared del laberinto y seguirla. Esto asegura encontrar la salida en laberintos que tienen todas sus paredes conectadas a la frontera del laberinto.
+
+### Pledge Algorithm
+El algoritmo de Pledge se utiliza para resolver laberintos en los que la regla de la mano en la pared no funciona debido a la presencia de ciclos. El método implica seguir una dirección fija y contar los giros a la derecha y a la izquierda, manteniendo un balance que permita al explorador volver a la dirección original.
+
+### Trémaux's Algorithm
+El algoritmo de Trémaux es un método de retroceso que marca cada camino recorrido y evita volver por el mismo camino más de una vez. Si se llega a un callejón sin salida, se retrocede por el mismo camino marcado. Este método asegura encontrar la salida y permite encontrar la solución más corta si se implementa correctamente.
+
+### Dead-end Filling
+El algoritmo de llenado de callejones sin salida (Dead-end Filling) consiste en identificar y llenar todos los callejones sin salida en el laberinto, convirtiéndolos en muros. Esto simplifica el laberinto y permite encontrar el camino hacia la salida de manera más directa.
+
+### Recursive Algorithm
+El algoritmo recursivo utiliza una estrategia de retroceso (backtracking). Comienza en el punto de partida y explora cada dirección posible recursivamente hasta que encuentra la salida o llega a un punto sin salida, en cuyo caso retrocede y prueba otra dirección.
+
+### Maze-routing Algorithm
+El algoritmo de enrutamiento de laberintos (Maze-routing Algorithm) se utiliza comúnmente en el diseño de circuitos electrónicos. Se basa en métodos sistemáticos para encontrar caminos desde el origen hasta el destino, como la propagación de una onda de expansión o técnicas de búsqueda en anchura (BFS).
+
+### Shortest Path Algorithm
+El algoritmo de camino más corto (Shortest Path Algorithm) busca encontrar la ruta más eficiente desde el inicio hasta la salida del laberinto. Métodos como el algoritmo de Dijkstra o el algoritmo A* son populares en este tipo de búsqueda, minimizando la distancia total recorrida.
+
+### Multi-agent Maze-solving
+El algoritmo de resolución de laberintos con múltiples agentes (Multi-agent Maze-solving) utiliza varios agentes que exploran el laberinto simultáneamente. Los agentes pueden comunicarse entre sí o trabajar de manera independiente, colaborando para encontrar la solución de manera más rápida y eficiente que un solo agente.
 
 # Misión 1
 
 ## Preparación de misión 1
 
-Se inició preparando el EV3 para trabajar con 3 sensores, dos sensores ultrasónicos de proximidad y un sensor de color.
-Un sensor de proximidad está ubicado orientado hacia el frente del robot, el segundo apuntando hacia el lateral izquierdo y el sensor de color apuntando al suelo lo más cerca posible como se muestra en la siguiente foto.
+Se inició preparando el EV3 para trabajar con 4 sensores, dos sensores ultrasónicos de proximidad, un giroscopio y un sensor de color.
+Un sensor de proximidad está ubicado orientado hacia el frente del robot, el segundo apuntando hacia el lateral izquierdo, el giroscopio de manera horizontal para detectar el giro del robot frente al plano horizontal y el sensor de color apuntando al suelo lo más cerca posible como se muestra en la siguiente foto.
 
 ![WhatsApp Image 2024-06-02 at 20 02 45](https://github.com/dcocoma/FRM-G5/assets/73080388/4e02d359-4b3c-4d98-ab73-a610cbbd4f34)
 
-A continuación, se adecuó la pista para ejecutar la misión, se colocó una cinta aislante negra a lo largo de la pista y al final de ella una pieza lego de color verde, se colocaron dos obstáculos sobre la cinta negra como se muestra en la siguiente foto para obstaculizar el trayecto y se posicionó el EV3 en el extremo sin pieza orientado hacia la cinta. 
+A continuación, se adecuó la pista para ejecutar la misión, se colocó una cinta aislante negra a lo largo de la pista y al final de ella una pieza impresa en 3D con PLA de color verde, se colocaron dos obstáculos sobre la cinta negra como se muestra en la siguiente foto para obstaculizar el trayecto y se posicionó el EV3 en el extremo sin pieza orientado hacia la cinta. 
 
 ![WhatsApp Image 2024-06-02 at 20 02 19](https://github.com/dcocoma/FRM-G5/assets/73080388/461213d8-5ff2-47c3-9758-91dcd2c5a73c)
 
