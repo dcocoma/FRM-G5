@@ -228,15 +228,15 @@ graph TD;
 
 Se describirá a continuación los pasos seguidos para implementar el algoritmo.
 
-Se utilizó la herramienta de lego mindstorm para programar la rutina del EV3 mediante bluetooth.
+Se utilizó la herramienta de Lego Mindstorm para programar la rutina del EV3 mediante bluetooth.
 
 Al inicio del programa se le indica al robot que busque la línea negra, avanzando hasta que el sensor detecte el color negro, para luego inicializar el giroscopio en 0° y que quede en espera. 
 
 ![WhatsApp Image 2024-06-02 at 20 05 15](https://github.com/dcocoma/FRM-G5/assets/73080388/79067310-0f75-48ad-bdb0-7d2031075660)
 ![WhatsApp Image 2024-06-02 at 20 05 15 (1)](https://github.com/dcocoma/FRM-G5/assets/73080388/80581bbe-b6b1-4a92-839e-581f5eb4681c)
 
-La rutina empieza al presionar el botón del centro, al hacerlo entra en un bucle que para una vez el color verde es detectado.
-Dentro de este bucle se llama la función "seguir línea" siempre y cuando el sensor de proximidad orientado hacia el frente no detecte un obstáculo a menos de 15 centímetros, una vez detecta el obstáculo llama la función "Esquivar obstáculo".
+La rutina empieza al presionar el botón del centro, al hacerlo entra en un bucle que se detiene una vez el color verde es detectado.
+Dentro de este bucle se llama la función "seguir línea" siempre y cuando el sensor de proximidad orientado hacia el frente no detecte un obstáculo a menos de 15 centímetros, una vez detecte un obstáculo llama la función "Esquivar obstáculo".
 
 Así se garantiza que siga la línea negra siempre que no tenga obstáculos al frente y se detenga al llegar al indicador verde de meta.
 
@@ -244,7 +244,7 @@ Así se garantiza que siga la línea negra siempre que no tenga obstáculos al f
 
 La función se seguir línea opera mediante un condicional, si detecta la línea negra en el sensor se inicia un movimiento de avance hacia la derecha y cuando no es detectado se inicia un movimiento de avance hacia la izquierda, de esta forma se mantiene el rumbo sobre el extremo derecho de la cinta e impide que se pierda hacia la izquierda de la cinta.
 
-La función de esquivar obstáculo inicia rotando el robot hacia la derecha 80 grados, luego entra en un ciclo que funciona siempre que no se detecte nuevamente la cinta en el suelo, dentro del ciclo, el robot va a estar midiendo constantemente el sensor de proximidad orientado hacia la parte lateral izquierda, si detecta un objeto a menos de 10 centímetros va a continuar derecho y si deja de detectar el objeto empieza a aproximarse hacia el rotando hacia la izquierda intentando rodearlo por la derecha siempre.
+La función de esquivar obstáculo inicia rotando el robot hacia la derecha 80 grados, luego entra en un ciclo que funciona siempre que no se detecte nuevamente la cinta en el suelo, dentro del ciclo, el robot va a estar midiendo constantemente el sensor de proximidad orientado hacia la parte lateral izquierda; si se detecta el obstáculo a menos de 10 centímetros, realiza un pequeño giro de 1 grado hacia la derecha alejándose del obstáculo; en caso contrario, avanza rotando hacia la izquierda, acercándose al obstáculo. Siempre se rodea por la derecha.
 
 ![WhatsApp Image 2024-06-02 at 20 05 16 (1)](https://github.com/dcocoma/FRM-G5/assets/73080388/75b17f1f-0640-4824-aec1-6573cdc9f78e)
 ![WhatsApp Image 2024-06-02 at 20 05 15 (2)](https://github.com/dcocoma/FRM-G5/assets/73080388/ced06a0b-1215-4059-b89e-4a2e552f30c4)
@@ -252,6 +252,8 @@ La función de esquivar obstáculo inicia rotando el robot hacia la derecha 80 g
 Se crea una función para rotar el robot determinados ángulos utilizando el giroscopio.
 
 ![WhatsApp Image 2024-06-02 at 20 05 16](https://github.com/dcocoma/FRM-G5/assets/73080388/e980b3e4-3c1b-44ef-a343-5dcdded90b23)
+
+Los valores utilizados para la rotación del robot fueron calibrados a prueba y error. Esto, debido a la incertidumbre que se tiene en el giroscopio y a que el avance de seguimiento de línea del robot no es en línea recta sino en zig zag.
 
 ## Video del resultado 1
 
