@@ -18,6 +18,7 @@ En el repositorio de este laboratorio se encuentra lo siguiente:
 Tabla de Contenidos
 ---
 
+- [Introducción](#introducción)
 - [Consulta bibliográfica previa](#consulta-bibliográfica-previa)
    - [Características navegación](#características-navegación)
    - [Investigaciones robotistas](#investigaciones-robotistas)
@@ -32,6 +33,9 @@ Tabla de Contenidos
    - [Preparación de misión 2](#preparación-de-misión-2)
    - [Algoritmo de solución 2](#algoritmo-de-solución-2)
    - [Video del resultado 2](#video-del-resultado-2)
+- [Conclusiones](#conclusiones)
+
+# Introducción
 
 # Consulta bibliográfica previa
 
@@ -283,6 +287,66 @@ Adicionalmente, cuando el robot está realizando la rutina, la luz que se ilumin
 
 ## Preparación de misión 2
 
+Para esta misión, se decidió utilizar los mismos sensores que para la misión 1, y configurados de la misma manera. 
+Tal como se ilustró en [Preparación de misión 1](#preparación-de-misión-1).
+
+A continuación, se adecuó la pista para ejecutar la misión, se construyó un laberinto con muebles y repisas de madera, de tal manera que el robot cupiera dentro de los pasillos y pudiera rotar sin problema. Para el inicio, se colocó un papel blanco sobre uno de los muebles, y para indicar el final (la meta), se colocó un papel blanco en el piso que puede ser detectado por el sensor de color.
+
+![](./Imgs/EscenarioMision2.jpeg)
+
+Se pedía un laberinto que debe tener como mínimo 6L x 2L, donde L debe ser entre 1,5 y 2,0 veces el largo del EV3. El EV3 tiene una longitud aproximada de 15 cm, por lo tanto $L=2*15=30cm$. Por lo tanto, el laberinto debe tener como mínimo un tamaño de $6L\times 2L=180cm\times 60cm$. El laberinto utilzado en la misión (mostrado en la figura), tiene un tamaño aproximado de $200cm\times 120cm$, cumpliendo así con el requerimiento.
+
 ## Algoritmo de solución 2
 
+```mermaid
+graph TD;
+    A(Inicio) --> B[Seguir pared izquierda];
+    B --> C{¿Llegó a la meta?};
+    C -- No --> D{¿Hay pared al frente?}; 
+    C -- Sí --> E[Avanzar para salir];
+    D -- No --> B;
+    D -- Sí --> F{¿Hay pared en la izquierda?};
+    F -- No --> G[Girar a la izquierda];
+    F -- Sí --> H[Girar a la derecha];
+    G --> B;
+    H --> B;
+    E --> I(Fin);
+```
+
+**Uso de sensores:**
+- Para girar hacia la izquierda y derecha, se usa el giroscopio para controlar cuántos grados girar.
+- Para detectar si hay una pared al frente, se usa el sensor ultrasónico en el frente del robot.
+- Para seguir la pared izquierda, se usa el sensor ultrasónico en el lateral del robot.
+- Para detectar la meta, se usa el sensor de color (blanco).
+
+Ahora, se va a detallar el código y funcionamiento del algoritmo implementado en el robot EV3. Se utilizó la herramienta de Lego Mindstorm para programar la rutina del EV3 mediante bluetooth.
+
+Para entender el código de bloques, es importante saber cuáles son las ubicaciones de los sensores en el brick EV3:
+- Posición 1: Sensor de ultrasonido lateral.
+- Posición 2: Sensor de ultrasonido frontal.
+- Posición 3: Giroscopio.
+- Posición 4: Sensor de color.
+
+Al inicio, el programa configura los motores, velocidades y resetea el giroscopio. Y queda en espera para iniciar la rutina.
+
+![](./Imgs/CodeMision2_1.jpg)
+
+Cuando se presiona el botón del centro, inicia la rutina. El robot va a 'seguir la pared' y revisar si encontró la meta, hasta que el sensor ultrasónico frontal detecte algo a menos de 15 cm. Al detectar algo en frente, revisa con el sensor ultrasónico lateral si hay algo a menos de 20 cm; en caso que sí, hay pared en la izquierda y por tanto se gira hacia la derecha; en caso que no, hay espacio en la izquierda y por tanto se gira hacia la izquierda. Cuando el robot detecta la meta, avanza recto por un tiempo para salir y se termina el programa.
+
+![](./Imgs/CodeMision2_2.jpg)
+
+Para seguir la pared, el roboot utiliza su sensor ultrasónico lateral (que está a la izquierda). El robot va a avanzar casi recto, pero una de las ruedas irá más rápido que la otra para que gire levemente. Si el sensor detecta la pared a menos de 10 cm, avanza girando levemente hacia la derecha (alejándose de la pared), y en caso contrario, avanza girando levemente hacia la izquierda (acercándose a la pared).
+
+![](./Imgs/CodeMision2_3.jpg)
+
+Se crea una función para rotar el robot determinados grados hacia la derecha utilizando el giroscopio. Para esto, se resetea el giroscopio y se giran ambas ruedas en sentido contrario hasta que la rotación detectada por el giroscopio sea mayor al valor de giro deseado. Y, se crea una función siilar para rotar el robot determinados grados hacia la izquierda. Como el giroscopio mide grados negativos cuando se gira hacia la izquierda, se debe aplicar otra lógica con negativos para obtener el resultado esperado, tal como se observa a continuación:
+
+![](./Imgs/CodeMision2_4.jpg)
+
+Los valores utilizados para la rotación del robot fueron calibrados a prueba y error. Esto, debido a la incertidumbre que se tiene en el giroscopio y a que el avance no es en línea recta.
+
+Adicionalmente, cuando el robot está siguiendo la pared, ilumina de color rojo; cuando el robot está rotando hacia la derecha, ilumina de color verde; cuando el robot está rotando hacia la izqueirda, ilumina de color naranja; y, cuando el robot encuentra la meta, ilumina de color verde nuevamente.
+
 ## Video del resultado 2
+
+# Conclusiones
