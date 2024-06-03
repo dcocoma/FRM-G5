@@ -219,11 +219,14 @@ A continuación, se adecuó la pista para ejecutar la misión, se colocó una ci
 
 ```mermaid
 graph TD;
-    A[Inicio] --> B{¿Condición?};
-    B -- Sí --> C[Acción 1];
-    B -- No --> D[Acción 2];
-    C --> E[Fin];
-    D --> E[Fin];
+    A(Inicio) --> B[Hallar línea];
+    B --> C[Seguir línea];
+    C --> D{¿Hay obstáculo?};
+    D -- No --> E{¿Llegó a la meta?}; 
+    D -- Sí --> F[Rodear obstáculo];
+    E -- No --> C;
+    E -- Sí --> H(Fin);
+    F --> E;
 ```
 
 Se describirá a continuación los pasos seguidos para implementar el algoritmo.
@@ -244,10 +247,13 @@ Así se garantiza que siga la línea negra siempre que no tenga obstáculos al f
 
 La función se seguir línea opera mediante un condicional, si detecta la línea negra en el sensor se inicia un movimiento de avance hacia la derecha y cuando no es detectado se inicia un movimiento de avance hacia la izquierda, de esta forma se mantiene el rumbo sobre el extremo derecho de la cinta e impide que se pierda hacia la izquierda de la cinta.
 
+![WhatsApp Image 2024-06-02 at 20 05 15 (2)](https://github.com/dcocoma/FRM-G5/assets/73080388/ced06a0b-1215-4059-b89e-4a2e552f30c4)
+
 La función de esquivar obstáculo inicia rotando el robot hacia la derecha 80 grados, luego entra en un ciclo que funciona siempre que no se detecte nuevamente la cinta en el suelo, dentro del ciclo, el robot va a estar midiendo constantemente el sensor de proximidad orientado hacia la parte lateral izquierda; si se detecta el obstáculo a menos de 10 centímetros, realiza un pequeño giro de 1 grado hacia la derecha alejándose del obstáculo; en caso contrario, avanza rotando hacia la izquierda, acercándose al obstáculo. Siempre se rodea por la derecha.
 
+Una vez el robot vuelve a detectar la línea negra que lo guía hacia la meta, el robot realiza una rotación para volver a dirigirse hacia la meta y vuelve a ejecutar la función de 'hallar línea'. Una vez halla la línea, continúa con el seguimiento de la línea hasta encontrar otro obstáculo o llegar a la meta.
+
 ![WhatsApp Image 2024-06-02 at 20 05 16 (1)](https://github.com/dcocoma/FRM-G5/assets/73080388/75b17f1f-0640-4824-aec1-6573cdc9f78e)
-![WhatsApp Image 2024-06-02 at 20 05 15 (2)](https://github.com/dcocoma/FRM-G5/assets/73080388/ced06a0b-1215-4059-b89e-4a2e552f30c4)
 
 Se crea una función para rotar el robot determinados ángulos utilizando el giroscopio.
 
