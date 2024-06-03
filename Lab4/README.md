@@ -13,6 +13,7 @@
 En el repositorio de este laboratorio se encuentra lo siguiente:
 - README.md -> Archivo base con la descripción del laboratorio.
 - Imgs -> Carpeta con imágenes utilizadas en el archivo README.
+- CodeEV3 -> Carpeta con los dos algoritmos utilizados en las misiones. Los archivos son para utilizar en el software Lego Mindstorms EV3.
 
 Tabla de Contenidos
 ---
@@ -209,11 +210,11 @@ El algoritmo de resolución de laberintos con múltiples agentes (Multi-agent Ma
 Se inició preparando el EV3 para trabajar con 4 sensores, dos sensores ultrasónicos de proximidad, un giroscopio y un sensor de color.
 Un sensor de proximidad está ubicado orientado hacia el frente del robot, el segundo apuntando hacia el lateral izquierdo, el giroscopio de manera horizontal para detectar el giro del robot frente al plano horizontal y el sensor de color apuntando al suelo lo más cerca posible como se muestra en la siguiente foto.
 
-![WhatsApp Image 2024-06-02 at 20 02 45](https://github.com/dcocoma/FRM-G5/assets/73080388/4e02d359-4b3c-4d98-ab73-a610cbbd4f34)
+![](./Imgs/RobotMision1.jpeg)
 
 A continuación, se adecuó la pista para ejecutar la misión, se colocó una cinta aislante negra a lo largo de la pista y al final de ella una pieza impresa en 3D con PLA de color verde, se colocaron dos obstáculos sobre la cinta negra como se muestra en la siguiente foto para obstaculizar el trayecto y se posicionó el EV3 en el extremo sin pieza orientado hacia la cinta. 
 
-![WhatsApp Image 2024-06-02 at 20 02 19](https://github.com/dcocoma/FRM-G5/assets/73080388/461213d8-5ff2-47c3-9758-91dcd2c5a73c)
+![](./Imgs/EscenarioMision1.jpeg)
 
 ## Algoritmo de solución 1
 
@@ -229,37 +230,50 @@ graph TD;
     F --> E;
 ```
 
-Se describirá a continuación los pasos seguidos para implementar el algoritmo.
+**Uso de sensores:**
+- Para seguir la línea, se usa el sensor de color (negro) en el frente del robot.
+- Para detectar si hay un obstáculo, se usa el sensor ultrasónico en el frente del robot.
+- Para detectar si se llegó a la meta, se usa el sensor de color (verde) en el frente del robot.
+- Para rodear el obstáculo, se usa el sensor ultrasónico en el lateral del robot.
+- El giroscopio se usa en pasos intermedios para acomodar el robot hacia alguna dirección requerida.
 
-Se utilizó la herramienta de Lego Mindstorm para programar la rutina del EV3 mediante bluetooth.
+Ahora, se va a detallar el código y funcionamiento del algoritmo implementado en el robot EV3. Se utilizó la herramienta de Lego Mindstorm para programar la rutina del EV3 mediante bluetooth.
+
+Para entender el código de bloques, es importante saber cuáles son las ubicaciones de los sensores en el brick EV3:
+- Posición 1: Sensor de ultrasonido lateral.
+- Posición 2: Sensor de ultrasonido frontal.
+- Posición 3: Giroscopio.
+- Posición 4: Sensor de color.
 
 Al inicio del programa se le indica al robot que busque la línea negra, avanzando hasta que el sensor detecte el color negro, para luego inicializar el giroscopio en 0° y que quede en espera. 
 
-![WhatsApp Image 2024-06-02 at 20 05 15](https://github.com/dcocoma/FRM-G5/assets/73080388/79067310-0f75-48ad-bdb0-7d2031075660)
-![WhatsApp Image 2024-06-02 at 20 05 15 (1)](https://github.com/dcocoma/FRM-G5/assets/73080388/80581bbe-b6b1-4a92-839e-581f5eb4681c)
+![](./Imgs/CodeMision1_1.jpg)
+![](./Imgs/CodeMision1_2.jpg)
 
 La rutina empieza al presionar el botón del centro, al hacerlo entra en un bucle que se detiene una vez el color verde es detectado.
 Dentro de este bucle se llama la función "seguir línea" siempre y cuando el sensor de proximidad orientado hacia el frente no detecte un obstáculo a menos de 15 centímetros, una vez detecte un obstáculo llama la función "Esquivar obstáculo".
 
 Así se garantiza que siga la línea negra siempre que no tenga obstáculos al frente y se detenga al llegar al indicador verde de meta.
 
-![WhatsApp Image 2024-06-02 at 20 05 15 (3)](https://github.com/dcocoma/FRM-G5/assets/73080388/ae8d3e9d-e935-4f88-b3c4-883edc287cc8)
+![](./Imgs/CodeMision1_3.jpg)
 
 La función se seguir línea opera mediante un condicional, si detecta la línea negra en el sensor se inicia un movimiento de avance hacia la derecha y cuando no es detectado se inicia un movimiento de avance hacia la izquierda, de esta forma se mantiene el rumbo sobre el extremo derecho de la cinta e impide que se pierda hacia la izquierda de la cinta.
 
-![WhatsApp Image 2024-06-02 at 20 05 15 (2)](https://github.com/dcocoma/FRM-G5/assets/73080388/ced06a0b-1215-4059-b89e-4a2e552f30c4)
+![](./Imgs/CodeMision1_4.jpg)
 
 La función de esquivar obstáculo inicia rotando el robot hacia la derecha 80 grados, luego entra en un ciclo que funciona siempre que no se detecte nuevamente la cinta en el suelo, dentro del ciclo, el robot va a estar midiendo constantemente el sensor de proximidad orientado hacia la parte lateral izquierda; si se detecta el obstáculo a menos de 10 centímetros, realiza un pequeño giro de 1 grado hacia la derecha alejándose del obstáculo; en caso contrario, avanza rotando hacia la izquierda, acercándose al obstáculo. Siempre se rodea por la derecha.
 
 Una vez el robot vuelve a detectar la línea negra que lo guía hacia la meta, el robot realiza una rotación para volver a dirigirse hacia la meta y vuelve a ejecutar la función de 'hallar línea'. Una vez halla la línea, continúa con el seguimiento de la línea hasta encontrar otro obstáculo o llegar a la meta.
 
-![WhatsApp Image 2024-06-02 at 20 05 16 (1)](https://github.com/dcocoma/FRM-G5/assets/73080388/75b17f1f-0640-4824-aec1-6573cdc9f78e)
+![](./Imgs/CodeMision1_5.jpg)
 
-Se crea una función para rotar el robot determinados ángulos utilizando el giroscopio.
+Se crea una función para rotar el robot determinados grados hacia la derecha utilizando el giroscopio. Para esto, se resetea el giroscopio y se giran ambas ruedas en sentido contrario hasta que la rotación detectada por el giroscopio sea mayor al valor de giro deseado.
 
-![WhatsApp Image 2024-06-02 at 20 05 16](https://github.com/dcocoma/FRM-G5/assets/73080388/e980b3e4-3c1b-44ef-a343-5dcdded90b23)
+![](./Imgs/CodeMision1_6.jpg)
 
 Los valores utilizados para la rotación del robot fueron calibrados a prueba y error. Esto, debido a la incertidumbre que se tiene en el giroscopio y a que el avance de seguimiento de línea del robot no es en línea recta sino en zig zag.
+
+Adicionalmente, cuando el robot está realizando la rutina, la luz que se ilumina sobre el brick EV3 es de color rojo; y, cuando se llega a la meta, la luz que se ilumina es de color verde.
 
 ## Video del resultado 1
 
