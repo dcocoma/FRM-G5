@@ -187,6 +187,15 @@ A continuación, se adecuó la pista para ejecutar la misión, se colocó una ci
 
 ## Algoritmo de solución 1
 
+```mermaid
+graph TD;
+    A[Inicio] --> B{¿Condición?};
+    B -- Sí --> C[Acción 1];
+    B -- No --> D[Acción 2];
+    C --> E[Fin];
+    D --> E[Fin];
+```
+
 Se describirá a continuación los pasos seguidos para implementar el algoritmo.
 
 Se utilizó la herramienta de lego mindstorm para programar la rutina del EV3 mediante bluetooth.
