@@ -37,6 +37,12 @@ Tabla de Contenidos
 
 # Introducción
 
+El laboratorio 4 del curso Fundamentos de Robótica Móvil se centra en la navegación basada en comportamientos. Este enfoque se utiliza para desarrollar algoritmos que permiten a un robot móvil interactuar con su entorno y tomar decisiones en tiempo real, adaptándose a cambios y obstáculos inesperados. La navegación basada en comportamientos es crucial en la robótica móvil debido a su capacidad para manejar entornos dinámicos y desconocidos, a diferencia de la navegación planeada que depende de mapas predefinidos y puede fallar en presencia de cambios imprevistos.
+
+El laboratorio se divide en dos misiones principales. La primera misión involucra seguir una línea mientras se evitan obstáculos en el camino, utilizando sensores de proximidad, un giroscopio y un sensor de color. La segunda misión consiste en navegar a través de un laberinto, empleando un algoritmo de seguimiento de paredes que permite al robot encontrar la salida sin un mapa previo del entorno.
+
+A lo largo del laboratorio, se aplicaron y analizaron diferentes algoritmos de navegación, como los algoritmos Bug y de laberintos, además de estudiar las contribuciones de destacados robotistas como Rodney Brooks y Mark Tilden. El propósito de estas actividades es proporcionar una comprensión práctica y teórica de cómo los robots pueden moverse y tomar decisiones en entornos complejos, emulando comportamientos biológicos y adaptativos.
+
 # Consulta bibliográfica previa
 
 ## Características navegación
@@ -352,3 +358,13 @@ Adicionalmente, cuando el robot está siguiendo la pared, ilumina de color rojo;
 https://youtu.be/KG5FalbwQMs
 
 # Conclusiones
+
+1. **Importancia de la Velocidad en la Precisión de los Sensores:** Uno de los aprendizajes clave es que el robot debe moverse a una velocidad relativamente lenta para asegurar que los sensores puedan medir y reaccionar adecuadamente a su entorno. A velocidades altas, los sensores pueden no proporcionar datos precisos, lo que resulta en comportamientos inexactos o fallas en la navegación.
+
+2. **Adaptabilidad de la Navegación Basada en Comportamientos:** La navegación basada en comportamientos demostró ser altamente efectiva para entornos dinámicos y desconocidos. A diferencia de la navegación planeada, este enfoque permite al robot adaptarse a cambios en el entorno en tiempo real, lo que es crucial para aplicaciones en el mundo real donde las condiciones pueden ser impredecibles.
+
+3. **Importancia de la Calibración de Sensores y Algoritmos:** La calibración precisa de los sensores y los parámetros de los algoritmos es esencial para el éxito de las misiones. Pequeñas variaciones en las mediciones de los sensores pueden tener un gran impacto en el comportamiento del robot, por lo que es crucial realizar pruebas y ajustes cuidadosos.
+
+4. **Limitaciones de los Sensores y Algoritmos Simples:** Aunque los algoritmos simples como los algoritmos Bug y de seguimiento de paredes son efectivos, tienen limitaciones en entornos muy complejos. La combinación de múltiples comportamientos y sensores puede mejorar la robustez del sistema, pero también aumenta la complejidad del diseño y la programación.
+
+5. **Aplicabilidad en Entornos Reales:** Los principios y técnicas estudiados en este laboratorio tienen una amplia aplicabilidad en la robótica móvil real, desde robots de servicio hasta exploradores autónomos. La capacidad de un robot para navegar y adaptarse a su entorno es fundamental para su funcionalidad y eficiencia en tareas prácticas.
