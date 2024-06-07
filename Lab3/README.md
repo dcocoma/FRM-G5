@@ -262,13 +262,14 @@ Toma 3
 ## Procesamiento de datos Lidar
 
 ### Ploteo
-![](./Imgs/plot1.jpg)
-![](./Imgs/plot2.jpg)
-![](./Imgs/plot3.jpg)
+![](./Imgs/dibujo.jepg)
+![](./Imgs/plot1.npg)
+![](./Imgs/plot2.npg)
+![](./Imgs/plot3.npg)
 ### Mapa de ocupación
-![](./Imgs/Occu1.jpg)
-![](./Imgs/Occu2.jpg)
-![](./Imgs/Occu3.jpg)
+![](./Imgs/Occu1.npg)
+![](./Imgs/Occu2.npg)
+![](./Imgs/Occu3.npg)
 ### Mapa del entorno
 
 ## Análisis y fuentes de error
