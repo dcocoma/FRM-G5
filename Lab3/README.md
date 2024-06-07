@@ -279,7 +279,10 @@ El plot de la segunda toma se tiene que empieza en 90 grados lo cual con los 240
 El plot de la tercera toma no tiene datos en el primer cuadrante ya que empezo en 90 grados ,para el segundo cuadrante es inicialmente cercano y luego se aleja rapidamente como se esperaba ya que termina un muro ,para el tercer cuadrante se espera que inicialmente los datos esten alejados y progrsivamente se vuelvan mas cercanos ,en comparacion con el segundo cuadrante de la primera toma esta quedo mejor y por ultimo el ultimo cuadrante se espera que los datos sean cercanos y se alejen progrsivamente lo cual coincide ,pero los datos son demasiados cercanos.
 
 ![](./Imgs/plot3.png)
+
 ### Mapa de ocupación
+
+Para el mapa de ocupacion se tienen presente los
 ![](./Imgs/Occu1.png)
 ![](./Imgs/Occu2.png)
 ![](./Imgs/Occu3.png)
