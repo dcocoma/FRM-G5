@@ -269,7 +269,7 @@ Se puede observar la ubicacion de muros y obstaculos cercanos a cada toma del li
 ### Ploteo
 En la siguiente imagen se tiene el plot para la primera toma del lidar,en la primera toma el angulo con el cual empezo el escaneo es de 0 y termina antes de completar el tercer cuadrante lo que coincide con los 240 grados ,ademas su recorrido es en contra de las manecillas del reloj .Acerca de la distribucion de puntos el primer cuadrante los tiene alejados como se esperaba ,la distribucion de puntos para el segundo cuadrante son cercanos mas de lo que se esperaba y por ultimo en el tercer cuadrante se tienen puntos alejados y cercano cuando se esperaba solo que fueran cercanos ya que habian muros en ese lugar.
 ![](./Imgs/plot1.png)
-
+El plot de la segunda toma se tiene que empieza en 90 grados lo cual con los 240 grados no deberian haber datos en el primer cuadrante ,para el segundo cuadrante los datos estan cerca y luego se alejan como se esperaba ,sin embargo los datos que estan cerca estan demasiado cerca .Para el tercer cuadrante se espera algo similar a el anterior cuadrante en el cual hay datos cercanos y luego se alejan rapidamente debido a que se termina el muro ,en el cuarto cuadrante en el cual se esperaba que los datos estuviesen alejados la distribucion obtenida es demasiado cercana 
 ![](./Imgs/plot2.png)
 ![](./Imgs/plot3.png)
 ### Mapa de ocupación
