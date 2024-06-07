@@ -262,6 +262,7 @@ Toma 3
 ## Procesamiento de datos Lidar
 Para realizar el procesamiento de datos obtenidos es necesario saber acerca del entorno e informacion general del lidar.
 Informacion del lidar necesaria es la siguiente:distancia maxima medible es de 4000mm ,el lidar no da una vuelta completa sino 240 grados ,resolucion de 1mm y por ultimo el driver utilizado para el lidar permite obtener un total de 682 datos.
+
 El espacio que se dispuso para el lidar tiene 29.5 cm en x y 23 cm para y ,en la siguiente imagen se puede observar la ubicacion del lidar en cada una de las tomas (P1,P2 y P3) junto a estas las coordenadas y el angulo con el cual el lidar empieza el escaneo.
 Se puede observar la ubicacion de muros y obstaculos cercanos a cada toma del lidar ,asi como tambien sus dimensiones.
 ![](./Imgs/dibujo.jpeg)
