@@ -264,6 +264,7 @@ El espacio que se dispuso para el lidar tiene 29.5 cm en x y 23 cm para y ,en la
 Se puede observar la ubicacion de muros y obstaculos cercanos a cada toma del lidar ,asi como tambien sus dimensiones.
 ![](./Imgs/dibujo.jpeg)
 ### Ploteo
+En la siguiente imagen se tiene el plot para la primera toma del lidar,en la primera toma el angulo con el cual empezo el escaneo es de 0 y termina antes de completar el tercer cuadrante lo que coincide con los 240 grados ,ademas su recorrido es en contra de las manecillas del reloj .Acerca de la distribucion de puntos el primer cuadrante los tiene alejados como se esperaba ,la distribucion de puntos para el segundo cuadrante son cercanos mas de lo que se esperaba y por ultimo en el tercer cuadrante se tienen puntos alejados y cercano cuando se esperaba solo que fueran cercanos ya que habian muros en ese lugar.
 ![](./Imgs/plot1.png)
 ![](./Imgs/plot2.png)
 ![](./Imgs/plot3.png)
