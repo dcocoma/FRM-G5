@@ -118,6 +118,72 @@ ans =
 ```
 ## Preparación del entorno y del sensor Lidar
 
+Este código en MATLAB configura la comunicación serie con un sensor LIDAR utilizando el protocolo SCIP2.0. A continuación se explica cada parte del código y su función:
+
+#### Configuración de la Comunicación Serie
+
+```matlab
+lidar = serial('COM11', 'baudrate', 115200);
+```
+- **`serial`**: Crea un objeto de comunicación serie llamado `lidar` en el puerto `COM11` con una velocidad de transmisión de 115200 baudios.
+
+#### Configuración del Objeto Serie
+
+```matlab
+set(lidar, 'Timeout', 0.5);
+set(lidar, 'InputBufferSize', 40000);
+set(lidar, 'Terminator', 'CR');
+```
+- **`Timeout`**: Establece el tiempo de espera para la comunicación serie en 0.5 segundos.
+- **`InputBufferSize`**: Configura el tamaño del búfer de entrada en 40000 bytes.
+- **`Terminator`**: Establece el terminador de línea en 'CR' (retorno de carro), que indica el final de un comando o mensaje.
+
+#### Abrir la Comunicación Serie
+
+```matlab
+fopen(lidar);
+pause(0.1);
+```
+- **`fopen`**: Abre la comunicación serie con el sensor LIDAR.
+- **`pause(0.1)`**: Pausa la ejecución del código durante 0.1 segundos para asegurar que la conexión se establezca correctamente.
+
+#### Configuración del Protocolo y Verificación de la Versión
+
+```matlab
+fprintf(lidar, 'SCIP2.0');
+pause(0.1);
+fscanf(lidar);
+```
+- **`fprintf(lidar, 'SCIP2.0')`**: Envía el comando 'SCIP2.0' al LIDAR para configurar el protocolo de comunicación en SCIP2.0.
+- **`pause(0.1)`**: Pausa durante 0.1 segundos para permitir que el LIDAR procese el comando.
+- **`fscanf(lidar)`**: Lee la respuesta del LIDAR, verificando que el protocolo se haya configurado correctamente.
+
+#### Comprobar Información de Versión
+
+```matlab
+fprintf(lidar, 'VV');
+pause(0.1);
+fscanf(lidar)
+```
+- **`fprintf(lidar, 'VV')`**: Envía el comando 'VV' para solicitar la información de la versión del LIDAR.
+- **`pause(0.1)`**: Pausa durante 0.1 segundos para permitir que el LIDAR procese el comando y prepare la respuesta.
+- **`fscanf(lidar)`**: Lee y muestra la información de la versión del LIDAR.
+
+#### Encender el Láser
+
+```matlab
+fprintf(lidar, 'BM');
+pause(0.1);
+fscanf(lidar)
+```
+- **`fprintf(lidar, 'BM')`**: Envía el comando 'BM' para encender el láser del LIDAR.
+- **`pause(0.1)`**: Pausa durante 0.1 segundos para permitir que el LIDAR procese el comando.
+- **`fscanf(lidar)`**: Lee la respuesta del LIDAR, confirmando que el láser se ha encendido correctamente.
+
+### Función Final del Código
+
+El propósito final de este código es configurar la comunicación serie con un sensor LIDAR, cambiar el protocolo de comunicación a SCIP2.0, verificar la información de la versión del LIDAR y encender el láser. Esta configuración es esencial para preparar el LIDAR para operaciones de escaneo y medición de distancias, asegurando que el dispositivo esté listo para capturar datos precisos.
+
 ### Código relevante Lidar
 
 Este código MATLAB realiza un escaneo LIDAR para obtener un vector de rango de 682 elementos, que representa las distancias medidas desde -120 a +120 grados. A continuación, se explica cada sección del código y su función:
