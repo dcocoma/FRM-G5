@@ -286,7 +286,7 @@ Para el mapa de ocupacion se tienen presente la misma informacion acerca del lid
 
 En los tres mapas de ocupacion se observa claramente los 240 grados que escanea el lidar teniendo asi grandes regiones oscuras ya que no hay datos para esa region ,tambien se tienen rayos oscuros en los cuales por alguna razon los datos respectivos a esos angulos tienen un valor de 0 ,los limites del mapa corresponde a los muros.Las celdas en blanco corresponde a las vacias mientras que las grises desconocidas u ocupadas esto debido a que en algunos mapas son notorias formas de obstaculos que corresponden a obstaculos esperados representados con gris.
 
-
+Para la rpimera toma se tiene que el lidar esta practicamente rodeado con un muro arriba y a la izquierda de este ,por lo que se pueden observar ciertas lineas grises mas grandes,pero estas no permiten denotar claramente un muro como tal,en este mapa se tienen rayos grises no por que se tenga un obstaculo sino por que el datos es 0,gran parte de el mapa como se espera esta dominado por el blanco debido a que esta vacio.
 
 Toma 1
 
