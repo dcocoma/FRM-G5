@@ -136,7 +136,116 @@ ans =
 
 ## Preparación del entorno y del sensor ultrasonido
 
-### Código relevante ultrasonido
+### Código ultrasonido
+
+Este código de Arduino está diseñado para medir la distancia utilizando un sensor ultrasónico. Aquí te explico cada parte del código:
+
+#### Declaración de Variables
+
+```cpp
+// declaración de variables para pines
+const int pinecho = 11;
+const int pintrigger = 12;
+```
+- `pinecho`: Define el pin 11 como el pin de entrada para el sensor ultrasónico.
+- `pintrigger`: Define el pin 12 como el pin de salida para el sensor ultrasónico.
+
+```cpp
+// variables para calculos
+unsigned long tiempo;
+float distancia;
+```
+- `tiempo`: Variable para almacenar el tiempo que tarda el eco en regresar al sensor.
+- `distancia`: Variable para almacenar la distancia calculada en centímetros.
+
+#### Función `setup()`
+
+```cpp
+void setup()
+{
+  // preparar la comunicación serial
+  Serial.begin(9600);
+ 
+  // configurar los pines utilizados por el sensor
+  pinMode(pinecho, INPUT);
+  pinMode(pintrigger, OUTPUT);
+}
+```
+- `Serial.begin(9600)`: Inicia la comunicación serial a una velocidad de 9600 baudios.
+- `pinMode(pinecho, INPUT)`: Configura el pin `pinecho` (11) como entrada.
+- `pinMode(pintrigger, OUTPUT)`: Configura el pin `pintrigger` (12) como salida.
+
+#### Función `loop()`
+
+```cpp
+void loop()
+{
+  // asegurarnos que el pin trigger se encuentra en estado bajo
+  digitalWrite(pintrigger, LOW);
+  delayMicroseconds(2);
+ 
+  // comenzamos pulso alto, debe durar 10 uS
+  // luego regresamos a estado bajo
+  digitalWrite(pintrigger, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(pintrigger, LOW);
+ 
+  // medimos el tiempo en estado alto del pin "echo"
+  // el tiempo en estado alto es proporcional a la distancia medida
+  tiempo = pulseIn(pinecho, HIGH);
+ 
+  // LA VELOCIDAD DEL SONIDO ES DE 340 M/S O 29,4 MICROSEGUNDOS POR CENTIMETRO
+  // DIVIDIMOS EL TIEMPO DEL PULSO ENTRE 58, TIEMPO QUE TARDA RECORRER IDA Y
+  // VUELTA UN CENTIMETRO LA ONDA SONORA
+  distancia = float(tiempo) / 58.8;
+ 
+  // imprimir la distancia medida al monitor serial
+  Serial.print(distancia);
+  Serial.print('\n');
+ 
+  // esperar 0,25 segundos antes de realizar otra medición
+  delay(250);
+}
+```
+
+1. **Generar el Pulso Ultrasónico**:
+   ```cpp
+   digitalWrite(pintrigger, LOW);
+   delayMicroseconds(2);
+   digitalWrite(pintrigger, HIGH);
+   delayMicroseconds(10);
+   digitalWrite(pintrigger, LOW);
+   ```
+   - Se asegura que el pin `pintrigger` está en estado bajo (LOW) durante 2 microsegundos.
+   - Luego se envía un pulso alto (HIGH) de 10 microsegundos al pin `pintrigger` para generar una señal ultrasónica.
+   - Finalmente, se vuelve a poner el pin `pintrigger` en estado bajo (LOW).
+
+2. **Medir el Tiempo del Eco**:
+   ```cpp
+   tiempo = pulseIn(pinecho, HIGH);
+   ```
+   - `pulseIn(pinecho, HIGH)` mide el tiempo que el pin `pinecho` permanece en estado alto (HIGH), lo cual es proporcional a la distancia al objeto.
+
+3. **Calcular la Distancia**:
+   ```cpp
+   distancia = float(tiempo) / 58.8;
+   ```
+   - La distancia se calcula dividiendo el tiempo medido entre 58.8, basado en la velocidad del sonido (340 m/s).
+
+4. **Imprimir la Distancia**:
+   ```cpp
+   Serial.print(distancia);
+   Serial.print('\n');
+   ```
+   - La distancia medida se envía al monitor serial para visualizarla.
+
+5. **Esperar Antes de la Próxima Medición**:
+   ```cpp
+   delay(250);
+   ```
+   - Se espera 250 milisegundos (0.25 segundos) antes de realizar otra medición.
+
+Este ciclo se repite indefinidamente mientras el Arduino esté encendido, midiendo y reportando la distancia detectada por el sensor ultrasónico.
 
 ## Toma de datos ultrasonido
 
