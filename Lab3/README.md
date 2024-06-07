@@ -290,7 +290,7 @@ Para la primera toma se tiene que el lidar esta practicamente rodeado con un mur
 
 La segunda toma deberia tener un muro al frente y a la izquierda del lidar en las cuales hay zonas grises pero no se puede identificar claramente un obstaculo o muro ,como se espera hay varias zonas en blanco en las que no hay obstaculos,en la esquina inferior derecha se puede observar una forma rectangular que corresponderia a un obstaculo,pero en no hay uno con esa forma en realidad sino que al estar cerca de la zona en la cual el lidar no tiene datos se esta mostrando una parte de el obstaculo existente ,ademas en la esquina inferior izquierda se deberia poder observar ciertos rectangulos los cuales no se pueden observar ,solamente alguna parte gris de mayor tamano a las cercanas.
 
-
+La tercera toma no tiene ningun obstaculo apreciable ,se deberia poder aprecia un obstaculo a la izquierda con forma de c aunque hay varias partes grises no se puede apreciar dicho obstaculo.En el plot de esta toma se tienen en el tercer cuadrante una buena distribucion de datos sin embargo esa zona en el mapa de ocupacion corresponde al limite del mapa.
 
 Toma 1
 
