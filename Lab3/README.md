@@ -260,9 +260,10 @@ Toma 3
 
 
 ## Procesamiento de datos Lidar
-
-### Ploteo
+El espacio que se dispuso para el lidar tiene 29.5 cm en x y 23 cm para y ,en la siguiente imagen se puede observar la ubicacion del lidar en cada una de las tomas (P1,P2 y P3) junto a estas las coordenadas y engulo en el cual el lidar empezo el escaneo.
+Se puede observar la ubicacion de muros cercanos a cada toma del lidar ,asi como tambien sus dimensiones.
 ![](./Imgs/dibujo.jpeg)
+### Ploteo
 ![](./Imgs/plot1.png)
 ![](./Imgs/plot2.png)
 ![](./Imgs/plot3.png)
