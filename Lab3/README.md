@@ -246,6 +246,19 @@ El código hace referencia a una función llamada `decodeSCIP`, que no se propor
 
 ## Toma de datos Lidar
 
+Toma 1
+
+![](./Imgs/ScanPose1.jpg)
+
+Toma 2
+
+![](./Imgs/ScanPose2.jpg)
+
+Toma 3
+
+![](./Imgs/ScanPose3.jpg)
+
+
 ## Procesamiento de datos Lidar
 
 ### Ploteo
@@ -373,9 +386,6 @@ Este ciclo se repite indefinidamente mientras el Arduino esté encendido, midien
 
 ## Toma de datos ultrasonido
 
-## Procesamiento de datos ultrasonido
-
-
 1: 1m
 
 ![](./Imgs/ArduinoSample1.jpg)
@@ -387,6 +397,108 @@ Este ciclo se repite indefinidamente mientras el Arduino esté encendido, midien
 3: 2.5m
 
 ![](./Imgs/ArduinoSample3.jpg)
+
+
+## Procesamiento de datos ultrasonido
+
+Este código de MATLAB se encarga de leer datos de un archivo CSV, convertirlos a un arreglo numérico y luego crear un histograma a partir de estos datos. El histograma se guarda como una imagen y se muestra información básica sobre el vector de datos. Aquí tienes una explicación detallada de cada parte del código:
+
+#### Definición del Nombre del Archivo CSV
+```matlab
+sample1 = 'C:\Users\Joho_\Desktop\semestre\fundamentos de robotica movil\labs\lab3\Sample1.csv';
+```
+- Se define la ruta completa del archivo CSV que contiene los datos a procesar.
+
+#### Lectura de Datos del Archivo CSV
+```matlab
+datos1 = readtable(sample1);
+```
+- Se lee el archivo CSV y se almacena su contenido en una tabla llamada `datos1`.
+
+#### Suposiciones sobre las Columnas
+```matlab
+% Suponemos que las columnas son:
+% Columna 1: Valores Reales
+% Columna 2: Valores Predichos
+% Columna 3: Distancia
+```
+- Se asume que las columnas del archivo CSV tienen los siguientes significados:
+  - Columna 1: Valores Reales
+  - Columna 2: Valores Predichos
+  - Columna 3: Distancia
+
+#### Conversión de la Tabla a un Arreglo Numérico
+```matlab
+datosNumericos1 = table2array(datos1);
+valorReal1 = 100;
+histogramaDeVector(datosNumericos1);
+```
+- `datosNumericos1` convierte la tabla `datos1` a un arreglo numérico.
+- `valorReal1` se define como 100, aunque no se utiliza posteriormente en el código.
+- `histogramaDeVector(datosNumericos1)` llama a la función `histogramaDeVector` pasando el arreglo `datosNumericos1`.
+
+#### Definición de la Función `histogramaDeVector`
+```matlab
+function histogramaDeVector(vectorDatos)
+    % Esta función crea un histograma a partir de un vector de datos.
+
+    % Verificar si el vectorDatos está vacío
+    if isempty(vectorDatos)
+        disp('El vector está vacío. Proporciona un vector con datos.');
+        return;
+    end
+
+    % Crear el histograma
+    figure; % Abre una nueva figura
+    histogram(vectorDatos); % Crea el histograma
+    title('Histograma para 100 cm'); % Título del histograma
+    xlabel('Valores'); % Etiqueta del eje X
+    ylabel('Frecuencia'); % Etiqueta del eje Y
+
+    % Guardar la figura como una imagen
+    saveas(gcf, 'C:\Users\Joho_\Desktop\semestre\fundamentos de robotica movil\labs\lab3\histograma100cm.png');
+
+    % Mostrar información básica
+    disp(['Número de elementos: ', num2str(length(vectorDatos))]);
+    disp(['Valor mínimo: ', num2str(min(vectorDatos))]);
+    disp(['Valor máximo: ', num2str(max(vectorDatos))]);
+end
+```
+#### Verificación del Vector de Datos
+```matlab
+    if isempty(vectorDatos)
+        disp('El vector está vacío. Proporciona un vector con datos.');
+        return;
+    end
+```
+- Verifica si el vector `vectorDatos` está vacío y, de ser así, muestra un mensaje y termina la función.
+
+#### Creación del Histograma
+```matlab
+    figure; % Abre una nueva figura
+    histogram(vectorDatos); % Crea el histograma
+    title('Histograma para 100 cm'); % Título del histograma
+    xlabel('Valores'); % Etiqueta del eje X
+    ylabel('Frecuencia'); % Etiqueta del eje Y
+```
+- Abre una nueva figura.
+- Crea un histograma a partir de `vectorDatos`.
+- Añade un título y etiquetas a los ejes X e Y.
+
+#### Guardado de la Figura
+```matlab
+    saveas(gcf, 'C:\Users\Joho_\Desktop\semestre\fundamentos de robotica movil\labs\lab3\histograma100cm.png');
+```
+- Guarda la figura del histograma como una imagen PNG en la ruta especificada.
+
+#### Mostrar Información Básica
+```matlab
+    disp(['Número de elementos: ', num2str(length(vectorDatos))]);
+    disp(['Valor mínimo: ', num2str(min(vectorDatos))]);
+    disp(['Valor máximo: ', num2str(max(vectorDatos))]);
+```
+- Muestra en la consola el número de elementos, el valor mínimo y el valor máximo del vector de datos.
+
 
 
 ### Medidas estadísticas
@@ -430,6 +542,7 @@ $$error Relativo = 0.1431\%$$
 
 ### Análisis y conclusiones
 
+Se encontro que a medida que se incrementa la distancia, el error absoluto aumenta hasta llegar a ser superior al 30% para 2.5 metros. Se considera apropiado no usar el sensor de ultrasonido para distancias mayores a un metro dado que su error absoluto es de 3%.
 # Sensores Lego
 
 30%
