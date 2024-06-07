@@ -120,6 +120,64 @@ ans =
 
 ### Código relevante Lidar
 
+Este código MATLAB realiza un escaneo LIDAR para obtener un vector de rango de 682 elementos, que representa las distancias medidas desde -120 a +120 grados. A continuación, se explica cada sección del código y su función:
+
+#### Función `LidarScan`
+```matlab
+function [rangescan] = LidarScan(lidar)
+```
+Define una función llamada `LidarScan` que toma como entrada un objeto `lidar` y devuelve un vector `rangescan` con los resultados del escaneo.
+
+#### Bucle de Escaneo LIDAR
+```matlab
+proceed = 0;
+while (proceed == 0)
+    fprintf(lidar, 'GD0044072500');
+    pause(0.01);
+    data = fscanf(lidar);
+    if numel(data) == 2134
+        proceed = 1;
+    end
+end
+```
+- **Inicialización**: `proceed` se inicializa en 0.
+- **Bucle `while`**: Se ejecuta hasta que `proceed` sea 1.
+  - **Enviar Comando**: `fprintf(lidar, 'GD0044072500');` envía un comando al dispositivo LIDAR para iniciar un escaneo.
+  - **Pausa**: `pause(0.01);` espera 0.01 segundos.
+  - **Leer Datos**: `data = fscanf(lidar);` lee los datos recibidos del LIDAR.
+  - **Validación de Datos**: Si el número de elementos en `data` es 2134, el bucle se detiene (`proceed = 1`).
+
+#### Procesamiento de Datos
+```matlab
+i = find(data == data(13));
+rangedata = data(i(3) + 1:end - 1);
+for j = 0:31
+    onlyrangedata((64 * j) + 1:(64 * j) + 64) = rangedata(1 + (66 * j):64 + (66 * j));
+end
+```
+- **Buscar Índices**: `i = find(data == data(13));` encuentra los índices donde el valor es igual al valor en la posición 13 de `data`.
+- **Extraer Datos de Rango**: `rangedata = data(i(3) + 1:end - 1);` extrae los datos relevantes para el rango.
+- **Organizar Datos**: El bucle `for` organiza `rangedata` en segmentos de 64 elementos dentro de `onlyrangedata`.
+
+#### Decodificación de Distancias
+```matlab
+j = 0;
+for i = 1:floor(numel(onlyrangedata) / 3)
+    encodeddist(i, :) = [onlyrangedata((3 * j) + 1) onlyrangedata((3 * j) + 2) onlyrangedata((3 * j) + 3)];
+    j = j + 1;
+end
+for k = 1:size(encodeddist, 1)
+    rangescan(k) = decodeSCIP(encodeddist(k, :));
+end
+```
+- **Preparar Datos Codificados**: Se organiza `onlyrangedata` en grupos de 3 elementos y se almacena en `encodeddist`.
+- **Decodificación**: Se llama a la función `decodeSCIP` para cada conjunto de datos en `encodeddist` y se almacena el resultado en `rangescan`.
+
+El código realiza un escaneo LIDAR para medir distancias dentro de un rango de -120 a +120 grados, decodificando los datos recibidos y organizándolos en un vector de rangos. La función `LidarScan` se comunica con el dispositivo LIDAR, valida los datos recibidos, organiza y decodifica la información para devolver las distancias medidas.
+
+#### Función `decodeSCIP`
+El código hace referencia a una función llamada `decodeSCIP`, que no se proporciona, pero se puede inferir que esta función decodifica los datos codificados del LIDAR en valores de distancia reales.
+
 ## Toma de datos Lidar
 
 ## Procesamiento de datos Lidar
