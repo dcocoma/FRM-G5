@@ -265,12 +265,19 @@ Informacion del lidar necesaria es la siguiente:distancia maxima medible es de 4
 
 El espacio que se dispuso para el lidar tiene 29.5 cm en x y 23 cm para y ,en la siguiente imagen se puede observar la ubicacion del lidar en cada una de las tomas (P1,P2 y P3) junto a estas las coordenadas y el angulo con el cual el lidar empieza el escaneo.
 Se puede observar la ubicacion de muros y obstaculos cercanos a cada toma del lidar ,asi como tambien sus dimensiones.
+
 ![](./Imgs/dibujo.jpeg)
 ### Ploteo
 En la siguiente imagen se tiene el plot para la primera toma del lidar,en la primera toma el angulo con el cual empezo el escaneo es de 0 y termina antes de completar el tercer cuadrante lo que coincide con los 240 grados ,ademas su recorrido es en contra de las manecillas del reloj .Acerca de la distribucion de puntos el primer cuadrante los tiene alejados como se esperaba ,la distribucion de puntos para el segundo cuadrante son cercanos mas de lo que se esperaba y por ultimo en el tercer cuadrante se tienen puntos alejados y cercano cuando se esperaba solo que fueran cercanos ya que habian muros en ese lugar.
+
 ![](./Imgs/plot1.png)
+
 El plot de la segunda toma se tiene que empieza en 90 grados lo cual con los 240 grados no deberian haber datos en el primer cuadrante ,para el segundo cuadrante los datos estan cerca y luego se alejan como se esperaba ,sin embargo los datos que estan cerca estan demasiado cerca .Para el tercer cuadrante se espera algo similar a el anterior cuadrante en el cual hay datos cercanos y luego se alejan rapidamente debido a que se termina el muro ,en el cuarto cuadrante en el cual se esperaba que los datos estuviesen alejados la distribucion obtenida es demasiado cercana de hecho los datos obtenidos son solo dos valores 0 y 20.
+
 ![](./Imgs/plot2.png)
+
+El plot de la tercera toma no tiene datos en el primer cuadrante ya que empezo en 90 grados ,para el segundo cuadrante es inicialmente cercano y luego se aleja rapidamente como se esperaba ya que termina un muro ,para el tercer cuadrante se espera que inicialmente los datos esten alejados y progrsivamente se vuelvan mas cercanos ,en comparacion con el segundo cuadrante de la primera toma esta quedo mejor y por ultimo el ultimo cuadrante se espera que los datos sean cercanos y se alejen progrsivamente lo cual coincide ,pero los datos son demasiados cercanos.
+
 ![](./Imgs/plot3.png)
 ### Mapa de ocupación
 ![](./Imgs/Occu1.png)
