@@ -282,9 +282,15 @@ El plot de la tercera toma no tiene datos en el primer cuadrante ya que empezo e
 
 ### Mapa de ocupación
 
-Para el mapa de ocupacion se tienen presente los
+Para el mapa de ocupacion se tienen presente la misma informacion acerca del lidar y su entorno
+
+En los tres mapas de ocupacion se observa claramente los 240 grados que escanea el lidar
+
+Toma 1
 ![](./Imgs/Occu1.png)
+Toma2
 ![](./Imgs/Occu2.png)
+Toma3
 ![](./Imgs/Occu3.png)
 ### Mapa del entorno
 
