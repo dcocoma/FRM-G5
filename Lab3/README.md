@@ -260,12 +260,15 @@ Toma 3
 
 
 ## Procesamiento de datos Lidar
+Para realizar el procesamiento de datos obtenidos es necesario saber acerca del entorno e informacion general del lidar.
+Informacion del lidar necesaria es la siguiente:distancia maxima medible es de 4000mm ,el lidar no da una vuelta completa sino 240 grados ,resolucion de 1mm y por ultimo el driver utilizado para el lidar permite obtener un total de 682 datos.
 El espacio que se dispuso para el lidar tiene 29.5 cm en x y 23 cm para y ,en la siguiente imagen se puede observar la ubicacion del lidar en cada una de las tomas (P1,P2 y P3) junto a estas las coordenadas y el angulo con el cual el lidar empieza el escaneo.
 Se puede observar la ubicacion de muros y obstaculos cercanos a cada toma del lidar ,asi como tambien sus dimensiones.
 ![](./Imgs/dibujo.jpeg)
 ### Ploteo
 En la siguiente imagen se tiene el plot para la primera toma del lidar,en la primera toma el angulo con el cual empezo el escaneo es de 0 y termina antes de completar el tercer cuadrante lo que coincide con los 240 grados ,ademas su recorrido es en contra de las manecillas del reloj .Acerca de la distribucion de puntos el primer cuadrante los tiene alejados como se esperaba ,la distribucion de puntos para el segundo cuadrante son cercanos mas de lo que se esperaba y por ultimo en el tercer cuadrante se tienen puntos alejados y cercano cuando se esperaba solo que fueran cercanos ya que habian muros en ese lugar.
 ![](./Imgs/plot1.png)
+
 ![](./Imgs/plot2.png)
 ![](./Imgs/plot3.png)
 ### Mapa de ocupación
