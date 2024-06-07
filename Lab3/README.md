@@ -284,13 +284,18 @@ El plot de la tercera toma no tiene datos en el primer cuadrante ya que empezo e
 
 Para el mapa de ocupacion se tienen presente la misma informacion acerca del lidar y su entorno
 
-En los tres mapas de ocupacion se observa claramente los 240 grados que escanea el lidar
+En los tres mapas de ocupacion se observa claramente los 240 grados que escanea el lidar teniendo asi grandes regiones oscuras ya que no hay datos para esa region ,tambien se tienen rayos oscuros en los cuales por alguna razon los datos respectivos a esos angulos tienen un valor de 0 ,los mapas estan ubicados 
 
 Toma 1
+
 ![](./Imgs/Occu1.png)
+
 Toma2
+
 ![](./Imgs/Occu2.png)
+
 Toma3
+
 ![](./Imgs/Occu3.png)
 ### Mapa del entorno
 
